@@ -52,6 +52,8 @@ public class Appreciate implements Serializable {
 
     private Integer commentCount;
 
+    private Integer voteCount;
+
     private List<AppreciateComment> commentList = new ArrayList<AppreciateComment>();
 
     public Long getId() {
@@ -270,5 +272,13 @@ public class Appreciate implements Serializable {
 
     public void setCommentCount(Integer commentCount) {
         this.commentCount = commentCount;
+    }
+
+    public Integer getVoteCount() {
+        return voteCount;
+    }
+
+    public void setVoteCount(Integer voteCount) {
+        this.voteCount = voteCount;
     }
 }
