@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lucier.model">
+    <resultMap type="com.lucifer.model.vote.Appreciate" id="AppreciateMap">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="summary" property="summary"/>
+        <result column="logo" property="logo"/>
+        <result column="author" property="author"/>
+        <result column="category_id" property="categoryId"/>
+        <result column="category_name" property="categoryName"/>
+        <result column="content" property="content"/>
+        <result column="click_count" property="clickCount"/>
+        <result column="like_count" property="likeCount"/>
+        <result column="comment_count" property="commentCount"/>
+        <result column="publish_at" property="publishAt"/>
+        <result column="top" property="top"/>
+        <result column="l_width" property="lWidth"/>
+        <result column="l_height" property="lHeight"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+
+    </resultMap>
+
+    <select id="appreciateList" resultMap="AppreciateMap">
+        select appreciate.*,appreciate_category.name category_name from appreciate
+        left outer join appreciate_category on appreciate.category_id = appreciate_category.id
+        where  appreciate.is_deleted = 0
+        <if test="title!=null and title!=''">
+            and appreciate.title like '%${title}%'
+        </if>
+        <if test="categoryId!=null and categoryId!=''">
+            and appreciate.category_id = #{categoryId}
+        </if>
+        order by appreciate.top desc,appreciate.publish_at desc limit #{offset},#{count}
+    </select>
+
+    <select id="cmsAppreciateMatchRecordCount" resultType="java.lang.Integer">
+        select count(*) from appreciate where is_deleted = 0
+        <if test="title!=null and title!=''">
+            and appreciate.title like '%${title}%'
+        </if>
+        <if test="categoryId!=null and categoryId!=''">
+            and appreciate.category_id = #{categoryId}
+        </if>
+    </select>
+
+
+    <select id="appreciateTopList" resultMap="AppreciateMap">
+        select appreciate.*,appreciate_category.name category_name from appreciate
+        left outer join appreciate_category on appreciate.category_id = appreciate_category.id
+        where  appreciate.is_deleted = 0 and appreciate.top != 0
+        <if test="title!=null and title!=''">
+            and appreciate.title like '%${title}%'
+        </if>
+        order by appreciate.top desc,appreciate.publish_at desc limit #{offset},#{count}
+    </select>
+
+    <select id="cmsAppreciateTopMatchRecordCount" resultType="java.lang.Integer">
+        select count(*) from appreciate where is_deleted = 0 and appreciate.top != 0
+        <if test="title!=null and title!=''">
+            and appreciate.title like '%${title}%'
+        </if>
+    </select>
+
+    <insert id="insertAppreciate" useGeneratedKeys="true" keyProperty="id">
+        insert into appreciate
+        (title,logo,summary,author,category_id,content,publish_at,top,click_count,l_width,l_height,created_at,updated_at)
+        values
+        (#{title},#{logo},#{summary},#{author},#{categoryId},#{content},#{publishAt},#{top},#{clickCount},#{lWidth},#{lHeight},#{createdAt},#{updatedAt})
+    </insert>
+
+    <update id="updateAppreciate">
+        update appreciate
+        set
+        title = #{title},  logo= #{logo}, summary=#{summary}, author=#{author},l_width = #{lWidth}, l_height = #{lHeight},
+        category_id = #{categoryId} ,content = #{content},publish_at = #{publishAt} ,top = #{top},updated_at = #{updatedAt}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteAppreciate">
+        update appreciate
+        set is_deleted = 1
+        where id = #{id}
+    </delete>
+
+    <update id="updateAppreciateLikeCount">
+        update  appreciate set like_count = #{likeCount} where id = #{id}
+    </update>
+
+    <update id="appreciateAddOneRead">
+        update appreciate set click_count = click_count +1 where id = #{id}
+    </update>
+
+    <select id="getAppreciate" resultMap="AppreciateMap">
+        select appreciate.*,appreciate_category.name category_name from appreciate
+        left outer join appreciate_category on appreciate.category_id = appreciate_category.id
+        where  appreciate.id = #{id}
+    </select>
+    <select id="getAppreciateCounts" resultMap="AppreciateMap">
+        select id,click_count,like_count,comment_count from appreciate where id = #{id}
+    </select>
+
+    <select id="appreciateListOrderByUpdatedAt"   resultMap="AppreciateMap">
+        select *
+        from appreciate
+        <if test="updatedAt != null">
+            <![CDATA[
+			where updated_at > #{updatedAt}
+			]]>
+        </if>
+        order by updated_at limit #{count}
+    </select>
+
+
+    <resultMap type="com.lucifer.model.vote.AppreciateCategory" id="AppreciateCategoryMap">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="top" property="top"/>
+        <result column="is_deleted" property="isDeleted"/>
+    </resultMap>
+
+    <select id="appreciateCategoryList" resultMap="AppreciateCategoryMap">
+        select * from appreciate_category where  is_deleted = 0 order by top desc
+    </select>
+
+    <insert id="addAppreciateCategory" useGeneratedKeys="true" keyProperty="id">
+        insert into appreciate_category (name,top,is_deleted) values (#{name},#{top},0)
+    </insert>
+
+    <delete id="deleteAppreciateCategory">
+        update appreciate_category set is_deleted = 1 where id = #{id}
+    </delete>
+
+    <select id="getAppreciateCategory" resultMap="AppreciateCategoryMap">
+        select * from appreciate_category where  id = #{id}
+    </select>
+    <update id="updateAppreciateCategory">
+        update appreciate_category set name = #{name},top = #{top} where id = #{id}
+    </update>
+
+
+    
+
+
+
+</mapper>

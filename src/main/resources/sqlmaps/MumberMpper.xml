@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lucier.model">
+    <resultMap type="com.lucifer.model.vote.Member" id="MemberMap">
+        <id column="id" property="id"/>
+        <result column="weixin_id" property="weixinId"/>
+        <result column="qq_id" property="qqId"/>
+        <result column="phone" property="phone"/>
+
+        <result column="password" property="password"/>
+        <result column="salt" property="salt"/>
+
+        <result column="nick_name" property="nickName"/>
+        <result column="avatar" property="avatar"/>
+
+
+
+        <result column="birthday" property="birthday"/>
+        <result column="receipt_address" property="receiptAddress"/>
+        <result column="signature" property="signature"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+    </resultMap>
+    <insert id="insertMember">
+        insert into user
+        (phone, password,salt,nick_name,created_at,updated_at)
+        values
+        (#{phone},#{password},#{salt},#{nickName},#{createdAt},#{updatedAt})
+    </insert>
+    <select id="getMemberByPhone"  resultMap="MemberMap">
+        select * from user where phone=#{phone}
+    </select>
+
+    <select id="getMemberByWxId" resultMap="MemberMap">
+        select * from user where weixin_id=#{wxId}
+    </select>
+
+    <select id="getMemberByQqId" resultMap="MemberMap">
+        select * from user where qq_id=#{qqId}
+    </select>
+
+    <select id="getMemberIdByToken" resultType="java.lang.Long">
+        select user_id from access_token where access_token = #{token}
+    </select>
+
+    <select id="getMemberById"  resultMap="MemberMap">
+        select * from user where id=#{id}
+    </select>
+    
+    <select id="memberCountByNickName" resultType="java.lang.Integer">
+        select count(*) from user where nick_name = #{nickName}
+    </select>
+    
+    <update id="updateMemberNick">
+        update user set nick_name = #{nickName} where id = #{id}
+    </update>
+
+    <update id="updateMemberInfo">
+        update user set signature = #{signature} ,gender = #{gender},birthday = #{birthday}, receipt_address = #{receiptAddress} where id = #{id}
+    </update>
+    <update id="updateMemberAvatar">
+        update user set avatar = #{avatar} where id = #{id}
+    </update>
+    <update id="updateMemberPassword">
+        update user set password = #{password} where id = #{id}
+    </update>
+
+    <select id="memberCmsSearch"  resultMap="MemberMap">
+        ${_parameter}
+    </select>
+    <select id="memberCmsSearchCount" resultType="java.lang.Integer">
+        ${_parameter}
+    </select>
+</mapper>

@@ -1,0 +1,211 @@
+body {
+    font-family:'Microsoft YaHei','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif;
+    font-size: 15px;
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width: 100%;
+}
+
+.middle{
+    width: 288px;
+    margin: 0 auto;
+}
+.title-block{
+    position: relative;
+    height: 40px;
+    margin-top:30px;
+}
+.title-line{
+    border-bottom: 1px solid rgb(214, 214, 216);
+    height: 15px;
+}
+.title-name{
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    width: 108px;
+    text-align: center;
+    left: 90px;
+    top: 0px;
+    background-color: white;
+}
+
+
+.phone-block{
+    margin-top: 27px;
+    position: relative;
+}
+
+.phone-block .phone-input{
+    height: 30px;
+    width: 253px;
+    font-size: 15px;
+    //box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    padding-left: 35px;
+}
+
+.icon-phone{
+    position: absolute;
+    left: 8px;
+    top: 11px;
+    background-image: url(/web/images/sj_icon.png); /*引入图片图片*/
+    background-repeat: no-repeat; /*设置图片不重复*/
+    background-position: 0px 0px; /*图片显示的位置*/
+    width: 18px; /*设置图片显示的宽*/
+    height: 18px; /*图片显示的高*/
+}
+.check-block{
+    margin-top:20px;
+}
+
+.img-check{
+    float: left;
+    width: 90px;
+}
+.img-check-input{
+     height: 30px;
+     width: 90px;
+     font-size: 15px;
+}
+#captchaImg{
+    float:  left;
+}
+.light_gray{
+    float: left;
+    margin-left: 5px;
+}
+.img-code{
+    float: right;
+    width: 180px;
+    overflow: hidden;
+    height: 30px;
+    margin-top: 2px;
+}
+
+.send-code{
+    float: right;
+}
+
+.send-code .btn{
+   background-color: #EB3D3C;
+   height: 37px;
+   width: 100px;
+   line-height: 37px;
+   text-align: center;
+   border-radius: 2px;
+   font-size: 15px;
+   color: white;
+   cursor: pointer;
+}
+.send-code .btn-message{
+    height: 40px;
+    width: 116px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 16px;
+    background: #F2F2F2;
+    border: 1px solid #D9D9D9;
+    box-shadow: none;
+    color: #BBB;
+    text-shadow: none;
+    cursor: default;
+    display: none;
+}
+
+.code-check{
+    float: left;
+    width: 176px;
+}
+.code-check-input{
+    height: 30px;
+    width: 160px;
+    font-size: 15px;
+}
+
+.pass-block{
+    margin-top: 20px;
+    position: relative;
+}
+
+.pass-block .pass-input{
+    height: 30px;
+    width: 253px;
+    font-size: 15px;
+    //box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    padding-left: 35px;
+}
+
+.icon-pass{
+    position: absolute;
+    left: 8px;
+    top: 11px;
+    background-image: url(/web/images/mm_icon.png); /*引入图片图片*/
+    background-repeat: no-repeat; /*设置图片不重复*/
+    background-position: 0px 0px; /*图片显示的位置*/
+    width: 18px; /*设置图片显示的宽*/
+    height: 18px; /*图片显示的高*/
+}
+
+.btn-submit{
+    margin-top: 20px;
+   background-color: #EB3D3C;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 18px;
+    color: white;
+    letter-spacing: 10px;
+    cursor: pointer;
+}
+
+.main input{
+       padding-left: 12px;
+}
+.more-func{
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.to-register{
+    float: left;
+}
+
+.to-find{
+    float: right;
+}
+
+.more-func a{
+    color: #EB3D3C;
+    text-decoration: none;
+}
+
+.third-title{
+    margin-top: 10px;
+
+}
+
+.third-name{
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    width: 108px;
+    text-align: center;
+    left: 90px;
+    top: 0px;
+    background-color: white;
+    color: #D5D5D5;
+}
+.qq{
+    float: left;
+    margin-left: 50px;
+}
+.wx{
+    float: right;
+    margin-right: 50px;
+}

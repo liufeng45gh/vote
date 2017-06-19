@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lucier.model">
+    <resultMap type="com.lucifer.model.vote.AppreciateComment" id="AppreciateCommentMap">
+        <id column="id" property="id"/>
+        <result column="appreciate_id" property="appreciateId"/>
+        <result column="parent_id" property="parentId"/>
+        <result column="user_id" property="userId"/>
+        <result column="content" property="content"/>
+        <result column="delete_reason" property="deleteReason"/>
+        <result column="timestamp" property="timestamp"/>
+        <result column="user_nick" property="userNick"/>
+        <result column="answer_user_nick" property="answerUserNick"/>
+        <result column="answer_user_id" property="answerUserId"/>
+        <result column="answer_content" property="answerContent"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+
+    </resultMap>
+    <insert id="insertAppreciateComment" useGeneratedKeys="true" keyProperty="id">
+        insert into appreciate_comment
+        (appreciate_id,parent_id,user_id,content,created_at,updated_at,timestamp,user_nick,answer_user_nick,answer_user_id,answer_content)
+        values
+        (#{appreciateId},#{parentId},#{userId},#{content},#{createdAt},#{updatedAt},#{timestamp},#{userNick},#{answerUserNick},#{answerUserId},#{answerContent})
+    </insert>
+    
+    <select id="appreciateCommentList" resultMap="AppreciateCommentMap">
+        select * from appreciate_comment where is_deleted = 0 and  appreciate_id = #{appreciateId} order by id desc limit #{offset}, #{count}
+    </select>
+    <select id="getAppreciateComment" resultMap="AppreciateCommentMap">
+        select * from appreciate_comment where id = #{id}
+    </select>
+    <select id="getAppreciateCommentCount" resultType="java.lang.Integer" >
+        select count(*) from appreciate_comment where is_deleted = 0 and appreciate_id = #{appreciateId}
+    </select>
+    <update id="updateAppreciateCommentCount">
+        update appreciate set comment_count = #{commentCount} where id = #{id}
+    </update>
+    <delete id="deleteAppreciateComment">
+        update appreciate_comment set is_deleted = 1 where id = #{id}
+    </delete>
+
+
+</mapper>

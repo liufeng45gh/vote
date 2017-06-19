@@ -1,0 +1,256 @@
+.a-category {
+    float: left;
+    font-size: 25px;
+    margin-right: 20px;
+    font-weight: bold;
+    line-height: 80px;
+    color: rgb(38,38,38);
+}
+
+
+.box{
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    background-color: #FFFFFF;
+}
+
+.info-title{
+  height: 20px;
+  border-left: 3px solid #EA3E3C;
+  margin-top: 20px;
+  margin-left: 15px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+.t-cn{
+    color: rgb(38,38,38);
+    font-size: 18px;
+    font-weight: 600;
+    height: 20px;
+    line-height: 20px;
+}
+.t-en{
+    color: #CCCCCC;
+    font-size: 10px;
+}
+.h-box{
+    width:240px;
+    float: left;
+}
+.head-fm{
+    margin-left: 50px;
+    margin-top:50px;
+}
+
+#up-head-btn{
+    width: 90px;
+    height: 30px;
+    background-color: #EB3D3E;
+    color: #FFFFFF;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 75px;
+    margin-top: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.i-box{
+    float: left;
+    margin-top: 50px;
+
+}
+.ftr{
+    height: 40px;
+    margin-bottom: 15px;
+}
+.f-name{
+    color: #B2B2B2;
+    font-size: 15px;
+    float: left;
+    width: 75px;
+    text-align: right;
+    height: 40px;
+    line-height: 40px;
+
+}
+
+.f-input{
+    float: left;
+    margin-left: 30px;
+}
+
+.f-input input{
+    height: 35px;
+    width: 280px;
+    //border :1px solid #B2B2B2;
+    border :1px solid rgba(0,0,0,0.25);
+    font-size: 16px;
+    color: #4D4D4D;
+    padding-left: 10px;
+    background-color: #FAFAFA;
+    border-radius: 1px;
+}
+
+.f-input .radio{
+    width: 20px;
+    float: left;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 9px;
+}
+
+.male{
+    float: left;
+    width: 60px;
+    height: 35px;
+    background-color: #FAFAFA;
+}
+
+.female{
+    float: left;
+    width: 60px;
+    height: 35px;
+    background-color: #FAFAFA;
+    margin-left: 20px;
+}
+
+.unknown{
+    float: left;
+    width: 75px;
+    height: 35px;
+    background-color: #FAFAFA;
+    margin-left: 20px;
+}
+
+.f-input .gender-info{
+    height: 35px;
+    font-size: 16px;
+    color: #4D4D4D;
+    line-height: 35px;
+    float: left;
+}
+
+.f-area{
+  float: left;
+  margin-left: 30px;
+}
+
+.f-area textarea {
+    width: 520px;
+    height: 95px;
+    border :1px solid rgba(0,0,0,0.25);
+    font-size: 16px;
+    color: #4D4D4D;
+    padding-left: 10px;
+    background-color: #FAFAFA;
+    border-radius: 1px;
+}
+
+.btn-submit{
+   width: 100px;
+   height: 37px;
+   background-color: #EB3D3E;
+   color: #FFFFFF;
+   line-height: 37px;
+   text-align: center;
+   margin-left: 105px;
+   margin-top: 20px;
+   font-size: 16px;
+   cursor: pointer;
+   border-radius: 3px;
+}
+
+.active {
+    color: #EB3D3C;
+}
+.p-name{
+    width: 165px;
+}
+.p-submit{
+    margin-left: 195px;
+}
+
+
+
+.msg-item{
+    border-bottom: 1px solid rgb(214, 214, 216);
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.a-img {
+    width: 75px;
+    float: left;
+}
+
+.a-img img {
+    width: 33px;
+    height: 33px;
+    margin-left: 20px;
+}
+
+.c-right {
+    float: left;
+    width: 1125px;
+}
+
+.c-top {
+    height: 40px;
+}
+
+.nick-red {
+    color: rgb(204,47,54) ;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    float: left;
+}
+.t-text{
+    color: #AAAAAA;
+    padding-left: 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+
+}
+
+.c-date {
+    color: #AAAAAA;
+    height: 40px;
+    line-height: 40px;
+    font-size: 11px;
+}
+.c-text {
+    color: rgb(83,83,83);
+}
+
+.c-parent {
+    background-color: #F7F7F7;
+    margin-top: 15px;
+    border: 1px solid #e5e5e5;
+    padding-left: 15px;
+    margin-right: 30px;
+    position: relative;
+}
+
+.c-parent .bot {
+    font-size: 40px;
+    position: absolute;
+    line-height: 40px;
+    top: -20px;
+    color: #F7F7F7;
+}
+
+.patent-text {
+    color: #AAAAAA;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 5px;
+    font-size: 11px;
+}
+
+em {
+     color: rgb(204,47,54) ;
+}

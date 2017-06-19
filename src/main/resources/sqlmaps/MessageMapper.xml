@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lucier.model">
+	<resultMap type="com.lucifer.model.vote.Message" id="MessageMap">
+		<id column="id" property="id"/>
+		<result column="form_user_id" property="formUserId"/>
+		<result column="to_user_id" property="toUserId"/>
+		<result column="text" property="text"/>
+		<result column="parent_text" property="parentText"/>
+		<result column="target_id" property="targetId"/>
+		<result column="type" property="type"/>
+		<result column="is_read" property="isRead"/>
+		<result column="is_deleted" property="isDeleted"/>
+		<result column="created_at" property="createdAt"/>
+		<result column="updated_at" property="updatedAt"/>
+	</resultMap>
+
+	<select id="messageList" resultMap="MessageMap">
+		select * from message where to_user_id = #{toUserId} and is_deleted = 0 order by id desc limit #{offset},#{count}
+	</select>
+	<insert id="insertMessage" >
+		insert into message
+		(from_user_id,to_user_id,text,parent_text,target_id,type,is_read,is_deleted,created_at,updated_at)
+		values
+		(#{fromUserId},#{toUserId},#{text},#{parentText},#{targetId},#{type},0,0,#{createdAt},#{updatedAt})
+	</insert>
+
+
+</mapper>

@@ -1,0 +1,309 @@
+.artist-item{
+    background-color: white;
+    height: 160px;
+    width: 140px;
+    margin-top: 20px;
+    //box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    float: left;
+    margin-left: 80px;
+}
+
+.artist-item img{
+    width: 140px;
+    height: 100px;
+}
+
+.artist-item .name{
+    float: left;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.artist-item em{
+    color: #c00;
+}
+
+.artist-item .tag{
+   float: right;
+   margin-top: 10px;
+   font-size: 8px;
+   margin-right: 12px;
+   border: 1px solid #e5e5e5;
+   padding: 0 3px 0 3px;
+   color: #BABABA;
+   line-height: 15px;
+}
+
+.recommend-item {
+    height:167px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    margin-top: 20px;
+}
+
+.recommend-item img{
+    height:100px;
+    width: 140px;
+}
+
+.recommend-item .logo{
+    float:left;
+}
+
+.recommend-item .text{
+     float: left;
+     width: 204px;
+     margin-left: 15px;
+}
+
+.recommend-item .line1{
+    height:35px;
+}
+
+.recommend-item .name{
+    float: left;
+    font-size: 17px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.recommend-item .tag{
+   float: left;
+   margin-top: 12px;
+   font-size: 8px;
+   margin-left: 12px;
+   border: 1px solid #e5e5e5;
+   padding: 0 3px 0 3px;
+   color: #BABABA;
+   line-height: 15px;
+}
+
+.recommend-item .intro{
+    margin-top: 5px;
+    font-size: 13px;
+    padding-right: 5px;
+    color: #B5B5B5;
+}
+
+
+.rnImgBody {
+    background: #333;
+}
+
+.rnImgBody .main {
+    padding: 8px 0;
+    height: 620px;
+    width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pr {
+    position: relative;
+}
+
+.targetImg {
+    height: 30px;
+    background: #fbfbfb;
+    border-radius: 3px;
+    display: inline-block;
+    padding-left: 8px;
+    line-height: 30px;
+    border: 1px solid #dfdfdf;
+    color: #000;
+    text-decoration: none !important;
+    position: absolute;
+    right: 84px;
+    top: 7px;
+}
+
+#imgPrevBtn, #imgNextBtn {
+    position: absolute;
+    width: 41px;
+    height: 68px;
+    background: #fff;
+    top: 50%;
+    margin-top: -34px;
+    background: url(/web/images/ar.png) no-repeat;
+    opacity: .8;
+    filter: alpha(opacity:80);
+    transition: .3s;
+}
+
+#imgNextBtn {
+    right: 0;
+    background-position: -41px 0;
+}
+
+.rnImgCon {
+    text-align: center;
+    background: url(/web/images/ld1.gif) no-repeat center center;
+}
+
+.rnImgCon img {
+    max-width: 800px;
+    overflow: hidden;
+    height: 620px;
+}
+
+.targetImg span {
+    display: block;
+    _display: inline-block;
+    padding-right: 11px;
+}
+
+.targetImg i {
+    float: left;
+    height: 32px;
+    width: 25px;
+    display: block;
+    color: #369ae8;
+    font-size: 20px;
+    line-height: 32px;
+    font-style: normal;
+}
+
+.rnImgDes {
+    height: 70px;
+    background: #222;
+}
+
+.rnImgDes .main {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rnImgDes .rnImgNum {
+    margin-right: 60px;
+}
+
+.fl {
+    float: left;
+    display: inline;
+}
+
+.rnImgDes .rnImgNum .s1 {
+    font-size: 36px;
+    color: #f90;
+    font-family: '微软雅黑';
+    position: relative;
+    top: -3px;
+}
+
+.rnImgDes .rnImgNum .s2 {
+    font-size: 50px;
+    font-weight: normal;
+    color: #fff;
+    font-family: '宋体';
+}
+
+.rnImgDes .rnImgNum .s3 {
+    font-size: 18px;
+    color: #ddd;
+    margin-left: -4px;
+}
+
+.rnImgDes p {
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+    color: #ccc;
+    font-size: 14px;
+    padding: 15px 0 0 0;
+}
+
+
+.rnImgThumb {
+    height: 130px;
+    background: #eee;
+    padding: 15px 0 0 0;
+}
+
+.rnImgThumb .main {
+    width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ablumListBox {
+    width: 100%;
+    height: 96px;
+    overflow: hidden;
+}
+
+#ablumList {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+}
+
+#ablumList li {
+    float: left;
+    cursor: pointer;
+    width: 130px;
+    //position: relative;
+    height: 80px;
+    text-align: center;
+    top: 0px;
+    position: absolute;
+}
+
+#ablumList li.active img, #ablumList li:hover img {
+    border: 1px solid #d3222a;
+    transition: .5s;
+}
+
+#ablumList li img {
+    display: inline-block;
+    overflow: hidden;
+    width: 118px;
+    height: 78px;
+    border: 1px solid #ccc;
+}
+
+#ablumList li span {
+    display: block;
+    padding: 0 3px;
+    height: 18px;
+    font-size: 11px;
+    text-align: center;
+    line-height: 18px;
+    position: absolute;
+    right: 6px;
+    bottom: 1px;
+    background: #333;
+    color: #fff;
+    overflow: hidden;
+}
+
+.rnImgThumb .scrollBarBox {
+    height: 13px;
+    background: url(/web/images/bg-bar.png) repeat-x;
+}
+
+.rnImgThumb #scrollBarCon {
+    border-left: 1px solid #cacaca;
+    border-right: 1px solid #cacaca;
+    height: 13px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rnImgThumb #scrollBar {
+    height: 13px;
+    width: 100%;
+    cursor: pointer;
+}
+.rnImgThumb .scrollBarNor {
+    background: url(/web/images/bar.png) no-repeat top center;
+}
+
+.thumb-li{
+    top: 0px;
+    position: absolute;
+}

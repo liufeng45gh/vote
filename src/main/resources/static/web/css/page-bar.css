@@ -1,0 +1,32 @@
+/* page style start */
+.pages_bar{
+    margin-top:5px;
+    padding:5px 0 5px 15px;
+    border-top:1px #dddddd solid;
+    //border-bottom:1px #dddddd solid;
+    color:#525252;
+    text-align:left;
+    height: 32px;
+}
+.pages_bar a{
+	    display:block;
+	    float:left;
+	    height:32px;
+	    min-width:32px;
+	    margin-right:6px;
+	    padding:0 6px;
+	    border:1px #d5d5d5 solid;
+	    line-height:32px;
+	    color:#7e7e7e;
+	    text-align:center;
+	    background-color:#e5e5e5;
+	    overflow:hidden
+	 }
+	.pages_bar a.current_page{
+	    color: #fff;
+	    background-color: #EB3D3C;
+	}
+	.pages_bar .btn{color:#525252;}
+	.pages_bar .inactive{cursor:auto;color:#aca899}
+	.pages_bar a.ellipsis{border:none;height:18px;background:none;}
+/* page style end */
