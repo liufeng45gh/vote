@@ -1,0 +1,25 @@
+.w-max{
+    width:100%;
+    padding-top: 20px;
+}
+
+.left-total{
+    width: 40%;
+    float: left;
+    border: 1px solid rgba(255,255,255,.8);
+    color: #373737;;
+    background: 0;
+    text-shadow: none;
+    box-shadow: none;
+    height: 38px;
+}
+.right-total{
+    width: 40%;
+    float: left;
+    border: 1px solid rgba(255,255,255,.8);
+    color: #373737;;
+    background: 0;
+    text-shadow: none;
+    box-shadow: none;
+    height: 38px;
+}

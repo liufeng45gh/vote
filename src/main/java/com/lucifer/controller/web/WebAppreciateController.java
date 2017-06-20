@@ -44,52 +44,24 @@ public class WebAppreciateController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping(value="/index",method = RequestMethod.GET)
-    public String index(HttpServletRequest request,
-                        @RequestParam(value = "categoryId",required=false,defaultValue="") Long categoryId,
-                        @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
+    public String index(HttpServletRequest request
+                       ){
         Integer pageSize = Constant.PAGESIZE;
-        Integer offset = (page-1) * pageSize;
-        //List<Appreciate> appreciateList = appreciateDao.appreciateList(null,categoryId,offset,pageSize);
-        //request.setAttribute("appreciateList",appreciateList);
-
+      
         List<AppreciateCategory> appreciateCategoryList =  appreciateDao.appreciateCategoryList();
 
         request.setAttribute("appreciateCategoryList",appreciateCategoryList);
 
-        if (null != categoryId) {
-            AppreciateCategory appreciateCategory = appreciateDao.getAppreciateCategory(categoryId);
-            request.setAttribute("appreciateCategory",appreciateCategory);
+        for (AppreciateCategory category: appreciateCategoryList) {
+            List<Appreciate> appreciateList = appreciateDao.appreciateList(null,category.getId(),0,1000);
+            category.setAppreciateList(appreciateList);
         }
 
 
         return "/web/appreciate/index";
     }
 
-    @RequestMapping(value="/list",method = RequestMethod.GET)
-    public String list(HttpServletRequest request,
-                       @RequestParam(value = "categoryId",required=false,defaultValue="") Long categoryId,
-                       @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
-        Integer pageSize = Constant.PAGESIZE;
-        Integer offset = (page-1) * pageSize;
-        List<Appreciate> appreciateList = appreciateDao.appreciateList(null,categoryId,offset,pageSize);
-        request.setAttribute("appreciateList",appreciateList);
-        return "/web/appreciate/list";
-
-    }
-
-    @RequestMapping(value="/list.json",method = RequestMethod.GET)
-    @ResponseBody
-    public List<Map> jsonList(HttpServletRequest request,
-                       @RequestParam(value = "categoryId",required=false,defaultValue="") Long categoryId,
-                       @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
-        Integer pageSize = Constant.PAGESIZE;
-        Integer offset = (page-1) * pageSize;
-
-        List<Map> resultList = appreciateService.jsonList(categoryId,offset,pageSize);
-        //request.setAttribute("appreciateList",appreciateList);
-        return resultList;
-
-    }
+    
 
     @RequestMapping(value="/{id}/detail",method = RequestMethod.GET)
     public String detail(HttpServletRequest request,@PathVariable Long id){
@@ -99,21 +71,7 @@ public class WebAppreciateController {
     }
 
 
-    @RequestMapping(value="/search",method = RequestMethod.GET)
-    public String search(HttpServletRequest request,
-                        @RequestParam(value = "page",required=false,defaultValue="1")Integer page,
-                         @RequestParam(value = "title",required=false,defaultValue="")String title){
-        Integer pageSize = Constant.PAGESIZE;
-        Integer offset = (page-1) * pageSize;
-        //List<Appreciate> appreciateList = appreciateDao.appreciateList(null,categoryId,offset,pageSize);
-        //request.setAttribute("appreciateList",appreciateList);
-
-        request.setAttribute("title",title);
-
-
-        return "/web/appreciate/search";
-    }
-
+    
    
 
     @RequestMapping(value="/{id}/counts",method = RequestMethod.GET)

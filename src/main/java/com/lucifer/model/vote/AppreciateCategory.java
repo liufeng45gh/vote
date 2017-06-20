@@ -1,5 +1,7 @@
 package com.lucifer.model.vote;
 
+import java.util.List;
+
 /**
  * Created by liufx on 17/1/16.
  */
@@ -12,6 +14,8 @@ public class AppreciateCategory {
     private Float top;
 
     private Integer isDeleted;
+
+    private List<Appreciate> appreciateList;
 
     public Long getId() {
         return id;
@@ -43,5 +47,13 @@ public class AppreciateCategory {
 
     public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    public List<Appreciate> getAppreciateList() {
+        return appreciateList;
+    }
+
+    public void setAppreciateList(List<Appreciate> appreciateList) {
+        this.appreciateList = appreciateList;
     }
 }
