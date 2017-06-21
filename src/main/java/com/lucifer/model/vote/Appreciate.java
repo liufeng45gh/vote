@@ -27,6 +27,9 @@ public class Appreciate implements Serializable {
 
     private String author;
 
+
+    private String source;
+
     private String content;
 
     private Integer clickCount;
@@ -280,5 +283,13 @@ public class Appreciate implements Serializable {
 
     public void setVoteCount(Integer voteCount) {
         this.voteCount = voteCount;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
     }
 }
