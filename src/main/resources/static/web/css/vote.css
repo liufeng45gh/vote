@@ -30,22 +30,23 @@ body{
 }
 
 .left-total{
-    width: 180px;
+    width: 280px;
     float: right;
     border: 1px solid rgba(255,255,255,.8);
     color: #373737;;
     text-shadow: none;
     box-shadow: none;
-    height: 38px;
+    height: 58px;
     margin-right: 60px;
     background-color: red;
     border-radius: 50px;
     text-align: center;
-    line-height: 38px;
+    line-height: 58px;
      margin-top: 50px;
+     font-size: 30px;
 }
 .right-total{
-    width: 180px;
+    width: 280px;
     float: right;
     border: 1px solid rgba(255,255,255,.8);
     color: #373737;;
