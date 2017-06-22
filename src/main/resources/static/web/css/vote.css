@@ -144,13 +144,13 @@ body{
      background: 0;
      text-shadow: none;
      box-shadow: none;
-     height: 58px;
+     height: 68px;
      background-color: red;
      border-radius: 50px;
      text-align: center;
-     line-height: 58px;
+     line-height: 68px;
      margin: 40px auto 80px auto;
-     font-size: 28px;
+     font-size: 38px;
      -webkit-box-shadow:
          0 5px 0 #CC0000,
          0 15px 20px rgba(0,0,0,.35);
