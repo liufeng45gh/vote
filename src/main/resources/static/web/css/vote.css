@@ -117,7 +117,7 @@ body{
    line-height: 53px;
    margin: 0 auto;
    text-align: center;
-   font-size: 28px;
+   font-size: 48px;
 }
 
 .c-red{
@@ -125,6 +125,7 @@ body{
 }
 .c-rosewood{
    color: #8B4513;
+   margin-left: 10px;
 }
 
 .source{
