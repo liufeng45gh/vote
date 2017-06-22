@@ -88,7 +88,7 @@ body{
 
 .card-img{
     width: 90%;
-    height: 200px;
+    height: 300px;
     margin: 10px auto;
 }
 
@@ -109,10 +109,11 @@ body{
 
 .vote-count{
    width: 100%;
-   height: 33px;
-   line-height: 33px;
+   height: 53px;
+   line-height: 53px;
    margin: 0 auto;
    text-align: center;
+   font-size: 28px;
 }
 
 .c-red{
@@ -126,24 +127,26 @@ body{
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    height: 33px;
-   line-height: 33px;
+    height: 53px;
+   line-height: 53px;
+   font-size: 28px;
 }
 
 .vote-btn{
-    width: 150px;
+    width: 70%;
      border: 1px solid rgba(255,255,255,.8);
      color: white;
      letter-spacing: 5px;
      background: 0;
      text-shadow: none;
      box-shadow: none;
-     height: 38px;
+     height: 58px;
      background-color: red;
      border-radius: 50px;
      text-align: center;
-     line-height: 38px;
-     margin: 20px auto 40px auto;
+     line-height: 58px;
+     margin: 40px auto 80px auto;
+     font-size: 28px;
      -webkit-box-shadow:
          0 5px 0 #CC0000,
          0 15px 20px rgba(0,0,0,.35);
