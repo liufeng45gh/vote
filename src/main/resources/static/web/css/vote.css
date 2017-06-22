@@ -144,20 +144,20 @@ body{
      background: 0;
      text-shadow: none;
      box-shadow: none;
-     height: 68px;
+     height: 78px;
      background-color: red;
      border-radius: 50px;
      text-align: center;
-     line-height: 68px;
+     line-height: 78px;
      margin: 40px auto 80px auto;
-     font-size: 38px;
+     font-size: 48px;
      -webkit-box-shadow:
-         0 5px 0 #CC0000,
+         0 8px 0 #CC0000,
          0 15px 20px rgba(0,0,0,.35);
        -moz-box-shadow:
-         0 5px 0 #CC0000,
+         0 8px 0 #CC0000,
          0 15px 20px rgba(0,0,0,.35);
        box-shadow:
-         0 5px 0 #CC0000,
+         0 8px 0 #CC0000,
          0 15px 20px rgba(0,0,0,.35);
 }
