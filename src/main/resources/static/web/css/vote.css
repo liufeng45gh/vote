@@ -31,13 +31,13 @@ body{
 
 .left-total{
     width: 180px;
-    float: left;
+    float: right;
     border: 1px solid rgba(255,255,255,.8);
     color: #373737;;
     text-shadow: none;
     box-shadow: none;
     height: 38px;
-    margin-left: 120px;
+    margin-right: 60px;
     background-color: red;
     border-radius: 50px;
     text-align: center;
@@ -46,14 +46,14 @@ body{
 }
 .right-total{
     width: 180px;
-    float: left;
+    float: right;
     border: 1px solid rgba(255,255,255,.8);
     color: #373737;;
     background: 0;
     text-shadow: none;
     box-shadow: none;
     height: 38px;
-    margin-left: 40px;
+    margin-right: 80px;
     background-color: red;
     border-radius: 50px;
     text-align: center;
@@ -65,7 +65,7 @@ body{
     background-image: url(/web/images/bg_repeat.jpg);
     background-size:100% 100%;
     background-repeat: repeat;
-   
+    padding-bottom: 100px;
 }
 
 .category-title{
@@ -80,7 +80,7 @@ body{
 }
 
 .card-item{
-     width: 43%;
+     width: 48%;
      margin-top: 20px;
 
      background-color: white;
@@ -143,5 +143,14 @@ body{
      border-radius: 50px;
      text-align: center;
      line-height: 38px;
-     margin: 0 auto 20px auto;
+     margin: 20px auto 40px auto;
+     -webkit-box-shadow:
+         0 5px 0 #CC0000,
+         0 15px 20px rgba(0,0,0,.35);
+       -moz-box-shadow:
+         0 5px 0 #CC0000,
+         0 15px 20px rgba(0,0,0,.35);
+       box-shadow:
+         0 5px 0 #CC0000,
+         0 15px 20px rgba(0,0,0,.35);
 }
