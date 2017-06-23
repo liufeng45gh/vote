@@ -1,13 +1,16 @@
 package com.lucifer.controller.web;
 
 import com.lucifer.dao.vote.AppreciateDao;
+import com.lucifer.exception.NotLoginException;
 import com.lucifer.model.vote.Appreciate;
 import com.lucifer.model.vote.AppreciateCategory;
+import com.lucifer.model.vote.Vote;
 import com.lucifer.service.vote.AppreciateReadService;
 import com.lucifer.service.vote.AppreciateService;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.PageInfoWriter;
 import com.lucifer.utils.Result;
+import com.lucifer.utils.StringHelper;
 import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -88,4 +91,5 @@ public class WebAppreciateController {
         appreciateReadService.readAppreciate(id);
         return Result.ok();
     }
+
 }
