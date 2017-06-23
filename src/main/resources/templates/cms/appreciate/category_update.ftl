@@ -23,6 +23,10 @@
                 <td><input id="name_input"  class="form-control" name="name" style="display:inline-block;" value="${entity.name}" /><label id="name_input_info" style="display:inline-block;">* 分类名称</label></td>
             </tr>
             <tr>
+                <th width="20%" style="text-align:right;">图标:</th>
+                <td><input id="icon_input"  class="form-control" name="icon" style="display:inline-block;" value="${entity.icon}" /><label id="icon_input_info" style="display:inline-block;">* 图标</label></td>
+            </tr>
+            <tr>
                 <th width="20%" style="text-align:right;">排序:</th>
                 <td><input id="top_input"  class="form-control" name="top" style="display:inline-block;" value="${entity.top}"/><label id="top_input_info" style="display:inline-block;">* 排序</label></td>
             </tr>

@@ -122,6 +122,7 @@
     <resultMap type="com.lucifer.model.vote.AppreciateCategory" id="AppreciateCategoryMap">
         <id column="id" property="id"/>
         <result column="name" property="name"/>
+        <result column="icon" property="icon"/>
         <result column="top" property="top"/>
         <result column="is_deleted" property="isDeleted"/>
     </resultMap>

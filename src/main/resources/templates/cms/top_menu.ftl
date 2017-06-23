@@ -22,7 +22,7 @@
 
         </div>
       <h5 id="companyname" style="text-align:left;">
-        海富文化网后台管理系统
+        投票系统后台管理系统
         </h5>
     </div>
 

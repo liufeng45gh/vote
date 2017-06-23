@@ -11,6 +11,8 @@ public class AppreciateCategory {
 
     private String name;
 
+    private String icon;
+
     private Float top;
 
     private Integer isDeleted;
@@ -55,5 +57,13 @@ public class AppreciateCategory {
 
     public void setAppreciateList(List<Appreciate> appreciateList) {
         this.appreciateList = appreciateList;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }
