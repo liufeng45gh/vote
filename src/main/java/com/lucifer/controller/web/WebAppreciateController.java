@@ -57,7 +57,8 @@ public class WebAppreciateController {
             category.setAppreciateList(appreciateList);
         }
 
-
+        Integer allAppreciateCount = appreciateService.allAppreciateCount();
+        request.setAttribute("allAppreciateCount",allAppreciateCount);
         return "/web/appreciate/index";
     }
 

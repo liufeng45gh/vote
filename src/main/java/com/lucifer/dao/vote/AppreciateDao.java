@@ -5,6 +5,7 @@ import com.lucifer.cache.CacheProvider;
 import com.lucifer.dao.IBatisBaseDao;
 import com.lucifer.model.vote.Appreciate;
 import com.lucifer.model.vote.AppreciateCategory;
+import com.lucifer.service.vote.AppreciateService;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.DateUtils;
 import org.springframework.stereotype.Component;
@@ -23,6 +24,9 @@ public class AppreciateDao  extends IBatisBaseDao {
 
     @Resource
     private AppCache appCache;
+
+    @Resource
+    private AppreciateService appreciateService;
 
     public List<AppreciateCategory> appreciateCategoryList(){
         return this.voteSqlSession.selectList("appreciateCategoryList");
@@ -79,7 +83,9 @@ public class AppreciateDao  extends IBatisBaseDao {
         appreciate.setUpdatedAt(DateUtils.now());
         //news.setTop(0f);
         appreciate.setClickCount(0);
-        return this.voteSqlSession.insert("insertAppreciate",appreciate);
+        Integer updateCount =  this.voteSqlSession.insert("insertAppreciate",appreciate);
+        appreciateService.updateAllAppreciateCount();
+        return updateCount;
     }
 
     public Appreciate getAppreciate(Long id){
@@ -109,7 +115,9 @@ public class AppreciateDao  extends IBatisBaseDao {
     }
 
     public Integer deleteAppreciate(Long id){
-        return this.voteSqlSession.delete("deleteAppreciate",id);
+        Integer updateCount = this.voteSqlSession.delete("deleteAppreciate",id);
+        appreciateService.updateAllAppreciateCount();
+        return updateCount;
     }
 
     public List<Appreciate> appreciateListOrderByUpdatedAt(Date updatedAt, int count){

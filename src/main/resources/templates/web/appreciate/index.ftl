@@ -13,7 +13,7 @@
         <span style="color: white;"> 总投票数: </span><span style="color: #FFFF00;margin-left: 5px;">2345</span>
     </div>
     <div class="left-total">
-        <span style="color: white;"> 总作品数:</span><span style="color: #FFFF00;margin-left: 10px;">380</span>
+        <span style="color: white;"> 总作品数:</span><span style="color: #FFFF00;margin-left: 10px;">${allAppreciateCount?default(0)}</span>
     </div>
     <div style="clear: both;"></div>
     <div class="vote-tips">
@@ -29,12 +29,12 @@
 
     <div class="w-max m-bg">
         <#list category.appreciateList as appreciate>
-            <div class="card-item <#if appreciate?is_even_item>card-right<#else>card-left</#if>">
+            <div class="card-item <#if appreciate?is_even_item>card-right<#else>card-left</#if>" objectId="${appreciate.id!}">
                 <div class="card-img">
-                    <img src="http://upload.art.ifeng.com/2015/0601/thumb_1076_500_1433141379758.jpg">
+                    <img src="${appreciate.logo!}">
                 </div>
-                <div class="vote-count"><span class="c-red">234</span><span class="c-rosewood">票</span></div>
-                <div class="source"><span class="c-rosewood">报送单位--广州恒大</span></div>
+                <div class="vote-count"><span class="c-red">${appreciate.voteCount!}</span><span class="c-rosewood">票</span></div>
+                <div class="source"><span class="c-rosewood">报送单位--${appreciate.source!}</span></div>
                 <div class="vote-btn">投票</div>
             </div>
         </#list>
