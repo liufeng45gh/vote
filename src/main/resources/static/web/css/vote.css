@@ -14,19 +14,19 @@ body{
     background-image: url(/web/images/bg_top.jpg);
     background-size:100% 100%;
     background-repeat:no-repeat;
-    height: 450px;
+    height: 350px;
 }
 
 .logo{
      width: 84px;
-     height: 84px;
+     height: 94px;
      margin-left: 80px;
      margin-top: 20px;
      float: left;
 }
 .logo img{
     width: 84px;
-    height: 84px;
+    height: 94px;
 }
 
 .left-total{
@@ -66,10 +66,19 @@ body{
 }
 
 .m-bg{
-    background-image: url(/web/images/bg_repeat.jpg);
-    background-size:100% 100%;
-    background-repeat: repeat;
+    //background-image: url(/web/images/bg_repeat.jpg);
+    //background-size:100% 100%;
+    //background-repeat: repeat;
+    background-color: #62c8d7;
     padding-bottom: 100px;
+}
+
+.vote-tips{
+     width: 80%;
+     margin: 0 auto;
+     color: white;
+     text-align: center;
+     margin-top: 170px;
 }
 
 .category-title{
@@ -124,7 +133,7 @@ body{
    color: red;
 }
 .c-rosewood{
-   color: #8B4513;
+   color: #714d38;
    margin-left: 10px;
 }
 
