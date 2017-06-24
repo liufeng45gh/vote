@@ -60,6 +60,9 @@ sms:
   appKey: 80f0cbe03428deb5f520005694aeffdd
   appSecret: ef2c21102cb8
   verifyCodeUrl: https://api.netease.im/sms/verifycode.action
+wx:
+  appId: wx7933d55ea3872f4d
+  secret: 0c79e1fa963cd80cc0be99b20a18faeb
 
 
 

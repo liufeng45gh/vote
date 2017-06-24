@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lucier.model">
+    <resultMap type="com.lucifer.model.vote.WxInfo" id="WxInfoMap">
+        <result column="wx_id" property="wxId"/>
+
+        <result column="nick_name" property="nickName"/>
+        <result column="avatar" property="avatar"/>
+
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+    </resultMap>
+    <insert id="insertWxUser">
+        insert into user
+        (wx_id, nick_name,avatar,created_at,updated_at)
+        values
+        (#{wxId},#{nickName},#{avatar},#{createdAt},#{updatedAt})
+    </insert>
+    <select id="getWxUserByWxId"  resultMap="WxInfoMap">
+        select * from user where wx_id=#{wxId}
+    </select>
+
+
+</mapper>

@@ -1,8 +1,16 @@
 package com.lucifer.controller.web;
 
+import com.lucifer.dao.vote.WxUserDao;
+import com.lucifer.exception.WxAuthenticationException;
+import com.lucifer.model.vote.WxInfo;
+import com.lucifer.service.vote.WxService;
+import org.json.JSONException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.annotation.Resource;
+import java.io.IOException;
 
 /**
  * Created by Administrator on 2017/6/23.
@@ -12,8 +20,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/wx")
 public class WxLoginController {
 
+    @Resource
+    private WxService wxService;
+
+
+
     @RequestMapping(value="/login-by-code",method = RequestMethod.GET)
-    public String loginByCode( String code){
+    public String loginByCode( String code) throws JSONException, WxAuthenticationException, IOException {
+
         return "redirect:/appreciate/index";
     }
 
