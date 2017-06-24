@@ -27,5 +27,5 @@ $(document).ready(function(){
 
 function openWxLogin(){
     //alert(1);
-    window.location.href = "/wx/login";
+    window.location.href = "/wx/login?random="+Math.random();
 }
