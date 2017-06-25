@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lucifer.dao.vote.WxUserDao;
 import com.lucifer.exception.WxAuthenticationException;
 import com.lucifer.model.vote.WxInfo;
+import com.lucifer.utils.Constant;
 import com.lucifer.utils.HttpClientUtils;
 import com.lucifer.utils.StringHelper;
 import org.apache.commons.httpclient.Header;
@@ -15,15 +16,20 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by Administrator on 2017/6/24.
@@ -39,6 +45,9 @@ public class WxService {
 
     @Resource
     private WxUserDao wxUserDao;
+
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
     final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -95,12 +104,26 @@ public class WxService {
         return resultJ;
     }
 
-    public void LoginByCode(String code, HttpServletRequest request, HttpServletResponse response) throws JSONException, WxAuthenticationException, IOException {
+    public void loginByCode(String code,  HttpServletResponse response) throws JSONException, WxAuthenticationException, IOException {
         WxInfo wxInfo = this.getWxInfo(code);
         WxInfo dbWxInfo = wxUserDao.getWxUser(wxInfo.getWxId());
         if (null == dbWxInfo) {
             wxUserDao.insertWxUser(wxInfo);
         }
+        String token = UUID.randomUUID().toString();
+        //stringRedisTemplate.opsForValue().set(Constant.CACHE_KEY_PERSISTENCE_TOKEN_PRE+token,wxInfo.getWxId());
+        this.writeToken(token,wxInfo.getWxId());
+        Cookie c2 = new Cookie("token",token);
+//设置生命周期为1小时，秒为单位
+        c2.setMaxAge(12 * 30 * 24 * 3600);
+        response.addCookie(c2);
+    }
+
+    public void writeToken(String token,String wxId){
+        stringRedisTemplate.opsForValue().set(Constant.CACHE_KEY_PERSISTENCE_TOKEN_PRE+token,wxId);
+    }
+    public String getWxIdByToken(String token){
+        return stringRedisTemplate.opsForValue().get(token);
     }
 
 }

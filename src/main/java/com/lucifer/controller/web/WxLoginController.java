@@ -8,8 +8,10 @@ import org.json.JSONException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -26,8 +28,8 @@ public class WxLoginController {
 
 
     @RequestMapping(value="/login-by-code",method = RequestMethod.GET)
-    public String loginByCode( String code) throws JSONException, WxAuthenticationException, IOException {
-
+    public String loginByCode(@RequestParam  String code, HttpServletResponse response) throws JSONException, WxAuthenticationException, IOException {
+        wxService.loginByCode(code,response);
         return "redirect:/appreciate/index";
     }
 

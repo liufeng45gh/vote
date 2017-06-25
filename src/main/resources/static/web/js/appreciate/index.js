@@ -19,7 +19,13 @@ $(document).ready(function(){
         });
 
         count_request.done(function(data) {
-         window.location.reload();
+        layer.alert('投票成功!', {
+                          closeBtn: 0
+                        }, function(){
+                          window.location.reload();
+                          //layer.prompt("dsfssadsd");
+                        });
+        // window.location.reload();
         });
     });
 
