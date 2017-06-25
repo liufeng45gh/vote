@@ -59,9 +59,10 @@ public class WxService {
     }
 
     public WxInfo getWxInfo(String code) throws IOException, WxAuthenticationException, JSONException {
-        String url =  "https://api.weixin.qq.com/sns/oauth2/access_token?appid=#{appId}&secret=#{secret}&code=CODE&grant_type=authorization_code";
+        String url =  "https://api.weixin.qq.com/sns/oauth2/access_token?appid=#{appId}&secret=#{secret}&code=#{code}&grant_type=authorization_code";
         url = url.replace("#{appId}",appId);
         url = url.replace("#{secret}",secret);
+        url = url.replace("#{code}",code);
         logger.info("url is : {}",url);
         String resultString = HttpClientUtils.get(url);
         //JSONObject resultJ=  new JSONObject(resultString);
@@ -69,7 +70,7 @@ public class WxService {
         //WxInfo wxInfo = objectMapper.readValue(resultString,WxInfo.class);
         WxInfo wxInfo = new WxInfo();
 
-        if (!StringHelper.isEmpty((String) resultMap.get("errcode"))) {
+        if (resultMap.get("errcode") !=  null) {
             throw new WxAuthenticationException("认证失败");
         }
 
