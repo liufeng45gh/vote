@@ -66,6 +66,7 @@ public class WxService {
         logger.info("url is : {}",url);
         String resultString = HttpClientUtils.get(url);
         //JSONObject resultJ=  new JSONObject(resultString);
+        logger.info("resultString is : {}",resultString);
         Map resultMap = objectMapper.readValue(resultString,Map.class);
         //WxInfo wxInfo = objectMapper.readValue(resultString,WxInfo.class);
         WxInfo wxInfo = new WxInfo();
