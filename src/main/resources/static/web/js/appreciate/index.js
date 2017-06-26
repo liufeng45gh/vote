@@ -22,7 +22,7 @@ $(document).ready(function(){
       
             layer.msg('投票成功!', {icon: 1});
            setTimeout(function(){
-             window.location.reload();
+             window.location.href = "/appreciate/index?random=" + Math.random();
            },5);
         });
     });
