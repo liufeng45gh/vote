@@ -126,7 +126,7 @@ public class WxService {
         stringRedisTemplate.opsForValue().set(Constant.CACHE_KEY_PERSISTENCE_TOKEN_PRE+token,wxId);
     }
     public String getWxIdByToken(String token){
-        return stringRedisTemplate.opsForValue().get(token);
+        return stringRedisTemplate.opsForValue().get(Constant.CACHE_KEY_PERSISTENCE_TOKEN_PRE+token);
     }
 
 }
