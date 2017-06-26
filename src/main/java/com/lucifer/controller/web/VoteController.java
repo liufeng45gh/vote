@@ -2,6 +2,7 @@ package com.lucifer.controller.web;
 
 import com.lucifer.exception.ArgumentException;
 import com.lucifer.exception.NotLoginException;
+import com.lucifer.exception.RepetitiveOperationException;
 import com.lucifer.model.vote.Vote;
 import com.lucifer.service.vote.VoteService;
 import com.lucifer.service.vote.WxService;
@@ -37,7 +38,7 @@ public class VoteController {
     
     @RequestMapping(value="/submit",method = RequestMethod.POST)
     @ResponseBody
-    public Result voteSubmit(Vote vote, @CookieValue(required = false) String token) throws NotLoginException, ArgumentException {
+    public Result voteSubmit(Vote vote, @CookieValue(required = false) String token) throws NotLoginException, ArgumentException, RepetitiveOperationException {
 
         logger.info("token is: {}",token);
         if(StringHelper.isEmpty(token)) {

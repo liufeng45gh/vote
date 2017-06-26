@@ -2,6 +2,7 @@ package com.lucifer.advice;
 
 import com.lucifer.controller.web.VoteController;
 import com.lucifer.exception.NotLoginException;
+import com.lucifer.exception.RepetitiveOperationException;
 import com.lucifer.utils.DateUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,6 +37,29 @@ public class RestControllerAdvice extends ResponseEntityExceptionHandler {
             this.put("status",status);
             this.put("oper_code",-1);
             this.put("error","NoAuth Server Error");
+            this.put("exception",ex.getClass().getName());
+            this.put("message",ex.getMessage());
+
+            this.put("detail",ex.getStackTrace()[0].toString());
+            this.put("path",request.getContextPath()+request.getServletPath());
+            this.put("url",request.getRequestURL());
+            this.put("timestamp", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(DateUtils.now()));
+        }
+    }
+
+    @ExceptionHandler(RepetitiveOperationException.class)
+    @ResponseBody
+    ResponseEntity<?> handleControllerRepetitiveOperationException(HttpServletRequest request, NotLoginException ex,HttpServletResponse response) throws UnsupportedEncodingException {
+        HttpStatus status = HttpStatus.valueOf(410);
+        response.setHeader("X-Err-Message", URLEncoder.encode(ex.getMessage(), "utf-8"));
+        return new ResponseEntity<>(new RepetitiveOperationExceptionType(status.value(),request, ex), status);
+    }
+
+    public class RepetitiveOperationExceptionType extends HashMap{
+        RepetitiveOperationExceptionType (Integer status, HttpServletRequest request, com.lucifer.exception.NotLoginException ex){
+            this.put("status",status);
+            this.put("oper_code",-1);
+            this.put("error","Repetitive Server Error");
             this.put("exception",ex.getClass().getName());
             this.put("message",ex.getMessage());
 

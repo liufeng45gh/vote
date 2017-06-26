@@ -13,9 +13,13 @@ $(document).ready(function(){
         });
 
         count_request.fail(function( jqXHR, textStatus ) {
-        if(jqXHR.status==401){
-           openWxLogin();
-        }
+            if(jqXHR.status==401){
+               openWxLogin();
+            }
+
+            if(jqXHR.status==410){
+               layer.msg('重复投票!', {icon: 5});
+            }
         });
 
         count_request.done(function(data) {

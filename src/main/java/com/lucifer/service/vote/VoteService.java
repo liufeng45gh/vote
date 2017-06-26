@@ -4,6 +4,7 @@ import com.lucifer.cache.AppCache;
 import com.lucifer.cache.CacheProvider;
 import com.lucifer.dao.vote.AppreciateDao;
 import com.lucifer.dao.vote.VoteDao;
+import com.lucifer.exception.RepetitiveOperationException;
 import com.lucifer.model.vote.Appreciate;
 import com.lucifer.model.vote.Vote;
 import com.lucifer.utils.Constant;
@@ -30,8 +31,13 @@ public class VoteService {
     @Resource
     private AppCache appCache;
 
-    public void saveVote(Vote vote){
-        voteDao.insertVote(vote);
+    public void saveVote(Vote vote) throws RepetitiveOperationException {
+        try{
+            voteDao.insertVote(vote);
+        } catch (Exception e){
+           throw new RepetitiveOperationException("重复投票");
+        }
+
         this.resetAppreciateVoteCount(vote.getAppreciateId());
         this.resetAllVoteCount();
 
