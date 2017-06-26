@@ -49,14 +49,14 @@ public class RestControllerAdvice extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(RepetitiveOperationException.class)
     @ResponseBody
-    ResponseEntity<?> handleControllerRepetitiveOperationException(HttpServletRequest request, NotLoginException ex,HttpServletResponse response) throws UnsupportedEncodingException {
+    ResponseEntity<?> handleControllerRepetitiveOperationException(HttpServletRequest request, Exception ex,HttpServletResponse response) throws UnsupportedEncodingException {
         HttpStatus status = HttpStatus.valueOf(410);
         response.setHeader("X-Err-Message", URLEncoder.encode(ex.getMessage(), "utf-8"));
         return new ResponseEntity<>(new RepetitiveOperationExceptionType(status.value(),request, ex), status);
     }
 
     public class RepetitiveOperationExceptionType extends HashMap{
-        RepetitiveOperationExceptionType (Integer status, HttpServletRequest request, com.lucifer.exception.NotLoginException ex){
+        RepetitiveOperationExceptionType (Integer status, HttpServletRequest request, Exception ex){
             this.put("status",status);
             this.put("oper_code",-1);
             this.put("error","Repetitive Server Error");
