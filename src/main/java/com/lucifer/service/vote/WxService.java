@@ -108,7 +108,7 @@ public class WxService {
 
     public void loginByCode(String code,  HttpServletResponse response) throws JSONException, WxAuthenticationException, IOException {
         WxInfo wxInfo = this.getWxInfo(code);
-        WxInfo dbWxInfo = wxUserDao.getWxUser(wxInfo.getWxId());
+        WxInfo dbWxInfo = wxUserDao.getWxUserByWxId(wxInfo.getWxId());
         if (null == dbWxInfo) {
             wxUserDao.insertWxUser(wxInfo);
         }

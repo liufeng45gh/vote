@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class WxUserDao extends IBatisBaseDao {
 
-    public WxInfo getWxUser(String wxId){
-        return this.voteSqlSession.selectOne("getWxUser",wxId);
+    public WxInfo getWxUserByWxId(String wxId){
+        return this.voteSqlSession.selectOne("getWxUserByWxId",wxId);
     }
 
     public Integer insertWxUser(WxInfo wxInfo){
