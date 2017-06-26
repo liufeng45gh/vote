@@ -60,6 +60,8 @@ public class Constant {
 
 	public static final String CACHE_KEY_ALL_APPRECIATE_COUNT = "VOTE:CACHE:ALL:APPRECIATE:COUNT";
 
+	public static final String CACHE_KEY_ALL_VOTE_COUNT = "VOTE:CACHE:ALL:VOTE:COUNT";
+
 	public static final String CACHE_KEY_GET_MEMBET_BY_ID = "VOTE:CACHE:MEMBER:getMemberById:";
 
 	public static final String CACHE_KEY_INDEX_HTML = "VOTE:CACHE:INDEX:HTML:";

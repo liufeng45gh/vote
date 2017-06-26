@@ -1,7 +1,9 @@
 package com.lucifer.controller.web;
 
+import com.lucifer.exception.ArgumentException;
 import com.lucifer.exception.NotLoginException;
 import com.lucifer.model.vote.Vote;
+import com.lucifer.service.vote.VoteService;
 import com.lucifer.service.vote.WxService;
 import com.lucifer.utils.Result;
 import com.lucifer.utils.StringHelper;
@@ -27,12 +29,14 @@ public class VoteController {
     @Resource
     private WxService wxService;
 
+    private VoteService voteService;
+
     final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     
     @RequestMapping(value="/submit",method = RequestMethod.POST)
     @ResponseBody
-    public Result voteSubmit(Vote vote, @CookieValue(required = false) String token) throws NotLoginException {
+    public Result voteSubmit(Vote vote, @CookieValue(required = false) String token) throws NotLoginException, ArgumentException {
 
         logger.info("token is: {}",token);
         if(StringHelper.isEmpty(token)) {
@@ -43,6 +47,11 @@ public class VoteController {
         if (StringHelper.isEmpty(wxId)) {
             throw new NotLoginException("无效token");
         }
+        if (vote.getAppreciateId() == null) {
+            throw new ArgumentException("appreciateId 不能为空");
+        }
+        vote.setWxId(wxId);
+        voteService.saveVote(vote);
 
         return Result.ok();
     }

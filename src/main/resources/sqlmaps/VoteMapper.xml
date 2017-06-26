@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lucier.model">
+    <resultMap type="com.lucifer.model.vote.Vote" id="VoteMap">
+        <result column="id" property="id"/>
+        <result column="wx_id" property="wxId"/>
+
+        <result column="appreciate_id" property="appreciateId"/>
+        <result column="date" property="date"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+
+
+
+    </resultMap>
+    <insert id="insertVote">
+        insert into vote
+        (wx_id, appreciate_id,date,created_at,updated_at)
+        values
+        (#{wxId},#{appreciateId},#{date,jdbcType=DATE},now(),now())
+    </insert>
+    <select id="getVote"  resultMap="VoteMap">
+        select * from user where wx_id=#{wxId}
+    </select>
+
+    <select id="getAppreciateVoteCount" resultType="java.lang.Integer">
+        select count(*) from  vote where  appreciate_id = #{appreciateId}
+    </select>
+
+    <select id="getAllVoteCount" resultType="java.lang.Integer">
+        select count(*) from vote
+    </select>
+
+
+</mapper>

@@ -93,6 +93,10 @@
     <update id="updateAppreciateLikeCount">
         update  appreciate set like_count = #{likeCount} where id = #{id}
     </update>
+    
+    <update id="updateAppreciateVoteCount">
+        update  appreciate set vote_count = #{voteCount} where id = #{id}
+    </update>
 
     <update id="appreciateAddOneRead">
         update appreciate set click_count = click_count +1 where id = #{id}
@@ -145,6 +149,7 @@
     <update id="updateAppreciateCategory">
         update appreciate_category set name = #{name},top = #{top} where id = #{id}
     </update>
+    
 
 
     

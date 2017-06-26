@@ -13,7 +13,7 @@
 <div class="w-max top-bg">
     <div class="logo"><img src="/web/images/logo.png"/></div>
     <div class="right-total">
-        <span style="color: white;"> 总投票数: </span><span style="color: #FFFF00;margin-left: 5px;">2345</span>
+        <span style="color: white;"> 总投票数: </span><span style="color: #FFFF00;margin-left: 5px;">${allVoteCount?default(0)}</span>
     </div>
     <div class="left-total">
         <span style="color: white;"> 总作品数:</span><span style="color: #FFFF00;margin-left: 10px;">${allAppreciateCount?default(0)}</span>

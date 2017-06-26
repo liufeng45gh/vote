@@ -7,6 +7,7 @@ import com.lucifer.model.vote.AppreciateCategory;
 import com.lucifer.model.vote.Vote;
 import com.lucifer.service.vote.AppreciateReadService;
 import com.lucifer.service.vote.AppreciateService;
+import com.lucifer.service.vote.VoteService;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.PageInfoWriter;
 import com.lucifer.utils.Result;
@@ -43,6 +44,9 @@ public class WebAppreciateController {
     @Resource
     private AppreciateReadService appreciateReadService;
 
+    @Resource
+    private VoteService voteService;
+
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -62,6 +66,11 @@ public class WebAppreciateController {
 
         Integer allAppreciateCount = appreciateService.allAppreciateCount();
         request.setAttribute("allAppreciateCount",allAppreciateCount);
+
+        Integer allVoteCount = voteService.allVoteCount();
+        request.setAttribute("allVoteCount",allVoteCount);
+        
+
         return "/web/appreciate/index";
     }
 

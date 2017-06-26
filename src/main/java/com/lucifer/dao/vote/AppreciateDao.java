@@ -137,4 +137,11 @@ public class AppreciateDao  extends IBatisBaseDao {
     public Integer appreciateAddOneRead(Long id){
         return this.voteSqlSession.update("appreciateAddOneRead",id);
     }
+
+    public Integer updateAppreciateVoteCount(Long id,Integer voteCount){
+        Map param = new HashMap();
+        param.put("id", id);
+        param.put("voteCount", voteCount);
+        return this.voteSqlSession.update("updateAppreciateVoteCount",param);
+    }
 }
