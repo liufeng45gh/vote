@@ -10,8 +10,7 @@
         <result column="nick_name" property="nickName"/>
         <result column="avatar" property="avatar"/>
 
-        <result column="created_at" property="createdAt"/>
-        <result column="updated_at" property="updatedAt"/>
+      
     </resultMap>
     <insert id="insertWxUser">
         insert into user
