@@ -62,7 +62,7 @@ sms:
   verifyCodeUrl: https://api.netease.im/sms/verifycode.action
 wx:
   appId: wx7933d55ea3872f4d
-  secret: 0c79e1fa963cd80cc0be99b20a18faeb
+  secret: 7904638ab6802dc7024fb6a44477d441
 
 
 
