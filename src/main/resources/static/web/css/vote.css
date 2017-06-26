@@ -171,3 +171,43 @@ body{
          0 8px 0 #CC0000,
          0 15px 20px rgba(0,0,0,.35);
 }
+
+
+.vote-title{
+     font-size: 24px;
+     line-height: 34px;
+     color: #222;
+     font-family: PingFangSC-Medium;
+     margin: 0;
+     padding: 0;
+     border: 0;
+}
+
+.vote-content{
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    clear: both;
+    padding-bottom: 24px;
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 12px;
+}
+
+.vote-content img{
+    margin-top: 20px;
+
+    width: 100%;
+    display: block;
+    margin: 4px auto;
+}
+
+.vote-content p{
+    word-wrap: break-word;
+    color: #333;
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 30px;
+}
