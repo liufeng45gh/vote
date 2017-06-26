@@ -29,6 +29,7 @@ public class VoteController {
     @Resource
     private WxService wxService;
 
+    @Resource
     private VoteService voteService;
 
     final Logger logger = LoggerFactory.getLogger(this.getClass());
