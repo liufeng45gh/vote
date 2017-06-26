@@ -17,7 +17,7 @@
         insert into user
         (wx_id, nick_name,avatar,created_at,updated_at)
         values
-        (#{wxId},#{nickName},#{avatar},#{createdAt},#{updatedAt})
+        (#{wxId},#{nickName},#{avatar},now(),now())
     </insert>
     <select id="getWxUserByWxId"  resultMap="WxInfoMap">
         select * from user where wx_id=#{wxId}
