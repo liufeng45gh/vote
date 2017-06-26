@@ -175,6 +175,7 @@ body{
 
 .vote-title{
      font-size: 24px;
+     font-weight: bold;
      line-height: 34px;
      color: #222;
      font-family: PingFangSC-Medium;
