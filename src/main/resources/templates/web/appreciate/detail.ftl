@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<div class="w-max ">
+<div class="w-max bottom-line padding-side">
     <!--
     <div class="vote-info">
         <div class="span"><img src="/web/images/time_icon.png" class="a-icon"/></div>

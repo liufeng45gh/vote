@@ -181,6 +181,11 @@ body{
      margin: 0;
      padding: 0;
      border: 0;
+     margin-top: 12px;
+     position: relative;
+     overflow: hidden;
+     background-color: #fff;
+     text-align: center;
 }
 
 .vote-content{
@@ -210,4 +215,12 @@ body{
     margin-top: 24px;
     font-size: 18px;
     line-height: 30px;
+}
+
+.bottom-line {
+    border-bottom: .5px solid #e8e8e8;
+}
+.padding-side {
+    padding-left: 17px;
+    padding-right: 17px;
 }
