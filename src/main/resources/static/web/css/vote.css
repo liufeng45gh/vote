@@ -174,9 +174,9 @@ body{
 
 
 .vote-title{
-     font-size: 24px;
+     font-size: 34px;
      font-weight: bold;
-     line-height: 54px;
+     line-height: 74px;
      color: #222;
      font-family: PingFangSC-Medium;
      margin: 0;
@@ -199,7 +199,7 @@ body{
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 12px;
+    font-size: 28px;
     line-height: 54px;
 }
 
@@ -215,7 +215,7 @@ body{
     word-wrap: break-word;
     color: #333;
     margin-top: 24px;
-    font-size: 18px;
+    font-size: 28px;
     line-height: 54px;
 }
 
