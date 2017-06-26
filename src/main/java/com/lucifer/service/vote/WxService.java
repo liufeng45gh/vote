@@ -117,6 +117,7 @@ public class WxService {
         this.writeToken(token,wxInfo.getWxId());
         Cookie c2 = new Cookie("token",token);
 //设置生命周期为1小时，秒为单位
+        c2.setPath("/");
         c2.setMaxAge(12 * 30 * 24 * 3600);
         response.addCookie(c2);
     }
