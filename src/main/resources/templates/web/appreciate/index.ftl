@@ -26,7 +26,7 @@
 </div>
 
 <#list appreciateCategoryList as category>
-    <div class="w-max m-bg">
+    <div class="w-max t-bg">
         <div class="category-title"><img src="${(category.icon)!}"/></div>
     </div>
 
