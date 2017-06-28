@@ -7,21 +7,10 @@ import java.util.Date;
 public class Constant {
 
 	public static final int PAFENO = 1;
+	
 	public static final int PAGESIZE = 20;
 
-	public static final Integer maxPage = 100;
-	
-	public static Integer minute_10 =  60*10;
-	
-	public static Integer hour_1 =  3600;
-	
-	public static Integer day_30 = 30 * 24 * 3600;
-	
-	public static Integer day_60 = 60 * 24 * 3600;
-	
-	public static Integer day_180 = 180 * 24 * 3600;
-	
-	public static Integer day_365 = 365 * 24 * 3600;
+
 	
 	public static Date firstOnlineDate = null;
 
@@ -69,6 +58,11 @@ public class Constant {
 	public static final String CACHE_KEY_REMOVE_ALL = "VOTE:CACHE:*";
 
 	public static final Integer LOGIN_TIME_OUT= 3600 * 24 *10;
+
+	
+
+
+	public static final String KEY_WX_JSAPI_TICKET = "VOTE:KEY-WX-JSAPI-TICKET";
 
 
 			
