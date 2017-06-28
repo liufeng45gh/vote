@@ -1,4 +1,4 @@
-var shareImgUrl = "http://vote.dbdbd.cn/logo-c.png";
+var shareImgUrl = "http://vote.dbdbd.cn/web/images/logo.png";
 var lineLink = "http://vote.dbdbd.cn/appreciate/index";
 var shareContent = "中国石油作品投票";
 var shareTitle = "好事多磨,重在参与";
