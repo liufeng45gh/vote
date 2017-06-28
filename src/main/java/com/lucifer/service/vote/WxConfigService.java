@@ -12,6 +12,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.HashMap;
@@ -41,8 +42,8 @@ public class WxConfigService {
          return WxSign.sign(jsapiTicket,shareUrl);
     }
 
-    @Scheduled(cron = "0 0 */1 * * ?")
-    //@PostConstruct
+    //@Scheduled(cron = "0 0 */1 * * ?")
+    @PostConstruct
     public void refreshWxJsapiTicket() throws IOException {
           String accessToken =  this.getAccessToken();
           String jsapiTiket = this.getJsapiTicket(accessToken);
