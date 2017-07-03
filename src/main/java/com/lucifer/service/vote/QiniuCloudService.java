@@ -106,15 +106,17 @@ public class QiniuCloudService {
         Auth auth = Auth.create(this.accessKey,
                 this.secretKey);
         String token = auth.uploadToken(this.publicBucket);
+        logger.info("token: {}",token);
         UploadManager um = new UploadManager();
         String key = "";
         try {
             Response resp = um.put(file, null,
                     token);
             Map<String,Object> map = objectMapper.readValue(resp.bodyString(),Map.class) ;
+            logger.info("resp.bodyString(): {}",resp.bodyString());
+            
             key = (String)map.get("key");
             //System.out.println(resp.bodyString());
-            logger.info("resp.bodyString(): {}",resp.bodyString());
             //System.out.println(key);
             logger.info("key: {}",key);
         } catch (QiniuException ex) {
@@ -128,20 +130,26 @@ public class QiniuCloudService {
         Auth auth = Auth.create(this.accessKey,
                 this.secretKey);
         String token = auth.uploadToken(this.publicBucket);
+        logger.info("token: {}",token);
         UploadManager um = new UploadManager();
-        String key = "";
+        //String key = "";
         String originFileName = file.getOriginalFilename();
+        logger.info("originFileName: {}",originFileName);
         String suffix = FileType.getSuffixByFilename(originFileName);
-        key = UUID.randomUUID().toString()+suffix;
+        logger.info("suffix: {}",suffix);
+        String key = UUID.randomUUID().toString()+suffix;
         try {
             Response resp = um.put(file.getBytes(), key,
                     token);
             Map<String,Object> map = objectMapper.readValue(resp.bodyString(),Map.class) ;
+            logger.info("resp.bodyString(): {}",resp.bodyString());
             key = (String)map.get("key");
-            System.out.println(resp.bodyString());
-            System.out.println(key);
+            //System.out.println(resp.bodyString());
+            //System.out.println(key);
+            logger.info("key: {}",key);
         } catch (QiniuException ex) {
             System.out.println(ex.getMessage());
+            ex.printStackTrace();
         }
         return url + key + "";
     }
