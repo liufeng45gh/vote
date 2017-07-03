@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
-    <title>中国石油作品投票系统</title>
+    <title>中国石油第二届新媒体内容创作大赛投票系统</title>
     <link rel="stylesheet" type="text/css" href="/web/css/vote.css"/>
     <script  src="/web/js/jquery-3.1.1.js"></script>
     <script  src="/web/js/common.js"></script>
