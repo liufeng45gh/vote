@@ -8,6 +8,8 @@ import com.qiniu.http.Response;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -31,6 +33,9 @@ public class QiniuCloudService {
     public static QiniuCloudService getInstance(){
         return instance;
     }
+
+
+    private  Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @PostConstruct
     public void init(){
@@ -108,10 +113,13 @@ public class QiniuCloudService {
                     token);
             Map<String,Object> map = objectMapper.readValue(resp.bodyString(),Map.class) ;
             key = (String)map.get("key");
-            System.out.println(resp.bodyString());
-            System.out.println(key);
+            //System.out.println(resp.bodyString());
+            logger.info("resp.bodyString(): {}",resp.bodyString());
+            //System.out.println(key);
+            logger.info("key: {}",key);
         } catch (QiniuException ex) {
             System.out.println(ex.getMessage());
+            ex.printStackTrace();
         }
         return url + key + "";
     }
