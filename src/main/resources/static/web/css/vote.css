@@ -210,12 +210,17 @@ body{
 }
 
 .vote-content img{
-    margin-top: 20px;
-
     width: 100%;
     display: block;
     margin: 4px auto;
 }
+
+.vote-content video{
+    width: 100%;
+    display: block;
+    margin: 4px auto;
+}
+
 
 .vote-content p{
     word-wrap: break-word;
