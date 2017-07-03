@@ -45,8 +45,8 @@ mybatis:
 qiniu:
   accessKey: eeYtcWvGPXqjEiTIxDljeVu8qxFpwdXOvGo4PURq
   secretKey: LHkSG-HRLccuUYSgb-TX0ZcDrsyUMEzSg6Z3GG6G
-  publicBucket: hfc-lucifer
-  url: http://ojvbqldpg.bkt.clouddn.com/
+  publicBucket: vote
+  url: http://osi1i0y6i.bkt.clouddn.com/
 multipart:
   maxFileSize: 10Mb
   maxRequestSize: 30Mb
