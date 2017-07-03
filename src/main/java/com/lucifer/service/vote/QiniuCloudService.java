@@ -4,7 +4,9 @@ package com.lucifer.service.vote;
 import com.baidu.ueditor.define.FileType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qiniu.common.QiniuException;
+import com.qiniu.common.Zone;
 import com.qiniu.http.Response;
+import com.qiniu.storage.Configuration;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
@@ -87,9 +89,12 @@ public class QiniuCloudService {
         Auth auth = Auth.create(this.accessKey,
                 this.secretKey);
         String token = auth.uploadToken(this.publicBucket);
-        UploadManager um = new UploadManager();
+        //构造一个带指定Zone对象的配置类
+        Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+        UploadManager uploadManager = new UploadManager(cfg);
         try {
-            Response resp = um.put("/Users/lijc/Downloads/8mm.png", null,
+            Response resp = uploadManager.put("/Users/lijc/Downloads/8mm.png", null,
                     token);
             System.out.println(resp.bodyString());
         } catch (QiniuException ex) {
@@ -107,10 +112,12 @@ public class QiniuCloudService {
                 this.secretKey);
         String token = auth.uploadToken(this.publicBucket);
         logger.info("token: {}",token);
-        UploadManager um = new UploadManager();
+        Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+        UploadManager uploadManager = new UploadManager(cfg);
         String key = "";
         try {
-            Response resp = um.put(file, null,
+            Response resp = uploadManager.put(file, null,
                     token);
             Map<String,Object> map = objectMapper.readValue(resp.bodyString(),Map.class) ;
             logger.info("resp.bodyString(): {}",resp.bodyString());
@@ -131,7 +138,9 @@ public class QiniuCloudService {
                 this.secretKey);
         String token = auth.uploadToken(this.publicBucket);
         logger.info("token: {}",token);
-        UploadManager um = new UploadManager();
+        Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+        UploadManager uploadManager = new UploadManager(cfg);
         //String key = "";
         String originFileName = file.getOriginalFilename();
         logger.info("originFileName: {}",originFileName);
@@ -139,7 +148,7 @@ public class QiniuCloudService {
         logger.info("suffix: {}",suffix);
         String key = UUID.randomUUID().toString()+suffix;
         try {
-            Response resp = um.put(file.getBytes(), key,
+            Response resp = uploadManager.put(file.getBytes(), key,
                     token);
             Map<String,Object> map = objectMapper.readValue(resp.bodyString(),Map.class) ;
             logger.info("resp.bodyString(): {}",resp.bodyString());
@@ -160,9 +169,11 @@ public class QiniuCloudService {
     public void simpleUploadWithKey(byte[] file,String key) throws QiniuException {
         Auth auth = Auth.create(this.accessKey, this.secretKey);
         String token = auth.uploadToken(this.publicBucket);
-        UploadManager um = new UploadManager();
+        Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+        UploadManager uploadManager = new UploadManager(cfg);
         try {
-            Response resp = um.put(file,
+            Response resp = uploadManager.put(file,
                     key, token);
             System.out.println(resp.bodyString());
         } catch (QiniuException ex) {
@@ -185,9 +196,11 @@ public class QiniuCloudService {
 //        extraParams.put("x:apple", "");
 //        extraParams.put("", "");
 
-        UploadManager um = new UploadManager();
+        Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+        UploadManager uploadManager = new UploadManager(cfg);
         try {
-            Response resp = um.put(file,
+            Response resp = uploadManager.put(file,
                     key, token, extraParams, null, false);
             System.out.println(resp.bodyString());
         } catch (QiniuException ex) {
@@ -202,9 +215,11 @@ public class QiniuCloudService {
         Auth auth = Auth.create(this.accessKey,
                 this.secretKey);
         String token = auth.uploadToken(this.publicBucket);
-        UploadManager um = new UploadManager();
+        Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+        UploadManager uploadManager = new UploadManager(cfg);
         try {
-            Response resp = um.put(file,
+            Response resp = uploadManager.put(file,
                     key, token, null, type, false);
             System.out.println(resp.bodyString());
         } catch (QiniuException ex) {
@@ -219,9 +234,11 @@ public class QiniuCloudService {
         Auth auth = Auth.create(this.accessKey,
                 this.secretKey);
         String token = auth.uploadToken(this.publicBucket);
-        UploadManager um = new UploadManager();
+        Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+        UploadManager uploadManager = new UploadManager(cfg);
         try {
-            Response resp = um.put("/Users/jemy/Documents/qiniu.png",
+            Response resp = uploadManager.put("/Users/jemy/Documents/qiniu.png",
                     "qiniu_crc32.png", token, null, null, true);
             System.out.println(resp.bodyString());
         } catch (QiniuException ex) {
@@ -244,9 +261,11 @@ public class QiniuCloudService {
                         "{\"hash\":\"$(hash)\",\"key\":\"$(key)\",\"bucket\":\"$(bucket)\",\"hello\":\"$(x:hello)\"}");
         String token = auth.uploadToken(this.publicBucket, null,
                 3600, putPolicy);
-        UploadManager um = new UploadManager();
+        Configuration cfg = new Configuration(Zone.zone0());
+//...其他参数参考类注释
+        UploadManager uploadManager = new UploadManager(cfg);
         try {
-            Response resp = um.put("/Users/jemy/Documents/qiniu.png",
+            Response resp = uploadManager.put("/Users/jemy/Documents/qiniu.png",
                     "qiniu_r1.png", token, extraParams, null, true);
             System.out.println(resp.bodyString());
         } catch (QiniuException ex) {
