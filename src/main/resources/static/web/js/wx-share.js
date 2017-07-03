@@ -1,7 +1,7 @@
 var shareImgUrl = "http://osi1i0y6i.bkt.clouddn.com/share-logo.jpg";
 var lineLink = "http://vote.dbdbd.cn/appreciate/index";
-var shareContent = "中国石油第二届新媒体创作大赛";
-var shareTitle = "小伙伴们快来投票啦!";
+var shareContent = "小伙伴们快来投票啦!";
+var shareTitle = "中国石油第二届新媒体创作大赛";
 var appid = "wx7933d55ea3872f4d";
   
 $(document).ready(function() {
