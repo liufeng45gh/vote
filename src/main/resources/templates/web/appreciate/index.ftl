@@ -39,7 +39,7 @@
                     <a href="/appreciate/${appreciate.id!}/detail" target="_blank"><img src="${appreciate.logo!}"></a>
                 </div>
                 <div class="vote-count"><span class="c-red">${appreciate.voteCount!}</span><span class="c-rosewood">票</span></div>
-                <div class="source"><span class="c-rosewood">报送单位--${appreciate.source!}</span></div>
+                <div class="source"><span class="c-rosewood">标题--${appreciate.source!}</span></div>
                 <div class="vote-btn">投票</div>
             </div>
         </#list>
