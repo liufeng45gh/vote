@@ -54,7 +54,7 @@
     </tr>
 
     <tr>
-        <th width="20%" style="text-align:right;">报送单位:</th>
+        <th width="20%" style="text-align:right;">标题:</th>
         <td>
             <input id="source_input" class="form-control" name="source" style="display:inline-block;" value="${entity.source?default("")}" />
         </td>
