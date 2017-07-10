@@ -238,3 +238,26 @@ body{
     padding-left: 17px;
     padding-right: 17px;
 }
+
+.c-item{
+     width: 47%;
+     margin-top: 20px;
+}
+
+.c-img{
+    width: 100%;
+    height: auto;
+}
+.c-img img{
+    width: 100%;
+}
+
+.c-left{
+    margin-left: 20px;
+    float: left;
+}
+
+.c-right{
+    margin-right: 20px;
+    float: right;
+}
