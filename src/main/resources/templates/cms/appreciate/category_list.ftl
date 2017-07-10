@@ -24,6 +24,7 @@
                                         <th width="140px">id</th>
                                         <th width="340px">分类名称</th>
                                         <th width="340px">图标</th>
+                                        <th width="340px">图标(分类界面)</th>
                                         <th width="150px">排序</th>
 
 
@@ -38,6 +39,9 @@
                                         <td>${category.name}</td>
                                         <td>
                                             <img src="${category.icon?default("")}" style="width:137px;height:37px;"/>
+                                        </td>
+                                        <td>
+                                            <img src="${category.image?default("")}" style="width:137px;height:100px;"/>
                                         </td>
 
                                         <td>${category.top}</td>

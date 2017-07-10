@@ -13,6 +13,8 @@ public class AppreciateCategory {
 
     private String icon;
 
+    private String image;
+
     private Float top;
 
     private Integer isDeleted;
@@ -65,5 +67,13 @@ public class AppreciateCategory {
 
     public void setIcon(String icon) {
         this.icon = icon;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

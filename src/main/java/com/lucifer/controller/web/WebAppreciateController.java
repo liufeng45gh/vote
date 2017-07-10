@@ -51,8 +51,7 @@ public class WebAppreciateController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping(value="/index",method = RequestMethod.GET)
-    public String index(HttpServletRequest request
-                       ){
+    public String index(HttpServletRequest request){
         Integer pageSize = Constant.PAGESIZE;
       
         List<AppreciateCategory> appreciateCategoryList =  appreciateDao.appreciateCategoryList();
@@ -73,6 +72,28 @@ public class WebAppreciateController {
 
         return "/web/appreciate/index";
     }
+
+    @RequestMapping(value="/",method = RequestMethod.GET)
+    public String category(HttpServletRequest request){
+        
+
+        List<AppreciateCategory> appreciateCategoryList =  appreciateDao.appreciateCategoryList();
+
+        request.setAttribute("appreciateCategoryList",appreciateCategoryList);
+
+        
+
+        Integer allAppreciateCount = appreciateService.allAppreciateCount();
+        request.setAttribute("allAppreciateCount",allAppreciateCount);
+
+        Integer allVoteCount = voteService.allVoteCount();
+        request.setAttribute("allVoteCount",allVoteCount);
+
+
+        return "/web/appreciate/category";
+    }
+
+
 
     
 

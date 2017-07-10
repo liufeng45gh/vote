@@ -127,6 +127,7 @@
         <id column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="icon" property="icon"/>
+        <result column="image" property="image"/>
         <result column="top" property="top"/>
         <result column="is_deleted" property="isDeleted"/>
     </resultMap>

@@ -14,12 +14,12 @@ spring:
 # DATASOURCE
 jdbc:
     driverClass: com.mysql.jdbc.Driver
-    url: jdbc:mysql://hfc.dbdbd.cn/oauth2-user?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
+    url: jdbc:mysql://www.haifuc.cn/oauth2-user?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
     username: root
     password: lucifer-HFC-20170501
 jdbc-vote:
     driverClass: com.mysql.jdbc.Driver
-    url: jdbc:mysql://hfc.dbdbd.cn/vote?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
+    url: jdbc:mysql://www.haifuc.cn/vote?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
     username: root
     password: lucifer-HFC-20170501
 
