@@ -35,5 +35,11 @@ $(document).ready(function(){
 
 function openWxLogin(){
     //alert(1);
+    var webHref = window.location.href;
+    var pos = webHref.indexOf('/');
+    //location.href=webHref.substring(0,pos);
+    //var lineLink = "http://vote.dbdbd.cn/appreciate/index";
+    var login_redirect_url = webHref.substring(0,pos);
+    setSessionCookie("login_redirect_url",login_redirect_url);
     window.location.href = "/wx/login?random="+Math.random();
 }

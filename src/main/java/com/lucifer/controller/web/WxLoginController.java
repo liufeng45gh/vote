@@ -4,6 +4,7 @@ import com.lucifer.dao.vote.WxUserDao;
 import com.lucifer.exception.WxAuthenticationException;
 import com.lucifer.model.vote.WxInfo;
 import com.lucifer.service.vote.WxService;
+import com.lucifer.utils.StringHelper;
 import org.json.JSONException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
@@ -28,9 +31,20 @@ public class WxLoginController {
 
 
     @RequestMapping(value="/login-by-code",method = RequestMethod.GET)
-    public String loginByCode(@RequestParam  String code, HttpServletResponse response) throws JSONException, WxAuthenticationException, IOException {
+    public String loginByCode(@RequestParam  String code, HttpServletResponse response, HttpServletRequest request) throws JSONException, WxAuthenticationException, IOException {
         wxService.loginByCode(code,response);
-        return "redirect:/appreciate/index";
+        Cookie[] cookies = request.getCookies();
+        String loginRedirectUrl = null;
+        for (Cookie cookie: cookies) {
+            if (cookie.getName().equals("login_redirect_url")) {
+                loginRedirectUrl = cookie.getValue();
+                break;
+            }
+        }
+        if (!StringHelper.isEmpty(loginRedirectUrl)) {
+            return "redirect:"+loginRedirectUrl;
+        }
+        return "redirect:/appreciate/category";
     }
 
     @RequestMapping(value="/login",method = RequestMethod.GET)
