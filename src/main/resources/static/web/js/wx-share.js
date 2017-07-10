@@ -1,5 +1,10 @@
 var shareImgUrl = "http://osi1i0y6i.bkt.clouddn.com/share-logo.jpg";
-var lineLink = "http://vote.dbdbd.cn/appreciate/index";
+
+var webHref = window.location.href;
+var pos = webHref.indexOf('/');
+//location.href=webHref.substring(0,pos);
+//var lineLink = "http://vote.dbdbd.cn/appreciate/index";
+var lineLink = webHref.substring(0,pos);
 var shareContent = "小伙伴们快来投票啦!";
 var shareTitle = "中国石油第二届新媒体内容创作大赛";
 var appid = "wx7933d55ea3872f4d";
