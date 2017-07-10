@@ -22,7 +22,7 @@
     </div>
     <div style="clear: both;"></div>
     <div class="vote-tips">
-        <span style="font-size: 28px;"> 温馨提示:</span><span style="font-size: 25px;">每个作品每天每人只能投一票</span>
+        <span style="font-size: 28px;"> 温馨提示:</span><span style="font-size: 25px;">每类作品均需投票（可多选），每个作品每人每天只能投一票。</span>
     </div>
 
 </div>
