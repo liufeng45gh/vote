@@ -80,11 +80,11 @@ body{
 }
 
 .vote-tips{
-     width: 80%;
-     margin: 0 auto;
-     color: white;
-     text-align: center;
-     margin-top: 170px;
+    width: 60%;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    margin-top: 160px;
 }
 
 .category-title{
