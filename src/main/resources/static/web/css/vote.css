@@ -95,7 +95,7 @@ body{
 
 .category-title img{
      width: 297px;
-     height: 93px;
+     height: auto;
 }
 
 .card-item{
