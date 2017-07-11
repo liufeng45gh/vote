@@ -4,7 +4,7 @@ var lineLink = window.location.href;
 if(lineLink.indexOf("?") != -1)
 {
     lineLink = lineLink.split("?")[0];
-    console.log(url);
+    console.log(lineLink);
 }
 //location.href=webHref.substring(0,pos);
 //var lineLink = "http://vote.dbdbd.cn/appreciate/index";

@@ -30,7 +30,7 @@ $(document).ready(function(){
                if(lineLink.indexOf("?") != -1)
                {
                    lineLink = lineLink.split("?")[0];
-                   console.log(url);
+                   console.log(lineLink);
                }
              window.location.href = lineLink+"?random=" + Math.random();
            },5);
@@ -45,7 +45,7 @@ function openWxLogin(){
   if(lineLink.indexOf("?") != -1)
   {
       lineLink = lineLink.split("?")[0];
-      console.log(url);
+      console.log(lineLink);
   }
     setSessionCookie("login_redirect_url",lineLink);
     window.location.href = "/wx/login?random="+Math.random();
