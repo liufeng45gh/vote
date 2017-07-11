@@ -52,7 +52,7 @@ public class WebAppreciateController {
 
     @RequestMapping(value="/index",method = RequestMethod.GET)
     public String index(HttpServletRequest request){
-        Integer pageSize = Constant.PAGESIZE;
+        //Integer pageSize = Constant.PAGESIZE;
       
         List<AppreciateCategory> appreciateCategoryList =  appreciateDao.appreciateCategoryList();
 
@@ -73,7 +73,7 @@ public class WebAppreciateController {
         return "/web/appreciate/index";
     }
 
-    @RequestMapping(value="/",method = RequestMethod.GET)
+    @RequestMapping(value="/category",method = RequestMethod.GET)
     public String category(HttpServletRequest request){
         
 
@@ -91,6 +91,29 @@ public class WebAppreciateController {
 
 
         return "/web/appreciate/category";
+    }
+
+    @RequestMapping(value="/by-category/{categoryId}",method = RequestMethod.GET)
+    public String listByCategory(HttpServletRequest request,@PathVariable  Long categoryId){
+        AppreciateCategory currentCategory = appreciateDao.getAppreciateCategory(categoryId);
+
+        List<AppreciateCategory> appreciateCategoryList = new ArrayList<>();
+        appreciateCategoryList.add(currentCategory);
+
+        request.setAttribute("appreciateCategoryList",appreciateCategoryList);
+
+        for (AppreciateCategory category: appreciateCategoryList) {
+            List<Appreciate> appreciateList = appreciateDao.appreciateList(null,category.getId(),0,1000);
+            category.setAppreciateList(appreciateList);
+        }
+
+        Integer allAppreciateCount = appreciateService.allAppreciateCount();
+        request.setAttribute("allAppreciateCount",allAppreciateCount);
+
+        Integer allVoteCount = voteService.allVoteCount();
+        request.setAttribute("allVoteCount",allVoteCount);
+
+        return "/web/appreciate/index";
     }
 
 

@@ -26,7 +26,13 @@ $(document).ready(function(){
       
             layer.msg('投票成功!', {icon: 1});
            setTimeout(function(){
-             window.location.href = "/appreciate/index?random=" + Math.random();
+              var lineLink = window.location.href;
+               if(lineLink.indexOf("?") != -1)
+               {
+                   lineLink = lineLink.split("?")[0];
+                   console.log(url);
+               }
+             window.location.href = lineLink+"?random=" + Math.random();
            },5);
         });
     });
@@ -35,5 +41,12 @@ $(document).ready(function(){
 
 function openWxLogin(){
     //alert(1);
+  var lineLink = window.location.href;
+  if(lineLink.indexOf("?") != -1)
+  {
+      lineLink = lineLink.split("?")[0];
+      console.log(url);
+  }
+    setSessionCookie("login_redirect_url",lineLink);
     window.location.href = "/wx/login?random="+Math.random();
 }
