@@ -75,7 +75,7 @@ body{
     //background-size:100% 100%;
     //background-repeat: repeat;
     background-color: #62c8d7;
-    padding-bottom: 100px;
+    padding-bottom: 200px;
     padding-top: 100px;
 }
 
@@ -260,4 +260,16 @@ body{
 .c-right{
     margin-right: 20px;
     float: right;
+}
+
+.to_index{
+   position: fixed;
+   bottom: -5px;
+   width: 100%;
+   height: auto;
+}
+
+.to_index img{
+   width: 100%;
+   height: auto;
 }
