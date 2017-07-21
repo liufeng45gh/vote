@@ -85,7 +85,7 @@ public class WxService {
     private void syncWeixinUserInfo(WxInfo user) throws HttpException, IOException, JSONException {
         JSONObject jsonObject = this.getWeixinUserInfo(user.getAccessToken(), user.getWxId());
         user.setAvatar(jsonObject.getString("headimgurl"));
-        //user.setNickName(jsonObject.getString("nickname"));
+        user.setNickName(jsonObject.getString("nickname"));
         //user.setCity(jsonObject.getString("city"));
         //user.setProvince(jsonObject.getString("province"));
     }
