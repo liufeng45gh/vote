@@ -35,12 +35,15 @@ public class WxLoginController {
         wxService.loginByCode(code,response);
         Cookie[] cookies = request.getCookies();
         String loginRedirectUrl = null;
-        for (Cookie cookie: cookies) {
-            if (cookie.getName().equals("login_redirect_url")) {
-                loginRedirectUrl = cookie.getValue();
-                break;
+        if(null != cookies) {
+            for (Cookie cookie: cookies) {
+                if (cookie.getName().equals("login_redirect_url")) {
+                    loginRedirectUrl = cookie.getValue();
+                    break;
+                }
             }
         }
+
         if (!StringHelper.isEmpty(loginRedirectUrl)) {
             return "redirect:"+loginRedirectUrl;
         }
