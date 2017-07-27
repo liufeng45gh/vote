@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>中国石油第二届新媒体内容创作大赛投票系统</title>
-    <link rel="stylesheet" type="text/css" href="/web/css/vote.css?version=1.1"/>
+    <link rel="stylesheet" type="text/css" href="/web/css/vote.css?version=1.2"/>
     <script  src="/web/js/jquery-3.1.1.js"></script>
     <script  src="/web/js/common.js"></script>
     <script  type="text/javascript" src="/layer/layer.js"></script>
@@ -43,9 +43,9 @@
                 </div>
                 <div class="vote-count"><span class="c-red">${appreciate.voteCount!}</span><span class="c-rosewood">票</span></div>
                 <div class="source"><span class="c-rosewood">标题--${appreciate.source!}</span></div>
-                <!--
+
                 <div class="vote-btn">投票</div>
-                -->
+                
             </div>
         </#list>
         

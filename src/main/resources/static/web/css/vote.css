@@ -161,7 +161,8 @@ body{
      text-shadow: none;
      box-shadow: none;
      height: 78px;
-     background-color: red;
+     //background-color: red;
+     background-color: #D3D3D3;
      border-radius: 50px;
      text-align: center;
      line-height: 78px;
