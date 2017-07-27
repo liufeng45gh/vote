@@ -32,6 +32,9 @@ public class VoteService {
     private AppCache appCache;
 
     public void saveVote(Vote vote) throws RepetitiveOperationException {
+        if(true){
+            throw new RepetitiveOperationException("投票已结束谢谢参与");
+        }
         try{
             voteDao.insertVote(vote);
         } catch (Exception e){
