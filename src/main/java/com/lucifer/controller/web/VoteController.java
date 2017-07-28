@@ -57,4 +57,11 @@ public class VoteController {
 
         return Result.ok();
     }
+
+    @RequestMapping(value="/reset-all-count",method = RequestMethod.POST)
+    @ResponseBody
+    public Result resetAllVoteCount(){
+        voteService.resetAllVoteCount();
+        return Result.ok();
+    }
 }

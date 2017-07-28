@@ -131,17 +131,12 @@ public class WebAppreciateController {
     
    
 
-    @RequestMapping(value="/{id}/counts",method = RequestMethod.GET)
-    @ResponseBody
-    public Appreciate counts(@PathVariable Long id){
-        Appreciate appreciate = appreciateDao.getAppreciateCounts(id);
-        return appreciate;
-    }
+   
 
-    @RequestMapping(value="/{id}/read",method = RequestMethod.POST)
+    @RequestMapping(value="/reset-all-count",method = RequestMethod.POST)
     @ResponseBody
     public Result read(@PathVariable Long id){
-        appreciateReadService.readAppreciate(id);
+        appreciateService.updateAllAppreciateCount();
         return Result.ok();
     }
 
