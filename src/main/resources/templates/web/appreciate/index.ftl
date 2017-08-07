@@ -39,7 +39,10 @@
         <#list category.appreciateList as appreciate>
             <div class="card-item <#if appreciate?is_even_item>card-right<#else>card-left</#if>" objectId="${appreciate.id!}">
                 <div class="card-img">
+                    <!--
                     <a href="/appreciate/${appreciate.id!}/detail" target="_blank"><img src="${appreciate.logo!}"></a>
+                    -->
+                    <img src="${appreciate.logo!}">
                 </div>
                 <div class="vote-count"><span class="c-red">${appreciate.voteCount!}</span><span class="c-rosewood">票</span></div>
                 <div class="source"><span class="c-rosewood">标题--${appreciate.source!}</span></div>
