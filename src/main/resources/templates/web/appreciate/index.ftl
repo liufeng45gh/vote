@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>中国石油第二届新媒体内容创作大赛投票系统</title>
-    <link rel="stylesheet" type="text/css" href="/web/css/vote.css?version=1.2"/>
+    <link rel="stylesheet" type="text/css" href="/web/css/vote.css?v=1.3"/>
     <script  src="/web/js/jquery-3.1.1.js"></script>
     <script  src="/web/js/common.js"></script>
     <script  type="text/javascript" src="/layer/layer.js"></script>
