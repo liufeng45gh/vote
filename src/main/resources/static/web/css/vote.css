@@ -145,9 +145,9 @@ body{
 
 .source{
     width: 100%;
-    margin: 0 auto;
+    margin: 30px auto 10px auto;
     text-align: center;
-    height: 53px;
+    height: 106px;
    line-height: 53px;
    font-size: 38px;
 }
