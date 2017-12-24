@@ -13,7 +13,7 @@
 <body>
 
 <div class="w-max top-bg">
-    <div class="logo"><img src="http://osi1i0y6i.bkt.clouddn.com/logo.png"/></div>
+    <div class="logo"><img src="/web/images/logo.png"/></div>
     <div class="right-total">
         <span style="color: white;"> 总投票数: </span><span style="color: #FFFF00;margin-left: 5px;">${allVoteCount?default(0)}</span>
     </div>
