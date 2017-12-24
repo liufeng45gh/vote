@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>中国石油第二届新媒体内容创作大赛投票系统</title>
-    <link rel="stylesheet" type="text/css" href="/web/css/vote.css?version=1.1"/>
+    <link rel="stylesheet" type="text/css" href="/web/css/vote.css?v=1.3"/>
     <script  src="/web/js/jquery-3.1.1.js"></script>
     <script  src="/web/js/common.js"></script>
     <script  type="text/javascript" src="/layer/layer.js"></script>
@@ -22,7 +22,10 @@
     </div>
     <div style="clear: both;"></div>
     <div class="vote-tips">
+        <!--
         <span style="font-size: 28px;"> 温馨提示:</span><span style="font-size: 25px;">每类作品均需投票（可多选），每个作品每人每天只能投一票。</span>
+        -->
+        <span style="font-size: 28px;"> 温馨提示:</span><span style="font-size: 25px;">投票已经结束,谢谢您的参与</span>
     </div>
 
 </div>
@@ -36,11 +39,21 @@
         <#list category.appreciateList as appreciate>
             <div class="card-item <#if appreciate?is_even_item>card-right<#else>card-left</#if>" objectId="${appreciate.id!}">
                 <div class="card-img">
+                    <!--
                     <a href="/appreciate/${appreciate.id!}/detail" target="_blank"><img src="${appreciate.logo!}"></a>
+                    -->
+                    <img src="${appreciate.logo!}">
                 </div>
-                <div class="vote-count"><span class="c-red">${appreciate.voteCount!}</span><span class="c-rosewood">票</span></div>
+                <!--
+                <div class="vote-count">
+                    <span class="c-red">${appreciate.voteCount!}</span>
+                    <span class="c-rosewood">票</span>
+                </div>
+                -->
                 <div class="source"><span class="c-rosewood">标题--${appreciate.source!}</span></div>
+
                 <div class="vote-btn">投票</div>
+                
             </div>
         </#list>
         
@@ -52,6 +65,6 @@
     <a href="/appreciate/category"><img src="http://osi1i0y6i.bkt.clouddn.com/to_index.jpg"/></a>
 </div>
 
-<script  src="/web/js/appreciate/index.js"></script>
+<script  src="/web/js/appreciate/index.js?version=1.0"></script>
 </body>
 </html>
