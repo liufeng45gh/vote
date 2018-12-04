@@ -6,6 +6,7 @@ import com.lucifer.model.vote.WxInfo;
 import com.lucifer.service.vote.WxService;
 import com.lucifer.utils.StringHelper;
 import org.json.JSONException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,6 +30,8 @@ public class WxLoginController {
     private WxService wxService;
 
 
+    @Value("${wx.appId}")
+    private String AppId;
 
     @RequestMapping(value="/login-by-code",method = RequestMethod.GET)
     public String loginByCode(@RequestParam  String code, HttpServletResponse response, HttpServletRequest request) throws JSONException, WxAuthenticationException, IOException {
@@ -52,7 +55,7 @@ public class WxLoginController {
 
     @RequestMapping(value="/login",method = RequestMethod.GET)
     public String toLogin(){
-        return "redirect:https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7933d55ea3872f4d&redirect_uri=http%3a%2f%2fvote.dbdbd.cn%2fwx%2flogin-by-code&response_type=code&scope=snsapi_userinfo&state=vote#wechat_redirect";
+        return "redirect:https://open.weixin.qq.com/connect/oauth2/authorize?appid="+AppId+"&redirect_uri=http%3a%2f%2fvote.dbdbd.cn%2fwx%2flogin-by-code&response_type=code&scope=snsapi_userinfo&state=vote#wechat_redirect";
         //return "redirect: https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7933d55ea3872f4d&redirect_uri=https%3a%2f%2fwww.jd.com&response_type=code&scope=snsapi_userinfo&state=vote#wechat_redirect";
     }
 }
