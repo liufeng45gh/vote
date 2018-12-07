@@ -43,7 +43,7 @@ public class WxConfigService {
     }
 
     @Scheduled(cron = "0 0 */1 * * ?")
-    //@PostConstruct
+    @PostConstruct
     public void refreshWxJsapiTicket() throws IOException {
           String accessToken =  this.getAccessToken();
           String jsapiTiket = this.getJsapiTicket(accessToken);
