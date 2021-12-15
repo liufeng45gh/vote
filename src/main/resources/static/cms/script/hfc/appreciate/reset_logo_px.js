@@ -10,7 +10,7 @@ function resetLogoPix(){
 }
 $(document).ready(function() {
     resetLogoPix();
-    $("#logo_cover").load (function() {
+    $("#logo_cover").on ("load",function() {
         resetLogoPix();
     });
 });
