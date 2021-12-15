@@ -113,7 +113,7 @@ public class QiniuCloudService {
                 this.secretKey);
         String token = auth.uploadToken(this.publicBucket);
         logger.info("token: {}",token);
-        Configuration cfg = new Configuration(Zone.zone0());
+        Configuration cfg = new Configuration(Region.region2());
 //...其他参数参考类注释
         UploadManager uploadManager = new UploadManager(cfg);
         String key = "";
@@ -139,7 +139,7 @@ public class QiniuCloudService {
                 this.secretKey);
         String token = auth.uploadToken(this.publicBucket);
         logger.info("token: {}",token);
-        Configuration cfg = new Configuration(Zone.zone0());
+        Configuration cfg = new Configuration(Region.region2());
 //...其他参数参考类注释
         UploadManager uploadManager = new UploadManager(cfg);
         //String key = "";
