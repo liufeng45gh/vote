@@ -45,10 +45,10 @@ mybatis:
     configLocation: classpath:/mybatis-config.xml
 
 qiniu:
-  accessKey: eeYtcWvGPXqjEiTIxDljeVu8qxFpwdXOvGo4PURq
-  secretKey: LHkSG-HRLccuUYSgb-TX0ZcDrsyUMEzSg6Z3GG6G
-  publicBucket: vote-2
-  url: http://osienakpr.bkt.clouddn.com/
+  accessKey: 0eQGsXVlK2ZMC0zrY-WwG0RAGN2XGhR-MuZ43obW
+  secretKey: E4Oi-dh-0xg3ehU8BBJkS63Aon8HVXs4fd7BRNxk
+  publicBucket: klny-vote
+  url: http://r45qwidb6.hn-bkt.clouddn.com/
 multipart:
   maxFileSize: 10Mb
   maxRequestSize: 30Mb
