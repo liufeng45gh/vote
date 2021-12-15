@@ -11,6 +11,8 @@ spring:
     multipart:
       max-file-size: 50M
       max-request-size: 100M
+  freemarker:
+    suffix: .ftl
 # DATASOURCE
 jdbc-user:
   driverClass: com.mysql.cj.jdbc.Driver
