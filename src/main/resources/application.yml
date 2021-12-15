@@ -4,24 +4,24 @@ server:
    resetCache: true
 spring:
   redis:
-    host: test.haifuc.cn
+    host: 152.136.137.43
     port: 6379
-    password: lucifer-hfc
+    password: lucifer-1qaz2wsx
   http:
     multipart:
       max-file-size: 50M
       max-request-size: 100M
 # DATASOURCE
+jdbc-user:
+  driverClass: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://152.136.137.43/oauth2-user?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&serverTimezone=Asia/Shanghai
+  username: klny
+  password: lucifer1qaz@WSX
 jdbc:
-    driverClass: com.mysql.jdbc.Driver
-    url: jdbc:mysql://www.haifuc.cn/oauth2-user?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
-    username: root
-    password: lucifer-HFC-20170501
-jdbc-vote:
-    driverClass: com.mysql.jdbc.Driver
-    url: jdbc:mysql://www.haifuc.cn/vote?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
-    username: root
-    password: lucifer-HFC-20170501
+  driverClass: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://152.136.137.43/vote?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&serverTimezone=Asia/Shanghai
+  username: klny
+  password: lucifer1qaz@WSX
 
 #jdbc:
 #    driverClass: com.mysql.jdbc.Driver

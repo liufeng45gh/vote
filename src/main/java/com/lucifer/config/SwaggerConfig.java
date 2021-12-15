@@ -1,41 +1,54 @@
 package com.lucifer.config;
 
-import com.mangofactory.swagger.configuration.SpringSwaggerConfig;
-import com.mangofactory.swagger.models.dto.ApiInfo;
-import com.mangofactory.swagger.plugin.EnableSwagger;
-import com.mangofactory.swagger.plugin.SwaggerSpringMvcPlugin;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.oas.annotations.EnableOpenApi;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
 
 /**
- * Created by lijc on 15/8/27.
+ * @program: mall
+ * @description: 集成swagger2
+ * @author: zhangyahe
+ * @create: 2020-12-08 15:06
  */
 @Configuration
-@EnableSwagger
-@EnableAutoConfiguration
+@EnableOpenApi
 public class SwaggerConfig {
-
-    @Autowired
-    private SpringSwaggerConfig springSwaggerConfig;
 
 
 
     @Bean
-    // Don't forget the @Bean annotation
-    public SwaggerSpringMvcPlugin customImplementation() {
-        return new SwaggerSpringMvcPlugin(this.springSwaggerConfig).apiInfo(
-                apiInfo()).includePatterns(".*?");
+    public Docket createRestApi()
+    {
+        return new Docket(DocumentationType.OAS_30)
+                // 是否启用Swagger
+                .enable(true)
+                // 用来创建该API的基本信息，展示在文档的页面中（自定义展示的信息）
+                .apiInfo(apiInfo())
+                // 设置哪些接口暴露给Swagger展示
+                .select()
+                // 扫描所有有注解的api，用这种方式更灵活
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                // 扫描所有 .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                .build();
     }
+
     private ApiInfo apiInfo() {
-        ApiInfo apiInfo = new ApiInfo(
-                "用户系统 API",
-                "API for 用户系统",
-                null,
-                null,
-                null,
-                null);
-        return apiInfo;
+        return new ApiInfoBuilder()
+                .title("首页")
+                .description("更新请关注团队Wiki")
+                .termsOfServiceUrl("http://www.klny.xyz")
+                .contact(new Contact("my team","",""))
+                .version("1.0")
+                .build();
     }
+
 }

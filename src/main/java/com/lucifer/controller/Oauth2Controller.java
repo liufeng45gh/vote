@@ -6,7 +6,7 @@ import com.lucifer.model.AccessToken;
 import com.lucifer.model.User;
 import com.lucifer.service.UserLoginService;
 import com.lucifer.service.UserService;
-import com.wordnik.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;

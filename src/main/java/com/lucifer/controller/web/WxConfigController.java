@@ -2,7 +2,7 @@ package com.lucifer.controller.web;
 
 
 import com.lucifer.service.vote.WxConfigService;
-import com.wordnik.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

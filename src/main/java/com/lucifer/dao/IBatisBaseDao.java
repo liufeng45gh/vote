@@ -11,13 +11,14 @@ import javax.annotation.Resource;
 public class IBatisBaseDao {	
 	//config
 	@Autowired
+	@Qualifier("userSqlSessionTemplate")
 	protected SqlSession sqlSession;
 	
 	@Autowired
 	private StringRedisTemplate stringRedisTemplate;
 
 	@Resource
-	@Qualifier("voteSqlSessionTemplate")
+	@Qualifier("sqlSessionTemplate")
 	protected SqlSession voteSqlSession;
 	
 	public Long nextId(String sequence){

@@ -4,8 +4,8 @@ package com.lucifer.controller;
 import com.lucifer.model.User;
 import com.lucifer.service.UserLoginService;
 import com.lucifer.utils.Result;
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

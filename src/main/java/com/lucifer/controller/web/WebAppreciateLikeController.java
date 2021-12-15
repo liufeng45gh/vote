@@ -2,7 +2,7 @@ package com.lucifer.controller.web;
 
 import com.lucifer.service.vote.AppreciateLikeService;
 import com.lucifer.utils.Result;
-import com.wordnik.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 

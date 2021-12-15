@@ -5,16 +5,12 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.bind.RelaxedPropertyResolver;
-import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.core.env.Environment;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -22,83 +18,76 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
+
 /**
  *
  * 获取第二个数据库的连接信息，在application.yml中配置，并指定特定的前缀
  *
  */
-@Configuration
-@MapperScan(basePackages={"com.h9.start.config"})
+@SpringBootConfiguration
 @AutoConfigureAfter({ DataBaseConfiguration.class })
-@EnableTransactionManagement(proxyTargetClass=true)
+@EnableTransactionManagement
+public class MyBatisConfiguration {
 
-public class MyBatisConfiguration implements EnvironmentAware{
-    private static Log logger = LogFactory.getLog(MyBatisConfiguration.class);
+    private  Log logger = LogFactory.getLog(this.getClass());
 
-    private RelaxedPropertyResolver propertyResolver;
+    @Value("${mybatis.typeAliasesPackage}")
+    private String typeAliasesPackage;
 
+    @Value("${mybatis.mapperLocations}")
+    private String mapperLocations;
+
+    @Value("${mybatis.configLocation}")
+    private String configLocation;
 
     @Autowired
-    @Qualifier("userDataSource")
-    protected DataSource userDataSource;
+    @Qualifier("dataSource")
+    protected DataSource dataSource;
 
 
 
-    @Override
-    public void setEnvironment(Environment environment) {
-        this.propertyResolver = new RelaxedPropertyResolver(environment,"mybatis.");
-    }
 
-    @Bean
-    @Primary
-    public SqlSessionFactory sqlSessionFactory() {
-        try {
+
+    @Bean(name="sqlSessionFactory")
+    public SqlSessionFactory sqlSessionFactory() throws Exception {
+
+            //logger.info("userSqlSessionFactory: "+userDataSource.getConnection().getSchema());
             SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
-            factoryBean.setDataSource(userDataSource);
-            factoryBean.setTypeAliasesPackage(propertyResolver
-                    .getProperty("typeAliasesPackage"));
+            factoryBean.setDataSource(dataSource);
+            factoryBean.setTypeAliasesPackage(typeAliasesPackage);
             factoryBean
                     .setMapperLocations(new PathMatchingResourcePatternResolver()
-                            .getResources(propertyResolver
-                                    .getProperty("mapperLocations")));
+                            .getResources(mapperLocations));
             factoryBean
                     .setConfigLocation(new DefaultResourceLoader()
-                            .getResource(propertyResolver
-                                    .getProperty("configLocation")));
+                            .getResource(configLocation));
 
             SqlSessionFactory sqlSessionFactory = null;
-            try {
-                sqlSessionFactory = factoryBean.getObject();
-            }catch (Exception e) {
-                e.printStackTrace();
-                System.exit(0);
-            }
+
+            sqlSessionFactory = factoryBean.getObject();
+
 
             org.apache.ibatis.session.Configuration configuration = sqlSessionFactory
                     .getConfiguration();
             configuration.setMapUnderscoreToCamelCase(true);
 
+
             return sqlSessionFactory;
 
-        } catch (Exception e) {
-            logger.warn("Could not confiure mybatis session factory");
-            return null;
-        }
+
     }
 
 
-    @Bean
-    public DataSourceTransactionManager transactionManager() {
-        return new DataSourceTransactionManager(userDataSource);
-    }
 
-
-    @Bean
-    @Primary
-    public SqlSessionTemplate getSqlSessionTemplate(){
-        SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
+    @Bean(name = "sqlSessionTemplate")
+    public SqlSessionTemplate getSqlSessionTemplate(@Qualifier("sqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+        logger.info("getSqlSessionTemplate  : ");
+        SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(sqlSessionFactory);
         return sessionTemplate;
     }
 
-
+    @Bean(name = "tm")
+    public DataSourceTransactionManager getDataSourceTransactionManager(@Qualifier("dataSource") DataSource dataSource){
+        return new DataSourceTransactionManager(dataSource);
+    }
 }
