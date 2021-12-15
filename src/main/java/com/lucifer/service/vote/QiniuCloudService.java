@@ -7,6 +7,7 @@ import com.qiniu.common.QiniuException;
 import com.qiniu.common.Zone;
 import com.qiniu.http.Response;
 import com.qiniu.storage.Configuration;
+import com.qiniu.storage.Region;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
@@ -90,7 +91,7 @@ public class QiniuCloudService {
                 this.secretKey);
         String token = auth.uploadToken(this.publicBucket);
         //构造一个带指定Zone对象的配置类
-        Configuration cfg = new Configuration(Zone.zone0());
+        Configuration cfg =  new Configuration(Region.region2());
 //...其他参数参考类注释
         UploadManager uploadManager = new UploadManager(cfg);
         try {
