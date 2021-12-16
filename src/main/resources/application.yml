@@ -63,8 +63,8 @@ sms:
   appSecret: ef2c21102cb8
   verifyCodeUrl: https://api.netease.im/sms/verifycode.action
 wx:
-  appId: wx7933d55ea3872f4d
-  secret: 7904638ab6802dc7024fb6a44477d441
+  appId: wx1b792045969d2147
+  secret: 34a9d9d86dc36f30320c89763780b23e
 
 
 
