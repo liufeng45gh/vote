@@ -1,4 +1,4 @@
-var shareImgUrl = "http://osi1i0y6i.bkt.clouddn.com/share-logo.jpg";
+var shareImgUrl = "https://vote.stack.cin/share-icon.png";
 
 var lineLink = window.location.href;
 if(lineLink.indexOf("?") != -1)
@@ -46,29 +46,35 @@ $(document).ready(function() {
 
                 wx.ready(function(){
                     // 自定义“分享到朋友圈”及“分享到QQ空间”按钮的分享内容（1.4.0）
-                    //alert("wx.ready");
-                    wx.updateTimelineShareData({
+                    alert("wx.ready");
+
+                     wx.updateTimelineShareData({
                         title: shareTitle, // 分享标题
-                        link: lineLink,
-                        imgUrl: shareImgUrl // 分享图标
-                    });
+                        link: lineLink, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                        imgUrl: shareImgUrl, // 分享图标
+                        success: function () {
+                          // 设置成功
+                          alert("updateTimelineShareData success");
+                        }
+                      })
 
 
                     // 自定义“分享给朋友”及“分享到QQ”按钮的分享内容（1.4.0）
+
+
                     wx.updateAppMessageShareData({
                         title: shareTitle, // 分享标题
                         desc: shareContent, // 分享描述
-                        link: lineLink,
+                        link: lineLink, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
                         imgUrl: shareImgUrl, // 分享图标
-                        type: 'link', // 分享类型,music、video或link，不填默认为link
                         success: function () {
-                                 // 用户确认分享后执行的回调函数
-                                 //alert("onMenuShareAppMessage success");
-                        },
-                        cancel: function () {
-                                 // 用户取消分享后执行的回调函数
+                          // 设置成功
+                          alert("updateAppMessageShareData success");
                         }
+                      })
                     });
+
+
 
                 });
 
