@@ -41,21 +41,21 @@ $(document).ready(function() {
                     timestamp: data.timestamp,
                     nonceStr: data.nonceStr,
                     signature: data.signature,
-                    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 功能列表，我们要使用JS-SDK的什么功能
+                    jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData'] // 功能列表，我们要使用JS-SDK的什么功能
                 });
 
                 wx.ready(function(){
-                    // 获取"分享到朋友圈"按钮点击状态及自定义分享内容接口
+                    // 自定义“分享到朋友圈”及“分享到QQ空间”按钮的分享内容（1.4.0）
                     //alert("wx.ready");
-                    wx.onMenuShareTimeline({
+                    wx.updateTimelineShareData({
                         title: shareTitle, // 分享标题
                         link: lineLink,
                         imgUrl: shareImgUrl // 分享图标
                     });
 
 
-                    // 获取"分享给朋友"按钮点击状态及自定义分享内容接口
-                    wx.onMenuShareAppMessage({
+                    // 自定义“分享给朋友”及“分享到QQ”按钮的分享内容（1.4.0）
+                    wx.updateAppMessageShareData({
                         title: shareTitle, // 分享标题
                         desc: shareContent, // 分享描述
                         link: lineLink,

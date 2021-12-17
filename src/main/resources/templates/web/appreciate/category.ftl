@@ -7,7 +7,7 @@
     <script  src="/web/js/jquery-3.1.1.js"></script>
     <script  src="/web/js/common.js"></script>
     <script  type="text/javascript" src="/layer/layer.js"></script>
-    <script  type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script  type="text/javascript" src="http://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
     <script  type="text/javascript" src="/web/js/wx-share.js?version=1.0"></script>
 </head>
 <body>
