@@ -8,6 +8,8 @@ import com.lucifer.exception.RepetitiveOperationException;
 import com.lucifer.model.vote.Appreciate;
 import com.lucifer.model.vote.Vote;
 import com.lucifer.utils.Constant;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
@@ -20,6 +22,7 @@ import javax.annotation.Resource;
 
 @Component
 public class VoteService {
+    final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Resource
     private VoteDao voteDao;
@@ -35,6 +38,7 @@ public class VoteService {
 //        if(true){
 //            throw new RepetitiveOperationException("投票已结束谢谢参与");
 //        }
+        logger.info("insert vote {}",vote);
         try{
             voteDao.insertVote(vote);
         } catch (Exception e){
