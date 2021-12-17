@@ -43,7 +43,7 @@ function configWX(data){
 
 
         wx.config({
-            debug: false,
+            debug: true,
             appId: appid,
             timestamp: data.timestamp,
             nonceStr: data.nonceStr,
