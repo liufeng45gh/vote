@@ -8,6 +8,9 @@ import com.lucifer.model.vote.WxInfo;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.HttpClientUtils;
 import com.lucifer.utils.StringHelper;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
@@ -90,19 +93,19 @@ public class WxService {
         //user.setProvince(jsonObject.getString("province"));
     }
 
-    private JSONObject getWeixinUserInfo(String accessToken,String openId) throws HttpException, IOException, JSONException {
-        HttpClient httpClient = new HttpClient();
-        GetMethod get = new GetMethod("https://api.weixin.qq.com/sns/userinfo?access_token="+accessToken+"&openid="+openId);
-        httpClient.executeMethod(get);
-        Header[] headers = get.getResponseHeaders();
-        int statusCode = get.getStatusCode();
-        logger.info("statusCode:"+statusCode);
-        for(Header h : headers){
-            logger.info(h.toString());
-        }
-        String result = new String(get.getResponseBodyAsString().getBytes("utf8"));
-        logger.info(result);
-        JSONObject resultJ=  new JSONObject(result);
+    private JSONObject getWeixinUserInfo(String accessToken,String openId) throws JSONException, IOException {
+        OkHttpClient okHttpClient = new OkHttpClient();
+        String url = "https://api.weixin.qq.com/sns/userinfo?access_token="+accessToken+"&openid="+openId;
+        Request request = new Request.Builder().url(url).get().build();
+
+        Response response = okHttpClient.newCall(request).execute();
+
+        Integer code = response.code();
+        logger.info("getWeixinUserInfo response code is {}", code);
+
+        String resultString =  response.body().string();
+        logger.info(resultString);
+        JSONObject resultJ=  new JSONObject(resultString);
         return resultJ;
     }
 
