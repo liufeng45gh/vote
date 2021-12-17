@@ -98,7 +98,7 @@ public class WxService {
         int statusCode = get.getStatusCode();
         logger.info("statusCode:"+statusCode);
         for(Header h : headers){
-            //log.info(h);
+            logger.info(h.toString());
         }
         String result = new String(get.getResponseBodyAsString().getBytes("utf8"));
         logger.info(result);
