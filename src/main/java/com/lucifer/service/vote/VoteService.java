@@ -42,6 +42,7 @@ public class VoteService {
         try{
             voteDao.insertVote(vote);
         } catch (Exception e){
+            logger.error("exception",e);
            throw new RepetitiveOperationException("重复投票");
         }
 
