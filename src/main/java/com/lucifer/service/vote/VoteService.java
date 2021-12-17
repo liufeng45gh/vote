@@ -38,11 +38,11 @@ public class VoteService {
 //        if(true){
 //            throw new RepetitiveOperationException("投票已结束谢谢参与");
 //        }
-        logger.info("insert vote {}",vote);
+        //logger.info("insert vote {}",vote);
         try{
             voteDao.insertVote(vote);
         } catch (Exception e){
-            logger.error("exception",e);
+           // logger.error("exception",e);
            throw new RepetitiveOperationException("重复投票");
         }
 
