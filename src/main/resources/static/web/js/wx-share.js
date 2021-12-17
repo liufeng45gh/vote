@@ -11,7 +11,7 @@ if(lineLink.indexOf("?") != -1)
 //var lineLink = webHref.substring(0,pos);
 var shareContent = "小伙伴们快来投票啦!";
 var shareTitle = "中国石油第二届新媒体内容创作大赛";
-var appid = "wx7933d55ea3872f4d";
+var appid = "wx1b792045969d2147";
   
 $(document).ready(function() {
     var data_send = {};
