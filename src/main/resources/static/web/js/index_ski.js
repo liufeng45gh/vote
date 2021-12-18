@@ -75,8 +75,12 @@ function toInitPage(){
 
 $(document).ready(function(){
     //checkLogin();
+    $(".rule-area").hide();
     $("#btn-rule-close").click(function(){
        $(".rule-area").hide();
+    });
+    $("#see-rule").click(function(){
+         $(".rule-area").show();
     });
 
 
@@ -97,12 +101,6 @@ function toPage(index){
 
 
 
-
-$(document).ready(function(){
-    $("#see-rule").click(function(){
-         $(".rule-area").show();
-    });
-});
 
 
 

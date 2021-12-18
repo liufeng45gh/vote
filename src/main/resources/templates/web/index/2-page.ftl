@@ -22,7 +22,10 @@
         </div>
         <div class="text-2" >
             1. 搜索关注“昆仑能源”微信公众号，12月xx日xx时至12月xx日xx时期间，点击本篇稿件下方的“阅读原文”或识别下面二维码均可进入投票页面参与投票。
-            【二维码】
+        </div>
+
+        <div class="text-qrcode" >
+            <img src="/web/images/p2/qrcode.png"/>
         </div>
 
         <div class="text-2" >

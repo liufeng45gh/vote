@@ -108,3 +108,11 @@
     text-align: left;
     padding: 0 1rem 0 1rem;
 }
+.text-qrcode{
+    text-align: center;
+}
+
+.text-qrcode img{
+  width: 5rem;
+  margin-top: 1rem;
+}
