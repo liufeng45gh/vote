@@ -33,7 +33,7 @@
     <select id="getAllVoteCount" resultType="java.lang.Integer">
         select count(*) from vote
     </select>
-    <select id="getTodayCategoryCount">
+    <select id="getTodayCategoryCount" resultType="java.lang.Integer">
         SELECT count(*)
         FROM vote v
         left join appreciate a
