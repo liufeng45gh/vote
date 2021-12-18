@@ -1,7 +1,6 @@
 body{
     margin: 0;
-    //width: 750px;
-    background-color: #62c8d7;
+    background-color: #a11b0e;
 }
 .wrap{
 
@@ -74,7 +73,7 @@ body{
     //background-image: url(/web/images/bg_repeat.jpg);
     //background-size:100% 100%;
     //background-repeat: repeat;
-    background-color: #62c8d7;
+    background-color: #a11b0e;
     padding-bottom: 200px;
     padding-top: 100px;
 }

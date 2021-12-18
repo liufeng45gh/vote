@@ -43,7 +43,7 @@ function configWX(data){
 
 
         wx.config({
-            debug: true,
+            debug: false,
             appId: appid,
             timestamp: data.timestamp,
             nonceStr: data.nonceStr,
@@ -53,7 +53,7 @@ function configWX(data){
 
         wx.ready(function(){
             // 自定义“分享到朋友圈”及“分享到QQ空间”按钮的分享内容（1.4.0）
-            alert("wx.ready");
+            //alert("wx.ready");
 
              wx.updateTimelineShareData({
                 title: shareTitle, // 分享标题
@@ -61,7 +61,7 @@ function configWX(data){
                 imgUrl: shareImgUrl, // 分享图标
                 success: function () {
                   // 设置成功
-                  alert("updateTimelineShareData success");
+                  //alert("updateTimelineShareData success");
                 }
               })
 
@@ -76,7 +76,7 @@ function configWX(data){
                 imgUrl: shareImgUrl, // 分享图标
                 success: function () {
                   // 设置成功
-                  alert("updateAppMessageShareData success");
+                  //alert("updateAppMessageShareData success");
                 }
               })
          });
