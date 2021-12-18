@@ -54,6 +54,15 @@ function configWX(data){
     });
 
     wx.ready(function(){
+
+        wx.checkJsApi({
+          jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+          success: function(res) {
+          // 以键值对的形式返回，可用的api值true，不可用为false
+          // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+          }
+        });
+
         // 获取"分享到朋友圈"按钮点击状态及自定义分享内容接口
         //alert("wx.ready");
         wx.onMenuShareTimeline({
