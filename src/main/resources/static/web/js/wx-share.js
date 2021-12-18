@@ -50,13 +50,13 @@ function configWX(data){
         timestamp: data.timestamp,
         nonceStr: data.nonceStr,
         signature: data.signature,
-        jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData'] // 功能列表，我们要使用JS-SDK的什么功能
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 功能列表，我们要使用JS-SDK的什么功能
     });
 
     wx.ready(function(){
         // 获取"分享到朋友圈"按钮点击状态及自定义分享内容接口
         //alert("wx.ready");
-        wx.updateTimelineShareData({
+        wx.onMenuShareTimeline({
             title: shareTitle, // 分享标题
             link: lineLink,
             imgUrl: shareImgUrl // 分享图标
@@ -64,7 +64,7 @@ function configWX(data){
 
 
         // 获取"分享给朋友"按钮点击状态及自定义分享内容接口
-        wx.updateAppMessageShareData({
+        wx.onMenuShareAppMessage({
             title: shareTitle, // 分享标题
             desc: shareContent, // 分享描述
             link: lineLink,
