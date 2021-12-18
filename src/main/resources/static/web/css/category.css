@@ -4,3 +4,10 @@ body{
     background-size: 100%;
     background-repeat:no-repeat;
 }
+
+.c-item {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
