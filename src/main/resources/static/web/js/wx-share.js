@@ -9,8 +9,8 @@ if(lineLink.indexOf("?") != -1)
 //location.href=webHref.substring(0,pos);
 //var lineLink = "http://vote.dbdbd.cn/appreciate/index";
 //var lineLink = webHref.substring(0,pos);
-var shareContent = "小伙伴们快来投票啦!";
-var shareTitle = "中国石油第二届新媒体内容创作大赛";
+var shareContent = "快来投上宝贵的一票!";
+var shareTitle = "天然气销售分公司首届文创评选展示活动";
 var appid = "wx41dbe3ee3f386699";
 
 $(document).ready(function() {
