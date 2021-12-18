@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>天然气销售分公司首届文创评选展示活动</title>
     <link rel="stylesheet" type="text/css" href="/web/css/vote.css?version=1.1"/>
+      <link rel="stylesheet" type="text/css" href="/web/css/category.css?version=1.1"/>
     <script  src="/web/js/jquery-3.1.1.js"></script>
     <script  src="/web/js/common.js"></script>
     <script  type="text/javascript" src="/layer/layer.js"></script>
@@ -35,10 +36,10 @@
 
 </div>
 
-<div class="w-max m-bg">
+<div class="w-max ">
 
     <#list appreciateCategoryList as category>
-    <div class="c-item  <#if category?is_even_item>c-right<#else>c-left</#if>">
+    <div class="c-item">
         <div class="c-img">
             <a href="/appreciate/by-category/${category.id!}"><img src="${category.image!}"/></a>
         </div>

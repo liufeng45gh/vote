@@ -1,4 +1,4 @@
-var shareImgUrl = "https://vote.stack.xin/share-icon.png";
+var shareImgUrl = "https://vote.stack.xin/share-icon.jpg";
 
 var lineLink = window.location.href;
 if(lineLink.indexOf("?") != -1)
