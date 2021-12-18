@@ -11,12 +11,10 @@ import com.lucifer.utils.StringHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by Administrator on 2017/6/23.
@@ -65,4 +63,6 @@ public class VoteController {
         voteService.resetAllVoteCount();
         return Result.ok();
     }
+
+
 }

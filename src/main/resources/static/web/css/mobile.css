@@ -1,0 +1,209 @@
+html, body {
+  position: relative;
+  height: 100%;
+}
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color:#000;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width:320px ) {
+    html{font-size: 12px;}
+}
+@media screen and (min-width:321px) and (max-width:346px ) {
+       html{font-size: 13px;}
+}
+@media screen and (min-width:347px) and (max-width:373px ) {
+  html{font-size: 14px;}
+}
+@media screen and (min-width:374px) and (max-width:400px ) {
+    html{font-size: 15px;}
+}
+@media screen and (min-width:401px) and (max-width:426px ) {
+    html{font-size: 16px;}
+}
+@media screen and (min-width:427px) and (max-width:453px ) {
+    html{font-size: 17px;}
+}
+@media screen and (min-width:454px) and (max-width:480px ) {
+   html{font-size: 18px;}
+}
+@media screen and (min-width:481px) and (max-width:506px ) {
+    html{font-size: 19px;}
+}
+ @media screen and (min-width:507px) and (max-width:533px ) {
+     html{font-size: 20px;}
+ }
+@media screen and (min-width:534px) and (max-width:560px ) {
+      html{font-size: 21px;}
+  }
+@media screen and (min-width:561px) and (max-width:586px ) {
+    html{font-size: 22px;}
+}
+@media screen and (min-width:587px) and (max-width:613px ) {
+    html{font-size: 23px;}
+}
+@media screen and (min-width:614px) and (max-width:640px ) {
+    html{font-size: 24px;}
+}
+@media screen and (min-width:641px) and (max-width:666px ) {
+    html{font-size: 25px;}
+}
+@media screen and (min-width:667px) and (max-width:693px ) {
+    html{font-size: 26px;}
+}
+@media screen and (min-width:694px) and (max-width:720px ) {
+    html{font-size: 27px;}
+}
+@media screen and (min-width:721px) and (max-width:746px ) {
+    html{font-size: 28px;}
+}
+@media screen and (min-width:747px) and (max-width:773px ) {
+    html{font-size: 29px;}
+}
+@media screen and (min-width:774px) and (max-width:800px ) {
+    html{font-size: 30px;}
+}
+@media screen and (min-width:801px) and (max-width:826px ) {
+    html{font-size: 31px;}
+}
+@media screen and (min-width:827px ) {
+    html{font-size: 32px;}
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+
+.arrow-down {
+    zoom: .8;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    margin-left: -23px;
+    width: 57px;
+    height: 57px;
+    border-radius: .5rem;
+    display: block;
+    background-image: url(/img/icon.png);
+    background-repeat: no-repeat;
+    z-index: 999;
+    -webkit-animation: opacity 1.2s linear infinite;
+}
+
+@keyframes opacity {
+	0% {
+		-webkit-transform: translate(0,0px)
+	}
+
+	25% {
+		-webkit-transform: translate(0,-3px)
+	}
+
+	50% {
+		-webkit-transform: translate(0,1px)
+	}
+
+	75% {
+		-webkit-transform: translate(0,-1px)
+	}
+
+	100% {
+		-webkit-transform: translate(0,0px)
+	}
+}
+
+@-webkit-keyframes opacity {
+	0% {
+		-webkit-transform: translate(0,0px)
+	}
+
+	25% {
+		-webkit-transform: translate(0,-3px)
+	}
+
+	50% {
+		-webkit-transform: translate(0,1px)
+	}
+
+	75% {
+		-webkit-transform: translate(0,-1px)
+	}
+
+	100% {
+		-webkit-transform: translate(0,0px)
+	}
+}
+
+.hart{
+
+    position: absolute;
+
+    left: 50%;
+    margin-left: -23px;
+    width: 57px;
+    height: 57px;
+    border-radius: .5rem;
+    display: block;
+
+    z-index: 999;
+}
+
+.layui-layer .layui-layer-setwin .layui-layer-close2 {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    margin-left: 0;
+    background-position: -149px -31px;
+}
+
+
+
+
+#music.play {
+  -webkit-animation:myfirst1 5s linear infinite;
+}
+
+@-webkit-keyframes myfirst1 {
+	0% {
+	transform:rotate(0deg);
+	//box-shadow:0px 0px 10px #fff;
+}
+50% {
+	transform:rotate(180deg);
+	//box-shadow:0px 0px 45px #fff;
+}
+100% {
+	transform:rotate(360deg);
+	//box-shadow:0px 0px 10px #fff;
+}
+
+
+
+
