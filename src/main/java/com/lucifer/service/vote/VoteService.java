@@ -9,6 +9,7 @@ import com.lucifer.exception.RepetitiveOperationException;
 import com.lucifer.model.vote.Appreciate;
 import com.lucifer.model.vote.Vote;
 import com.lucifer.utils.Constant;
+import com.lucifer.utils.DateUtils;
 import io.swagger.models.auth.In;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +43,8 @@ public class VoteService {
             throw new ArgumentException("作品 不存在");
         }
         vote.setCategoryId(appreciate.getCategoryId());
+        logger.info("vote.categoryId {}",vote.getCategoryId());
+        vote.setDate(DateUtils.now());
 
         Integer count = voteDao.getTodayCategoryCount(vote);
         logger.info("count is {}",count );
