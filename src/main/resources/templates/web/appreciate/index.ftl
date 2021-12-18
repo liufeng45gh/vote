@@ -8,7 +8,7 @@
     <script  src="/web/js/common.js"></script>
     <script  type="text/javascript" src="/layer/layer.js"></script>
     <script  type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
-    <script  type="text/javascript" src="/web/js/wx-share.js?version=1.2"></script>
+    <script  type="text/javascript" src="/web/js/wx-share.js?version=1.3"></script>
 </head>
 <body>
 
