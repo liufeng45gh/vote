@@ -12,29 +12,38 @@
 </head>
 <body>
 
-<div class="w-max top-bg">
+<div class=" top-bg">
+  <div class="t-bg">
+        <div class="category-title">${(currentCategory.name)!}</div>
+    </div>
+    <!--
     <div class="logo"><img src="http://osi1i0y6i.bkt.clouddn.com/logo.png"/></div>
+    -->
     <div class="right-total">
-        <span style="color: white;"> 总投票数: </span><span style="color: #FFFF00;margin-left: 5px;">${allVoteCount?default(0)}</span>
+        <span> 票数: </span><span style="margin-left: 5px;">${allVoteCount?default(0)}</span>
     </div>
+
     <div class="left-total">
-        <span style="color: white;"> 总作品数:</span><span style="color: #FFFF00;margin-left: 10px;">${allAppreciateCount?default(0)}</span>
+       <a href="/appreciate/category">
+       <img src="/web/images/btn-bk.png" />
+       </a>
     </div>
+
     <div style="clear: both;"></div>
+    <!--
     <div class="vote-tips">
 
         <span style="font-size: 28px;"> 温馨提示:</span><span style="font-size: 25px;">每类作品均需投票（可多选），每个作品每人每天只能投一票。</span>
-       <!--
+
         <span style="font-size: 28px;"> 温馨提示:</span><span style="font-size: 25px;">投票已经结束,谢谢您的参与</span>
-          -->
+
     </div>
+     -->
 
 </div>
 
 <#list appreciateCategoryList as category>
-    <div class="w-max t-bg">
-        <div class="category-title"><img src="${(category.icon)!}"/></div>
-    </div>
+
 
     <div class="w-max m-bg">
         <#list category.appreciateList as appreciate>
@@ -60,7 +69,7 @@
         
         <div style="clear: both;"></div>
     </div>
-    
+
 </#list>
 <div class="to_index">
     <a href="/appreciate/category"><img src="http://osi1i0y6i.bkt.clouddn.com/to_index.jpg"/></a>

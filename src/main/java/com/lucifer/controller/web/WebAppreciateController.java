@@ -101,6 +101,7 @@ public class WebAppreciateController {
         appreciateCategoryList.add(currentCategory);
 
         request.setAttribute("appreciateCategoryList",appreciateCategoryList);
+        request.setAttribute("currentCategory",currentCategory);
 
         for (AppreciateCategory category: appreciateCategoryList) {
             List<Appreciate> appreciateList = appreciateDao.appreciateList(null,category.getId(),0,1000);

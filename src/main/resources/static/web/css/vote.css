@@ -30,43 +30,28 @@ body{
 }
 
 .left-total{
-    width: 280px;
-    float: right;
-    border: 1px solid rgba(255,255,255,.8);
-    color: #373737;;
-    text-shadow: none;
-    box-shadow: none;
-    height: 58px;
-    margin-right: 60px;
-    background-color: red;
-    border-radius: 50px;
-    text-align: center;
-    line-height: 58px;
-     margin-top: 50px;
-     font-size: 30px;
-     font-weight: blod;
+  background: 0;
+  position: absolute;
+  top: 1.5rem;
+  left: 3rem;
 }
 .right-total{
-    width: 280px;
-    float: right;
-    border: 1px solid rgba(255,255,255,.8);
-    color: #373737;;
-    background: 0;
-    text-shadow: none;
-    box-shadow: none;
-    height: 58px;
-    margin-right: 80px;
-    background-color: red;
-    border-radius: 50px;
-    text-align: center;
-    line-height: 58px;
-    margin-top: 50px;
-    font-size: 30px;
-    font-weight: blod;
+   color: white;
+   background: 0;
+   text-shadow: none;
+   box-shadow: none;
+   height: 8rem;
+   line-height: 8rem;
+   font-size: 30px;
+   position: absolute;
+   top: 0px;
+   right: 3rem;
+   opacity: 0.9;
 }
 
 .t-bg{
-     background-color: #62c8d7;
+     background-color: #710F06;
+     opacity: 0.8;
 }
 
 .m-bg{
@@ -87,15 +72,14 @@ body{
 }
 
 .category-title{
-     width: 297px;
-     height: 93px;
-     margin: 0 auto;
+        height: 8rem;
+        line-height: 8rem;
+        margin: 0 auto;
+        font-size: 2.4rem;
+        text-align: center;
+        color: white;
 }
 
-.category-title img{
-     width: 297px;
-     height: auto;
-}
 
 .card-item{
      width: 48%;
