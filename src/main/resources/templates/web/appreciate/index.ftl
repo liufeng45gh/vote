@@ -48,21 +48,26 @@
     <div class="w-max m-bg">
         <#list category.appreciateList as appreciate>
             <div class="card-item <#if appreciate?is_even_item>card-right<#else>card-left</#if>" objectId="${appreciate.id!}">
-                <div class="card-img">
-                    <!--
-                    <a href="/appreciate/${appreciate.id!}/detail" target="_blank"><img src="${appreciate.logo!}"></a>
-                    -->
-                    <img src="${appreciate.logo!}">
+                <div class="card-border">
+                    <div class="card-title"><span class="c-rosewood">${appreciate.title!}</span></div>
+                    <div class="card-img">
+                        <!--
+                        <a href="/appreciate/${appreciate.id!}/detail" target="_blank"><img src="${appreciate.logo!}"></a>
+                        -->
+                        <img src="${appreciate.logo!}">
+                    </div>
+
+                    <div class="vote-count">
+                        <span class="c-rosewood">票数</span>
+                        <span class="c-rosewood">${appreciate.voteCount!}</span>
+
+                        <span class="c-red s-right">${appreciate.id!} 号</span>
+                    </div>
+
+
+
                 </div>
-
-                <div class="vote-count">
-                    <span class="c-red">${appreciate.voteCount!}</span>
-                    <span class="c-rosewood">票</span>
-                </div>
-
-                <div class="source"><span class="c-rosewood">标题--${appreciate.source!}</span></div>
-
-                <div class="vote-btn">投票</div>
+                <div class="vote-btn">&nbsp;</div>
                 
             </div>
         </#list>

@@ -14,7 +14,7 @@ body{
     background-image: url(http://osi1i0y6i.bkt.clouddn.com/bg_top.jpg);
     background-size:100% 100%;
     background-repeat:no-repeat;
-    height: 350px;
+    height: 50px;
 }
 
 .logo{
@@ -50,7 +50,7 @@ body{
 }
 
 .t-bg{
-     background-color: #710F06;
+     background-color: #831b10;
      opacity: 0.8;
 }
 
@@ -82,25 +82,40 @@ body{
 
 
 .card-item{
-     width: 48%;
+     width: 46%;
      margin-top: 20px;
+}
 
-     background-color: white;
+.card-border{
+  background-color: white;
+  border-color: #ffaf8f;
+  border:5px solid #ffaf8f;
+  border-radius:25px ;
+}
+
+.card-title{
+    width: 100%;
+    margin: 30px auto 10px auto;
+    text-align: center;
+    height: 3rem;
+    line-height: 2rem;
+    font-size: 38px;
+    font-weight: bold;
 }
 
 .card-img{
     width: 90%;
-    height: 300px;
+    height: 25rem;
     margin: 10px auto;
 }
 
 .card-left{
-    margin-left: 10px;
+    margin-left: 20px;
     float: left;
 }
 
 .card-right{
-    margin-right: 10px;
+    margin-right: 20px;
     float: right;
 }
 
@@ -110,19 +125,25 @@ body{
 }
 
 .vote-count{
-   width: 100%;
-   height: 53px;
-   line-height: 53px;
-   margin: 20px auto 20px auto;
-   text-align: center;
-   font-size: 48px;
+    width: 100%;
+    height: 53px;
+    line-height: 53px;
+    margin: 20px auto 20px 20px;
+    text-align: left;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.s-right{
+    float: right;
+    margin-right: 50px;
 }
 
 .c-red{
    color: red;
 }
+
 .c-rosewood{
-   color: #714d38;
    margin-left: 10px;
 }
 
@@ -138,28 +159,21 @@ body{
 .vote-btn{
     width: 70%;
      border: 1px solid rgba(255,255,255,.8);
-     color: white;
+     color: black;
      letter-spacing: 5px;
      background: 0;
      text-shadow: none;
-     box-shadow: none;
-     height: 78px;
-     background-color: red;
-     //background-color: #D3D3D3;
-     border-radius: 50px;
+     height: 7rem;
+     //background-color: #FFDE8F;
+     background-image: url(/web/images/btn-vote.png);
+     background-size:100%;
+     background-repeat:no-repeat;
+     border-radius: 10px;
      text-align: center;
-     line-height: 78px;
+     line-height: 7rem;
      margin: 40px auto 80px auto;
      font-size: 48px;
-     -webkit-box-shadow:
-         0 8px 0 #CC0000,
-         0 15px 20px rgba(0,0,0,.35);
-       -moz-box-shadow:
-         0 8px 0 #CC0000,
-         0 15px 20px rgba(0,0,0,.35);
-       box-shadow:
-         0 8px 0 #CC0000,
-         0 15px 20px rgba(0,0,0,.35);
+     font-weight: bold;
 }
 
 

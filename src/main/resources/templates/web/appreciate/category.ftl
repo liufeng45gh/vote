@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<div class="w-max top-bg">
+<div class=" top-bg">
     <!--
     <div class="logo"><img src="/web/images/logo.png"/></div>
     <div class="right-total">

@@ -46,6 +46,12 @@ public class WxService {
     @Value("${wx.appId}")
     private String appId;
 
+    @Value("${wx.loginSecret}")
+    private String loginSecret;
+
+    @Value("${wx.loginAppId}")
+    private String loginAppId;
+
     @Resource
     private WxUserDao wxUserDao;
 
@@ -63,8 +69,8 @@ public class WxService {
 
     public WxInfo getWxInfo(String code) throws IOException, WxAuthenticationException, JSONException {
         String url =  "https://api.weixin.qq.com/sns/oauth2/access_token?appid=#{appId}&secret=#{secret}&code=#{code}&grant_type=authorization_code";
-        url = url.replace("#{appId}",appId);
-        url = url.replace("#{secret}",secret);
+        url = url.replace("#{appId}",loginAppId);
+        url = url.replace("#{secret}",loginSecret);
         url = url.replace("#{code}",code);
         logger.info("url is : {}",url);
         String resultString = HttpClientUtils.get(url);
