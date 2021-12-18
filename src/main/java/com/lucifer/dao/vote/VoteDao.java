@@ -25,4 +25,8 @@ public class VoteDao  extends IBatisBaseDao {
     public Integer getAllVoteCount(){
         return  this.voteSqlSession.selectOne("getAllVoteCount");
     }
+
+    public Integer getTodayCategoryCount(Vote vote){
+        return this.voteSqlSession.selectOne("getTodayCategoryCount",vote);
+    }
 }

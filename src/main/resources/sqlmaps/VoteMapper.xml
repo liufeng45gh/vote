@@ -33,6 +33,13 @@
     <select id="getAllVoteCount" resultType="java.lang.Integer">
         select count(*) from vote
     </select>
+    <select id="getTodayCategoryCount">
+        SELECT count(*)
+        FROM vote v
+        left join appreciate a
+        on v.appreciate_id = a.id
+        where v.date=#{date,jdbcType=DATE} and v.wx_id = #{wxId} and a.category_id = #{categoryId} ;
+    </select>
 
 
 </mapper>

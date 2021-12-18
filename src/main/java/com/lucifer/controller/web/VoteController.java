@@ -53,6 +53,7 @@ public class VoteController {
             throw new ArgumentException("appreciateId 不能为空");
         }
         vote.setWxId(wxId);
+        voteService.checkVoteRepeat(vote);
         voteService.saveVote(vote);
 
         return Result.ok();

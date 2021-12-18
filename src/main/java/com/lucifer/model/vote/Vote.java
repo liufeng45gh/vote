@@ -13,6 +13,8 @@ public class Vote {
 
     private Long  appreciateId;
 
+    private Long categoryId;
+
     private Date date;
 
     private Date createdAt;
@@ -65,5 +67,13 @@ public class Vote {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 }

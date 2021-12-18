@@ -4,10 +4,12 @@ import com.lucifer.cache.AppCache;
 import com.lucifer.cache.CacheProvider;
 import com.lucifer.dao.vote.AppreciateDao;
 import com.lucifer.dao.vote.VoteDao;
+import com.lucifer.exception.ArgumentException;
 import com.lucifer.exception.RepetitiveOperationException;
 import com.lucifer.model.vote.Appreciate;
 import com.lucifer.model.vote.Vote;
 import com.lucifer.utils.Constant;
+import io.swagger.models.auth.In;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,23 @@ public class VoteService {
 
     @Resource
     private AppCache appCache;
+
+    public void checkVoteRepeat(Vote vote) throws RepetitiveOperationException ,ArgumentException{
+        Appreciate appreciate = appreciateDao.getAppreciate(vote.getAppreciateId());
+        if (null == appreciate) {
+            throw new ArgumentException("作品 不存在");
+        }
+        vote.setCategoryId(appreciate.getCategoryId());
+
+        Integer count = voteDao.getTodayCategoryCount(vote);
+        logger.info("count is {}",count );
+        if (count>4) {
+            throw new RepetitiveOperationException("每天没类作品最多投5票");
+        }
+
+
+
+    }
 
     public void saveVote(Vote vote) throws RepetitiveOperationException {
 //        if(true){
