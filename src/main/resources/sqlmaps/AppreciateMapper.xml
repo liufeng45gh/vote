@@ -38,7 +38,7 @@
         <if test="categoryId!=null and categoryId!=''">
             and appreciate.category_id = #{categoryId}
         </if>
-        order by appreciate.top desc,appreciate.publish_at desc limit #{offset},#{count}
+        order by appreciate.top asc,appreciate.publish_at desc limit #{offset},#{count}
     </select>
 
     <select id="cmsAppreciateMatchRecordCount" resultType="java.lang.Integer">
