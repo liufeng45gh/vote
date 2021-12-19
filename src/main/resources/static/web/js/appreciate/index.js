@@ -49,7 +49,7 @@ function openWxLogin(){
 
 function reloadVoteCount(){
     var lineLink = window.location.href;
-     if (lineLinkindexOf("/appreciate/by-category/")>0) {
+     if (lineLink.indexOf("/appreciate/by-category/")>0) {
         $("#all-vote-count").text($("#all-vote-count").text() + 1);
      }else{
            if(lineLink.indexOf("?") != -1)
