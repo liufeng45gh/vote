@@ -51,10 +51,11 @@
                 <div class="card-border">
                     <div class="card-title"><span class="c-rosewood">${appreciate.title!}</span></div>
                     <div class="card-img">
+
+                        <a href="/appreciate/${appreciate.id!}/detail" ><img src="${appreciate.logo!}"></a>
                         <!--
-                        <a href="/appreciate/${appreciate.id!}/detail" target="_blank"><img src="${appreciate.logo!}"></a>
-                        -->
                         <img src="${appreciate.logo!}">
+                         -->
                     </div>
 
                     <div class="vote-count">

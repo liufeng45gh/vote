@@ -205,6 +205,12 @@ body{
     border: 0;
     font-size: 28px;
     line-height: 54px;
+
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    text-align: left;
+    padding: 0 1rem 0 1rem;
 }
 
 .vote-content img{
@@ -223,7 +229,7 @@ body{
 
 .vote-content p{
     word-wrap: break-word;
-    color: #333;
+    color: white;
     margin-top: 24px;
     font-size: 28px;
     line-height: 94px;
