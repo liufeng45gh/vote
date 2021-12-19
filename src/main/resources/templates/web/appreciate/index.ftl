@@ -76,9 +76,11 @@
     </div>
 
 </#list>
+<!--
 <div class="to_index">
     <a href="/appreciate/category"><img src="http://osi1i0y6i.bkt.clouddn.com/to_index.jpg"/></a>
 </div>
+-->
 
 <script  src="/web/js/appreciate/index.js?version=1.1"></script>
 </body>
