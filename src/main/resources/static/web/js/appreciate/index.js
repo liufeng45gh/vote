@@ -5,7 +5,7 @@ $(document).ready(function(){
 //        layer.msg('投票已结束!', {icon: 5});
 //        return;
         var appreciateId = $(this).parent().attr("objectId");
-        currentVoteCountElement = $(this).parent().find(".vote-count");
+        currentVoteCountElement = $(this).parent().find(".show-count");
         var url = "/vote/submit";
         var data_send = {};
         data_send.appreciateId = appreciateId;
