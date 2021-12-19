@@ -18,6 +18,7 @@
 
     <script src="/web/js/common.js"></script>
     <script src="/web/js/jquery.touchClick.js"></script>
+    <script src="/web/js/myslideup.js?v=1.2"></script>
     <style>
 
         body .layer-test{background: none; box-shadow: none;}
@@ -44,8 +45,8 @@
 
 
 <!-- Initialize Swiper -->
-<script src="/web/js/myslideup.js?v=1.2"></script>
-<script src="/web/js/index_ski.js?v=1.3"></script>
+
+<script src="/web/js/index_ski.js?v=1.4"></script>
 <script  type="text/javascript" src="/web/js/wx-share.js?version=1.1"></script>
 </body>
 </html>

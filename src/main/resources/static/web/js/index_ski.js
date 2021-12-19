@@ -54,9 +54,9 @@ function createSwiper(){
 //页面 load 完成 显示 100% 并显示下一页
 $(window).on("load",function(){
     if (processCurrent < 80 ){
-        setTimeout(doLoadFinish,1000);
+        setTimeout(doLoadFinish,2000);
     }else {
-        setTimeout(doLoadFinish,1000);
+        setTimeout(doLoadFinish,2000);
         //doLoadFinish();
     }
 });
