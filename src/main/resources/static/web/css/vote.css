@@ -178,19 +178,16 @@ body{
 
 
 .vote-title{
-     font-size: 34px;
      font-weight: bold;
-     line-height: 74px;
-     color: #222;
      font-family: PingFangSC-Medium;
-     margin: 0;
-     padding: 0;
      border: 0;
-     margin-top: 12px;
      position: relative;
      overflow: hidden;
-     background-color: #fff;
      text-align: center;
+      color: white;
+     font-size: 2.9rem;
+     margin-top: 13rem;
+     padding: 0 3rem 0 3rem;
 }
 
 .vote-content{
@@ -198,19 +195,15 @@ body{
     position: relative;
     overflow: hidden;
     clear: both;
-    padding-bottom: 24px;
 
-    margin: 0;
-    padding: 0;
     border: 0;
-    font-size: 28px;
     line-height: 54px;
 
     color: white;
-    font-size: 0.9rem;
+    font-size: 1.9rem;
     margin-top: 2rem;
     text-align: left;
-    padding: 0 1rem 0 1rem;
+    padding: 0 2rem 0 2rem;
 }
 
 .vote-content img{
@@ -231,9 +224,15 @@ body{
     word-wrap: break-word;
     color: white;
     margin-top: 24px;
-    font-size: 28px;
-    line-height: 94px;
+    text-indent: 2rem;
 }
+.vote-bottom{
+ width: 100%;
+}
+.detail-vote-btn{
+    width: 30%;
+}
+
 
 .bottom-line {
     border-bottom: .5px solid #e8e8e8;

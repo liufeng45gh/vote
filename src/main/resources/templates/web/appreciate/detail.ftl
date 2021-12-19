@@ -15,7 +15,7 @@
 
 <div class=" top-bg">
     <div class="t-bg">
-        <div class="category-title">${entity.title?default("")}</div>
+        <div class="category-title">${currentCategory.name?default("")}</div>
     </div>
     <!--
     <div class="logo"><img src="http://osi1i0y6i.bkt.clouddn.com/logo.png"/></div>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="left-total">
-        <a href="/appreciate/category">
+        <a href="/appreciate/by-category/${currentCategory.id?default("1")}">
             <img src="/web/images/btn-bk.png" />
         </a>
     </div>
@@ -36,11 +36,11 @@
 </div>
 
 
-
+<div class="vote-title">${entity.title?default("")}</div>
 
 <div class="vote-content">${entity.content?default("")}</div>
 
-
-
+<div class="vote-bottom" objectId="${entity.id!}"> <div class="vote-btn  detail-vote-btn">&nbsp;</div></div>
+<script  src="/web/js/appreciate/index.js?version=1.1"></script>
 </body>
 </html>

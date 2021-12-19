@@ -124,7 +124,10 @@ public class WebAppreciateController {
     @RequestMapping(value="/{id}/detail",method = RequestMethod.GET)
     public String detail(HttpServletRequest request,@PathVariable Long id){
         Appreciate appreciate = appreciateDao.getAppreciate(id);
+        AppreciateCategory currentCategory = appreciateDao.getAppreciateCategory(appreciate.getCategoryId());
+
         request.setAttribute("entity",appreciate);
+        request.setAttribute("currentCategory",currentCategory);
         return "/web/appreciate/detail";
     }
 
