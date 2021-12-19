@@ -60,7 +60,7 @@
 
                     <div class="vote-count">
                         <span class="c-rosewood">票数</span>
-                        <span class="c-rosewood">${appreciate.voteCount!}</span>
+                        <span class="c-rosewood vote-count">${appreciate.voteCount!}</span>
 
                         <span class="c-red s-right">${appreciate.id!} 号</span>
                     </div>
