@@ -45,7 +45,7 @@
 
 <!-- Initialize Swiper -->
 <script src="/web/js/myslideup.js?v=1.2"></script>
-<script src="/web/js/index_ski.js?v=1.2"></script>
+<script src="/web/js/index_ski.js?v=1.3"></script>
 <script  type="text/javascript" src="/web/js/wx-share.js?version=1.1"></script>
 </body>
 </html>

@@ -15,15 +15,15 @@ function increaseProcess(){
 }
 function resetIncreaseQuantity(){
     if (processCurrent < 20) {
-        increaseQuantity = 4;
+        increaseQuantity = 20;
     }else if (processCurrent < 40) {
-        increaseQuantity = 3;
+        increaseQuantity = 20;
         createSwiper();
     }else if (processCurrent < 60) {
-         increaseQuantity = 2;
+         increaseQuantity = 10;
 
     }else if (processCurrent < 80) {
-          increaseQuantity = 1;
+          increaseQuantity = 10;
     }
 }
 
@@ -54,9 +54,9 @@ function createSwiper(){
 //页面 load 完成 显示 100% 并显示下一页
 $(window).on("load",function(){
     if (processCurrent < 80 ){
-        setTimeout(doLoadFinish,10000);
+        setTimeout(doLoadFinish,1000);
     }else {
-        setTimeout(doLoadFinish,3000);
+        setTimeout(doLoadFinish,1000);
         //doLoadFinish();
     }
 });
