@@ -1,8 +1,11 @@
+
+var currentVoteCountElement;
 $(document).ready(function(){
     $(".vote-btn").click(function () {
 //        layer.msg('投票已结束!', {icon: 5});
 //        return;
         var appreciateId = $(this).parent().attr("objectId");
+        currentVoteCountElement = $(this).parent().find(".c-rosewood");
         var url = "/vote/submit";
         var data_send = {};
         data_send.appreciateId = appreciateId;
@@ -50,7 +53,9 @@ function openWxLogin(){
 function reloadVoteCount(){
     var lineLink = window.location.href;
      if (lineLink.indexOf("/appreciate/by-category/")>0) {
-        $("#all-vote-count").text($("#all-vote-count").text() + 1);
+
+        $("#all-vote-count").text(parseInt($("#all-vote-count").text()) + 1);
+        currentVoteCountElement.text(parseInt(currentVoteCountElement.text()) + 1)
      }else{
            if(lineLink.indexOf("?") != -1)
            {
