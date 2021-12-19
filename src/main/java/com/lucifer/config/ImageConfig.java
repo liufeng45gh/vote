@@ -20,7 +20,7 @@ public class ImageConfig {
         //page 2
         resource.put("/web/images/p2/bj-2.jpg","/web/images/p2/bj-2.jpg");
         resource.put("/web/images/p2/see-rule.png","/web/images/p2/see-rule.png");
-        resource.put("/web/img/page2/baby.gif","http://q32mbjyvu.bkt.clouddn.com/baby.gif");
+        resource.put("/web/images/p2/box.gif","/web/images/p2/box.gif");
         resource.put("/web/img/page2/wish-input.png","http://q32mbjyvu.bkt.clouddn.com/wish-input.png");
         resource.put("/web/img/page2/p2-submit.png","http://q32mbjyvu.bkt.clouddn.com/p2-submit.png");
 

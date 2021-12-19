@@ -6,7 +6,7 @@
 <img class="b2-5" src="${resource['/web/images/p2/bj-2.jpg']!''}"/>
 
 
-<img class="p2-title" id="btn-start-vote" src="${resource['/web/images/p1/box.png']!''}"/>
+<img class="p2-title" id="btn-start-vote" src="${resource['/web/images/p2/box.gif']!''}"/>
 
 
 <img class="see-rule" id="see-rule" src="${resource['/web/images/p2/see-rule.png']!''}"/>
