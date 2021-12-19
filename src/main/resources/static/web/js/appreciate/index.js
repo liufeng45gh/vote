@@ -6,7 +6,7 @@ $(document).ready(function(){
         var url = "/vote/submit";
         var data_send = {};
         data_send.appreciateId = appreciateId;
-
+        data_send.random = Math.random();
         var count_request =$.ajax({
          type: 'post',
          url: url,

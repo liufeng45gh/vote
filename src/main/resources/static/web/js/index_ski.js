@@ -4,7 +4,7 @@ var swiper = null;
 
 var intervalId = null;
 var processCurrent = 0;
-var increaseQuantity = 5;
+var increaseQuantity = 10;
 function increaseProcess(){
     processCurrent = processCurrent + increaseQuantity;
     if (processCurrent>91) {
