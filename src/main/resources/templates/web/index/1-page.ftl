@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/web/css/1-page.css"/>
+<link rel="stylesheet" href="/web/css/1-page.css?ver=1.0"/>
 
 <div class="page-bg-1">
     <div class="bottom-bg-1"></div>
@@ -6,7 +6,7 @@
 
     <img class="title-1" src="${resource['/web/images/p1/box.png']!''}"/>
 
-    <div class="process-text">70%</div>
+    <div class="process-text">10%</div>
 
     <img class="process-bg" src="${resource['/web/images/p1/process-bg.png']!''}"/>
 
