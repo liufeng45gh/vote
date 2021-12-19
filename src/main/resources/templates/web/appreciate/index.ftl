@@ -20,7 +20,7 @@
     <div class="logo"><img src="http://osi1i0y6i.bkt.clouddn.com/logo.png"/></div>
     -->
     <div class="right-total">
-        <span> 票数: </span><span style="margin-left: 5px;">${allVoteCount?default(0)}</span>
+        <span> 票数: </span><span style="margin-left: 5px;" id="all-vote-count">${allVoteCount?default(0)}</span>
     </div>
 
     <div class="left-total">

@@ -28,13 +28,7 @@ $(document).ready(function(){
 
             layer.msg('投票成功!', {icon: 1});
            setTimeout(function(){
-              var lineLink = window.location.href;
-               if(lineLink.indexOf("?") != -1)
-               {
-                   lineLink = lineLink.split("?")[0];
-                   console.log(lineLink);
-               }
-             window.location.href = lineLink+"?random=" + Math.random();
+              reloadVoteCount();
            },5);
         });
     });
@@ -51,4 +45,19 @@ function openWxLogin(){
   }
     setSessionCookie("login_redirect_url",lineLink);
     window.location.href = "/wx/login?random="+Math.random();
+}
+
+function reloadVoteCount(){
+    var lineLink = window.location.href;
+     if (lineLinkindexOf("/appreciate/by-category/")>0) {
+        $("#all-vote-count").text($("#all-vote-count").text() + 1);
+     }else{
+           if(lineLink.indexOf("?") != -1)
+           {
+               lineLink = lineLink.split("?")[0];
+               console.log(lineLink);
+           }
+         window.location.href = lineLink+"?random=" + Math.random();
+     }
+
 }
