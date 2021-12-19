@@ -6,6 +6,8 @@ import com.lucifer.model.vote.WxInfo;
 import com.lucifer.service.vote.WxService;
 import com.lucifer.utils.StringHelper;
 import org.json.JSONException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,22 +30,28 @@ public class WxLoginController {
     @Resource
     private WxService wxService;
 
+    final Logger logger = LoggerFactory.getLogger(this.getClass());
+
 
 
     @RequestMapping(value="/login-by-code",method = RequestMethod.GET)
     public String loginByCode(@RequestParam  String code, HttpServletResponse response, HttpServletRequest request) throws JSONException, WxAuthenticationException, IOException {
+        logger.info("loginByCode has been called ");
         wxService.loginByCode(code,response);
+        logger.info("wxService.loginByCode has pass");
         Cookie[] cookies = request.getCookies();
         String loginRedirectUrl = null;
         if(null != cookies) {
             for (Cookie cookie: cookies) {
+                logger.info("cookie.getName() {}",cookie.getName());
+                logger.info("cookie.getValue() {}",cookie.getValue());
                 if (cookie.getName().equals("login_redirect_url")) {
                     loginRedirectUrl = cookie.getValue();
                     break;
                 }
             }
         }
-
+        logger.info("loginRedirectUrl {}",loginRedirectUrl);
         if (!StringHelper.isEmpty(loginRedirectUrl)) {
             return "redirect:"+loginRedirectUrl;
         }
