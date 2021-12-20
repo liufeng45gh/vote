@@ -46,7 +46,7 @@
 
 <!-- Initialize Swiper -->
 
-<script src="/web/js/index_ski.js?v=1.5"></script>
+<script src="/web/js/index_ski.js?v=1.6"></script>
 <script  type="text/javascript" src="/web/js/wx-share.js?version=1.1"></script>
 </body>
 </html>
