@@ -100,7 +100,7 @@ function toPage(index){
 }
 
 function openEmployeeOpt(){
-    var url = "https://www.cnpc.com.cn/cnpc/gyqywh/qywh_index.shtml";
+    var url = "https://vote.statk.xin/web/image/qywh20211028.pdf";
     layer.open({
       type: 2,
       shade: 0.9,
