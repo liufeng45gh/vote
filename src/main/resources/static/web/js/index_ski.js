@@ -85,8 +85,8 @@ $(document).ready(function(){
 
 
     $("#btn-start-vote").click(function () {
-        //window.location.href = "/appreciate/category";
-        window.location.href = "https://www.cnpc.com.cn/cnpc/gyqywh/qywh_index.shtml";
+        window.location.href = "/appreciate/category";
+        //window.location.href = "https://www.cnpc.com.cn/cnpc/gyqywh/qywh_index.shtml";
 
         //openEmployeeOpt();
     });
