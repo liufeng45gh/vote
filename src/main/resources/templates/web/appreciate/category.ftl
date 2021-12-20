@@ -46,6 +46,12 @@
     </div>
     </#list>
 
+    <div class="c-culture">
+        <a href="https://www.cnpc.com.cn/cnpc/gyqywh/qywh_index.shtml">
+        <img class="see-culture" id="see-culture" src="/web/images/culture.png"/>
+        </a>
+    </div>
+
     <div style="clear: both;"></div>
 </div>
 </body>
