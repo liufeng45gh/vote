@@ -100,7 +100,7 @@ function toPage(index){
 }
 
 function openEmployeeOpt(){
-    var url = "http://www.cnpc.com.cn/cnpc/gyqywh/qywh_index.shtml";
+    var url = "https://www.cnpc.com.cn/cnpc/gyqywh/qywh_index.shtml";
     layer.open({
       type: 2,
       shade: 0.9,
