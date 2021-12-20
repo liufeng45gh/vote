@@ -85,7 +85,8 @@ $(document).ready(function(){
 
 
     $("#btn-start-vote").click(function () {
-        window.location.href = "/appreciate/category";
+        //window.location.href = "/appreciate/category";
+        openEmployeeOpt();
     });
 
     $("#my-text").click(function () {
@@ -96,6 +97,23 @@ $(document).ready(function(){
 function toPage(index){
     $(".swiper-slide").css("display","none");
     $("#swiper-slide-" + index).css("display","block");
+}
+
+function openEmployeeOpt(){
+    var url = "http://www.cnpc.com.cn/cnpc/xhtml/gywm/qywh20211028.pdf";
+    layer.open({
+      type: 2,
+      shade: 0.9,
+      skin: 'layer-test' ,
+      title: false, //不显示标题
+      area: ['100%', '100%'], //宽高
+      //offset: ['50%', '50%'],
+      closeBtn: 1,
+      content: [url, 'yes'],//捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+      cancel: function(){
+        //layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', {time: 5000, icon:6});
+      }
+    });
 }
 
 
