@@ -43,6 +43,7 @@ public class CmsAppreciateController {
         List<Appreciate> appreciateList = appreciateDao.appreciateList(title,categoryId,offset,pageSize);
         request.setAttribute("appreciateList",appreciateList);
 
+
         Integer matchRecordCount=appreciateDao.matchRecordCount(title,categoryId);
 
         Integer totalPageCount= PageUtil.getTotalPageCount(matchRecordCount, pageSize);
