@@ -9,20 +9,25 @@ public class ImageConfig {
     static {
         //page 1
 
-        resource.put("/web/images/p1/bg-1.jpg","/web/images/p1/bg-1.jpg");
+//        resource.put("/web/images/p1/bg-1.jpg","/web/images/p1/bg-1.jpg");
+//        resource.put("/web/images/p1/box.png","/web/images/p1/box.png");
+//        resource.put("/web/images/p1/process-bg.png","/web/images/p1/process-bg.png");
+//        resource.put("/web/images/p1/process-front.png","/web/images/p1/process-front.png");
 
-
-        resource.put("/web/images/p1/box.png","/web/images/p1/box.png");
-
-        resource.put("/web/images/p1/process-bg.png","/web/images/p1/process-bg.png");
-        resource.put("/web/images/p1/process-front.png","/web/images/p1/process-front.png");
+        resource.put("/web/images/p1/bg-1.jpg","http://qn-vote-p.klny.xyz/bg-1.jpg");
+        resource.put("/web/images/p1/box.png","http://qn-vote-p.klny.xyz/box.png");
+        resource.put("/web/images/p1/process-bg.png","http://qn-vote-p.klny.xyz/process-bg.png");
+        resource.put("/web/images/p1/process-front.png","http://qn-vote-p.klny.xyz/process-front.png");
 
         //page 2
-        resource.put("/web/images/p2/bj-2.jpg","/web/images/p2/bj-2.jpg");
-        resource.put("/web/images/p2/see-rule.png","/web/images/p2/see-rule.png");
-        resource.put("/web/images/p2/box.gif","/web/images/p2/box.gif");
+        resource.put("/web/images/p2/bj-2.jpg","http://qn-vote-p.klny.xyz/bj-2.jpg");
+        resource.put("/web/images/p2/see-rule.png","http://qn-vote-p.klny.xyz/see-rule.png");
+        resource.put("/web/images/p2/box.gif","http://qn-vote-p.klny.xyz/box.gif");
         resource.put("/web/img/page2/wish-input.png","http://q32mbjyvu.bkt.clouddn.com/wish-input.png");
         resource.put("/web/img/page2/p2-submit.png","http://q32mbjyvu.bkt.clouddn.com/p2-submit.png");
+
+
+
 
         //page 3
         resource.put("/web/img/page3/bg.png","http://q32mdgay4.bkt.clouddn.com/bg.png");
