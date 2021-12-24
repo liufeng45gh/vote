@@ -89,13 +89,14 @@ public class AppreciateDao  extends IBatisBaseDao {
     }
 
     public Appreciate getAppreciate(Long id){
-        String key = Constant.CACHE_KEY_GET_APPRECIATE + id;
-        return appCache.find(key, new CacheProvider() {
-            @Override
-            public Object getData() {
-                return voteSqlSession.selectOne("getAppreciate",id);
-            }
-        });
+        return voteSqlSession.selectOne("getAppreciate",id);
+//        String key = Constant.CACHE_KEY_GET_APPRECIATE + id;
+//        return appCache.find(key, new CacheProvider() {
+//            @Override
+//            public Object getData() {
+//                return voteSqlSession.selectOne("getAppreciate",id);
+//            }
+//        });
 
     }
 

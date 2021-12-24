@@ -18,8 +18,7 @@ public class AppCache {
     private RedisTemplate<String,Object> redisTemplate;
 
     public  <T> T find(String key, CacheProvider provider){
-        Object object = null;
-                //redisTemplate.opsForValue().get(key);
+        Object object = redisTemplate.opsForValue().get(key);
         if (null != object) {
             return (T) object;
         }
