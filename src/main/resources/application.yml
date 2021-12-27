@@ -67,6 +67,8 @@ wx:
   secret: 0c367176de4c7db5a26bd542b6b4b2ea
   loginAppId: wx1b792045969d2147
   loginSecret: 34a9d9d86dc36f30320c89763780b23e
+vote:
+  deadline: '2021-12-31 00:00:00'
 
 
 

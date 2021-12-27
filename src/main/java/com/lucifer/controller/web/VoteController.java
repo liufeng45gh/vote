@@ -1,5 +1,6 @@
 package com.lucifer.controller.web;
 
+import com.lucifer.config.ServerConfig;
 import com.lucifer.exception.ArgumentException;
 import com.lucifer.exception.NotLoginException;
 import com.lucifer.exception.RepetitiveOperationException;
@@ -31,6 +32,9 @@ public class VoteController {
     @Resource
     private VoteService voteService;
 
+    @Resource
+    private ServerConfig serverConfig;
+
     final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     
@@ -50,6 +54,11 @@ public class VoteController {
         if (vote.getAppreciateId() == null) {
             throw new ArgumentException("appreciateId 不能为空");
         }
+
+        if(serverConfig.isAfterDeadline()){
+            throw new ArgumentException("投票已结束");
+        }
+
         vote.setWxId(wxId);
         voteService.checkVoteRepeat(vote);
         voteService.saveVote(vote);

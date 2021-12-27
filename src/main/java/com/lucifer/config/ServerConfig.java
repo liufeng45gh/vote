@@ -1,7 +1,10 @@
 package com.lucifer.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
+
+import java.util.Date;
 
 /**
  * Created by liufx on 17/3/16.
@@ -14,4 +17,12 @@ public class ServerConfig {
 
     @Value("${server.port}")
     public String port;
+
+    @Value("${vote.deadline}")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date deadline;
+
+    public boolean isAfterDeadline(){
+        return new Date().after(deadline);
+    }
 }
