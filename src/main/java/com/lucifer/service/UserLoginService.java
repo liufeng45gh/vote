@@ -4,8 +4,9 @@ package com.lucifer.service;
 import com.lucifer.dao.UserDao;
 import com.lucifer.exception.Oauth2CodeInvalidException;
 import com.lucifer.exception.Oauth2LoginException;
-import com.lucifer.model.AccessToken;
-import com.lucifer.model.User;
+import com.lucifer.mapper.oauth2.UserMapper;
+import com.lucifer.model.user.AccessToken;
+import com.lucifer.model.user.User;
 import com.lucifer.utils.HttpsUtil;
 import com.lucifer.utils.Md5Utils;
 import com.lucifer.utils.Result;
@@ -14,6 +15,7 @@ import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.lang.RandomStringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -38,6 +40,10 @@ public class UserLoginService {
 	
 	@Resource
 	private UserDao userDao;
+
+
+	@Resource
+	private UserMapper userMapper;
 
 
 	final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -114,6 +120,18 @@ public class UserLoginService {
 //
 //		}
 //		return Result.fail("密码错误");
+	}
+
+	public AccessToken newUserLoginToken(Long userId){
+		AccessToken accessToken = new AccessToken();
+		String token = RandomStringUtils.randomAlphanumeric(20);
+		String code = RandomStringUtils.randomAlphanumeric(20);
+		accessToken.setToken(token);
+		accessToken.setUserId(userId);
+		accessToken.setCode(code);
+
+		this.userMapper.insertUserLoginToken(accessToken);
+		return accessToken;
 	}
 
 

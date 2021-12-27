@@ -3,7 +3,7 @@ package com.lucifer.service;
 import com.lucifer.dao.UserDao;
 import com.lucifer.exception.ParamException;
 import com.lucifer.model.SearchParam;
-import com.lucifer.model.User;
+import com.lucifer.model.user.User;
 import com.lucifer.utils.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

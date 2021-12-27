@@ -1,6 +1,6 @@
 package com.lucifer.interceptor;
 
-import com.lucifer.model.User;
+import com.lucifer.model.user.User;
 import com.lucifer.model.vote.Member;
 import com.lucifer.service.vote.MemberService;
 import com.lucifer.utils.Constant;

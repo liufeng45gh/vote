@@ -2,8 +2,8 @@ package com.lucifer.controller;
 
 
 import com.lucifer.exception.Oauth2CodeInvalidException;
-import com.lucifer.model.AccessToken;
-import com.lucifer.model.User;
+import com.lucifer.model.user.AccessToken;
+import com.lucifer.model.user.User;
 import com.lucifer.service.UserLoginService;
 import com.lucifer.service.UserService;
 import io.swagger.annotations.ApiOperation;

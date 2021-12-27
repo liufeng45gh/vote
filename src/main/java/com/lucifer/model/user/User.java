@@ -1,4 +1,4 @@
-package com.lucifer.model;
+package com.lucifer.model.user;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.DateSerializer;

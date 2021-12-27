@@ -1,7 +1,7 @@
 package com.lucifer.dao;
 
-import com.lucifer.model.AccessToken;
-import com.lucifer.model.User;
+import com.lucifer.model.user.AccessToken;
+import com.lucifer.model.user.User;
 import org.apache.commons.lang.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

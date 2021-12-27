@@ -1,7 +1,7 @@
 package com.lucifer.controller;
 
 
-import com.lucifer.model.User;
+import com.lucifer.model.user.User;
 import com.lucifer.service.UserLoginService;
 import com.lucifer.utils.Result;
 import io.swagger.annotations.Api;

@@ -3,7 +3,7 @@ package com.lucifer.service.vote;
 
 import com.lucifer.dao.vote.MemberDao;
 import com.lucifer.exception.Oauth2CodeInvalidException;
-import com.lucifer.model.AccessToken;
+import com.lucifer.model.user.AccessToken;
 import com.lucifer.model.vote.Member;
 import com.lucifer.service.UserService;
 import com.lucifer.utils.*;

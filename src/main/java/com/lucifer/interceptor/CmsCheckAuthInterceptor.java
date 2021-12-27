@@ -1,19 +1,27 @@
 package com.lucifer.interceptor;
 
-import com.lucifer.model.User;
+import com.lucifer.mapper.oauth2.UserMapper;
+import com.lucifer.model.user.AccessToken;
+import com.lucifer.model.user.User;
 import com.lucifer.utils.Constant;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+
+import com.lucifer.utils.RequestUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Component
 public class CmsCheckAuthInterceptor extends HandlerInterceptorAdapter{
-	
-	private static  Log log = LogFactory.getLog(CmsCheckAuthInterceptor.class);
+
+	private  Logger log = LoggerFactory.getLogger(this.getClass());
+
+	@Resource
+	private UserMapper userMapper;
 
 	@Override
 	/**
@@ -45,8 +53,17 @@ public class CmsCheckAuthInterceptor extends HandlerInterceptorAdapter{
 		if(request.getRequestURI().startsWith("/cms/fonts")){
 			return true;
 		}
-		User user = (User)request.getSession().getAttribute(Constant.KEY_CMS_USER);
-		if(null==user){
+		String token = RequestUtils.getCookie(Constant.ADMIN_ACCESS_TOKEN,request);
+		log.info("token is: {}",token );
+		if(null==token){
+			//throw new Exception("not login!");
+			response.sendRedirect("/cms/login");
+			return false;
+		}
+
+		AccessToken accessToken = userMapper.getAccessTokenByToken(token);
+		//User user = (User)request.getSession().getAttribute(Constant.KEY_CMS_USER);
+		if(null==accessToken){
 			//throw new Exception("not login!");
 			response.sendRedirect("/cms/login");
 			return false;

@@ -6,7 +6,7 @@
        <div class="pull-right" id="topnav">
              <div class="dropdown" id="userMenu" >
                 <a href="javascript:;" data-toggle="dropdown">
-                <i class="icon-user"></i> <span>${Session["KEY_CMS_USER"].nickName?default("")}， 超级管理员</span> <span class="caret"></span>
+                <i class="icon-user"></i> <span> 超级管理员</span> <span class="caret"></span>
                 </a>
              </div>
              <div class="dropdown"  >

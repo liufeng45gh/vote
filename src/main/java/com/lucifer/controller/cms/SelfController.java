@@ -2,13 +2,16 @@ package com.lucifer.controller.cms;
 
 import com.lucifer.dao.UserDao;
 import com.lucifer.interceptor.CmsCheckAuthInterceptor;
-import com.lucifer.model.User;
+import com.lucifer.mapper.oauth2.UserMapper;
+import com.lucifer.model.user.AccessToken;
+import com.lucifer.model.user.User;
 import com.lucifer.service.AccountService;
 import com.lucifer.service.UserService;
 import com.lucifer.utils.Constant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -30,8 +33,12 @@ public class SelfController {
 
 	@Resource
 	private AccountService accountService;
-	
-	
+
+	@Resource
+	private UserMapper userMapper;
+
+
+
 	@RequestMapping(value="/cms/self/welcome",method = RequestMethod.GET)
 	public String welcome(HttpServletRequest request){
 		Properties props=System.getProperties(); //获得系统属性集
@@ -48,23 +55,27 @@ public class SelfController {
 	
 	
 	@RequestMapping(value="/cms/self/upnick",method = RequestMethod.GET)
-	public String updateNickInput(HttpServletRequest request){
-		User currentUser= CmsCheckAuthInterceptor.getSessionUser(request);
-		request.setAttribute("nick", currentUser.getNickName());
+	public String updateNickInput(HttpServletRequest request,  @CookieValue(value = Constant.ADMIN_ACCESS_TOKEN) String token){
+		AccessToken accessToken = userMapper.getAccessTokenByToken(token);
+		User user = userMapper.getUserById(accessToken.getUserId());
+		//User currentUser= CmsCheckAuthInterceptor.getSessionUser(request);
+		request.setAttribute("nick", user.getNickName());
 		return "/cms/self/upnick";
 	}
 	
 	
 	@RequestMapping(value="/cms/self/upnick",method = RequestMethod.POST)
-	public String updateNickSubmit(String nick,HttpServletRequest request){
+	public String updateNickSubmit(String nick,HttpServletRequest request, @CookieValue(value = Constant.ADMIN_ACCESS_TOKEN) String token){
 		logger.info("nick is:  "+nick );
 		logger.info("request nick is:  "+request.getParameter("nick") );
-		User currentUser= CmsCheckAuthInterceptor.getSessionUser(request);
-		currentUser.setNickName(nick);
-		userDao.updateUserNick(currentUser);
-		
+		AccessToken accessToken = userMapper.getAccessTokenByToken(token);
+		User user = userMapper.getUserById(accessToken.getUserId());
+		//User currentUser= CmsCheckAuthInterceptor.getSessionUser(request);
+		user.setNickName(nick);
+		userMapper.updateUserNick(user);
+
 		request.setAttribute(Constant.KEY_RESULT_MESSAGE, "修改成功");
-		request.setAttribute("nick", currentUser.getNickName());
+		request.setAttribute("nick", user.getNickName());
 		return "/cms/self/upnick";
 	}
 	
@@ -76,8 +87,9 @@ public class SelfController {
 	
 	
 	@RequestMapping(value="/cms/self/uppassword",method = RequestMethod.POST)
-	public String updatePasswordSubmit(String oldpass,String newpass,HttpServletRequest request){
-		User currentUser= CmsCheckAuthInterceptor.getSessionUser(request);
+	public String updatePasswordSubmit(String oldpass,String newpass,HttpServletRequest request, @CookieValue(value = Constant.ADMIN_ACCESS_TOKEN) String token){
+		AccessToken accessToken = userMapper.getAccessTokenByToken(token);
+		User currentUser = userMapper.getUserById(accessToken.getUserId());
 		boolean result = accountService.resetPassword(currentUser.getAccount(), oldpass, newpass);
 		if(result){
 			request.setAttribute(Constant.KEY_RESULT_MESSAGE, "修改成功");

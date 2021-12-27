@@ -2,7 +2,7 @@ package com.lucifer.service;
 
 
 import com.lucifer.dao.UserDao;
-import com.lucifer.model.User;
+import com.lucifer.model.user.User;
 import com.lucifer.utils.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
