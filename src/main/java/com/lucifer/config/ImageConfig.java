@@ -9,10 +9,10 @@ public class ImageConfig {
     static {
         //page 1
 
-        resource.put("/web/images/p1/bg-1.jpg","/web/images/p1/bg-1.jpg");
-        resource.put("/web/images/p1/box.png","/web/images/p1/box.png");
-        resource.put("/web/images/p1/process-bg.png","/web/images/p1/process-bg.png");
-        resource.put("/web/images/p1/process-front.png","/web/images/p1/process-front.png");
+        resource.put("/web/images/p1/bg-1.jpg","https://vote.stack.xin/web/images/p1/bg-1.jpg");
+        resource.put("/web/images/p1/box.png","https://vote.stack.xin/web/images/p1/box.png");
+        resource.put("/web/images/p1/process-bg.png","https://vote.stack.xin/web/images/p1/process-bg.png");
+        resource.put("/web/images/p1/process-front.png","https://vote.stack.xin/web/images/p1/process-front.png");
 
 //        resource.put("/web/images/p1/bg-1.jpg","http://qn-vote-p.klny.xyz/bg-1.jpg");
 //        resource.put("/web/images/p1/box.png","http://qn-vote-p.klny.xyz/box.png");
@@ -20,9 +20,9 @@ public class ImageConfig {
 //        resource.put("/web/images/p1/process-front.png","http://qn-vote-p.klny.xyz/process-front.png");
 
         //page 2
-        resource.put("/web/images/p2/bj-2.jpg","/web/images/p2/bj-2.jpg");
-        resource.put("/web/images/p2/see-rule.png","/web/images/p2/see-rule.png");
-        resource.put("/web/images/p2/box.gif","/web/images/p2/box.gif");
+        resource.put("/web/images/p2/bj-2.jpg","https://vote.stack.xin/web/images/p2/bj-2.jpg");
+        resource.put("/web/images/p2/see-rule.png","https://vote.stack.xin/web/images/p2/see-rule.png");
+        resource.put("/web/images/p2/box.gif","https://vote.stack.xin/web/images/p2/box.gif");
 
 
 //        resource.put("/web/images/p2/bj-2.jpg","http://qn-vote-p.klny.xyz/bj-2.jpg");
@@ -33,14 +33,14 @@ public class ImageConfig {
 
 
         //page 3
-        resource.put("/web/img/page3/bg.png","http://q32mdgay4.bkt.clouddn.com/bg.png");
-        resource.put("/web/img/page3/title.gif","http://q32mdgay4.bkt.clouddn.com/title.gif");
-        resource.put("/web/img/page3/my.png","http://q32mdgay4.bkt.clouddn.com/my.png");
-        resource.put("/web/img/page3/opportunity.png","http://q32mdgay4.bkt.clouddn.com/opportunity.png");
-        resource.put("/web/img/page3/rotate-bg.png","http://q32mdgay4.bkt.clouddn.com/rotate-bg.png");
-        resource.put("/web/img/page3/rotate-dish.png","http://q32mdgay4.bkt.clouddn.com/rotate-dish.png");
-        resource.put("/web/img/page3/rotate-center.png","http://q32mdgay4.bkt.clouddn.com/rotate-center.png");
-        resource.put("/web/img/page3/lottery-start.png","http://q32mdgay4.bkt.clouddn.com/lottery-start.png");
+//        resource.put("/web/img/page3/bg.png","http://q32mdgay4.bkt.clouddn.com/bg.png");
+//        resource.put("/web/img/page3/title.gif","http://q32mdgay4.bkt.clouddn.com/title.gif");
+//        resource.put("/web/img/page3/my.png","http://q32mdgay4.bkt.clouddn.com/my.png");
+//        resource.put("/web/img/page3/opportunity.png","http://q32mdgay4.bkt.clouddn.com/opportunity.png");
+//        resource.put("/web/img/page3/rotate-bg.png","http://q32mdgay4.bkt.clouddn.com/rotate-bg.png");
+//        resource.put("/web/img/page3/rotate-dish.png","http://q32mdgay4.bkt.clouddn.com/rotate-dish.png");
+//        resource.put("/web/img/page3/rotate-center.png","http://q32mdgay4.bkt.clouddn.com/rotate-center.png");
+//        resource.put("/web/img/page3/lottery-start.png","http://q32mdgay4.bkt.clouddn.com/lottery-start.png");
 
 
     }
