@@ -53,4 +53,10 @@ public class ApiAppreciateController {
         List<Appreciate> appreciateList = appreciateDao.appreciateList(null,categoryId,0,1000);
         return appreciateList;
     }
+
+    @GetMapping(value="/vote-count")
+    public Integer listByCategory(){
+        Integer allVoteCount = voteService.allVoteCount();
+        return allVoteCount;
+    }
 }
