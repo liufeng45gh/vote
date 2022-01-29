@@ -36,8 +36,6 @@ public class WebAppreciateController {
     @Resource
     private AppreciateDao appreciateDao;
 
-  
-
     @Resource
     private AppreciateService appreciateService;
 
@@ -93,12 +91,6 @@ public class WebAppreciateController {
         return "/web/appreciate/category";
     }
 
-    @RequestMapping(value="/api/category",method = RequestMethod.GET)
-    @ResponseBody
-    public List<AppreciateCategory> categoryApi(HttpServletRequest request){
-        List<AppreciateCategory> appreciateCategoryList =  appreciateDao.appreciateCategoryList();
-        return appreciateCategoryList;
-    }
 
     @RequestMapping(value="/by-category/{categoryId}",method = RequestMethod.GET)
     public String listByCategory(HttpServletRequest request,@PathVariable  Long categoryId){
@@ -123,7 +115,6 @@ public class WebAppreciateController {
 
         return "/web/appreciate/index";
     }
-
 
 
     
