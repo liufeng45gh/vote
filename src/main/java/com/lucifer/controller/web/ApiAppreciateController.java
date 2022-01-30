@@ -43,7 +43,7 @@ public class ApiAppreciateController {
     public Map<String,String> resources(){
         return ImageConfig.resource;
     }
-}
+
 
     @RequestMapping(value="/category/list",method = RequestMethod.GET)
     public List<AppreciateCategory> categoryApi(HttpServletRequest request){
