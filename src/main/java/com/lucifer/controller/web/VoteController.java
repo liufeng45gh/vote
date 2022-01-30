@@ -22,9 +22,8 @@ import javax.servlet.http.HttpServletRequest;
  */
 
 @Controller
-@RequestMapping("/vote")
+@RequestMapping("/api/vote")
 public class VoteController {
-
 
     @Resource
     private WxService wxService;

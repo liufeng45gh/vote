@@ -27,7 +27,7 @@ import java.io.IOException;
  */
 
 @Controller
-@RequestMapping("/wx")
+@RequestMapping("/api/wx")
 public class WxLoginController {
 
     @Resource
@@ -52,7 +52,7 @@ public class WxLoginController {
 
     @RequestMapping(value="/login/{state}",method = RequestMethod.GET)
     public String toLogin(@PathVariable String state){
-        return "redirect:https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1b792045969d2147&redirect_uri=https%3a%2f%2fvote.stack.xin%2fwx%2flogin-by-code&response_type=code&scope=snsapi_userinfo&state="+state+"#wechat_redirect";
+        return "redirect:https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1b792045969d2147&redirect_uri=https%3a%2f%2fvote.stack.xin%2fapi%2f%2fwx%2flogin-by-code&response_type=code&scope=snsapi_userinfo&state="+state+"#wechat_redirect";
         //return "redirect: https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7933d55ea3872f4d&redirect_uri=https%3a%2f%2fwww.jd.com&response_type=code&scope=snsapi_userinfo&state=vote#wechat_redirect";
     }
 }
