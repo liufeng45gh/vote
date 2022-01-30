@@ -1,5 +1,6 @@
 package com.lucifer.controller.web;
 
+import com.lucifer.config.ImageConfig;
 import com.lucifer.dao.vote.AppreciateDao;
 import com.lucifer.model.vote.Appreciate;
 import com.lucifer.model.vote.AppreciateCategory;
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -35,6 +37,13 @@ public class ApiAppreciateController {
 
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @GetMapping("/resources")
+    @ResponseBody
+    public Map<String,String> resources(){
+        return ImageConfig.resource;
+    }
+}
 
     @RequestMapping(value="/category/list",method = RequestMethod.GET)
     public List<AppreciateCategory> categoryApi(HttpServletRequest request){
