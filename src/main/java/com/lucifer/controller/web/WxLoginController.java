@@ -8,7 +8,10 @@ import com.lucifer.utils.StringHelper;
 import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,35 +35,24 @@ public class WxLoginController {
 
     final Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    @Autowired
+    private Environment environment;
+
 
 
     @RequestMapping(value="/login-by-code",method = RequestMethod.GET)
-    public String loginByCode(@RequestParam  String code, HttpServletResponse response, HttpServletRequest request) throws JSONException, WxAuthenticationException, IOException {
+    public String loginByCode(@RequestParam  String code, @RequestParam String state, HttpServletResponse response, HttpServletRequest request) throws JSONException, WxAuthenticationException, IOException {
         logger.info("loginByCode has been called ");
-        wxService.loginByCode(code,response);
+        String token = wxService.loginByCode(code);
         logger.info("wxService.loginByCode has pass");
-        Cookie[] cookies = request.getCookies();
-        String loginRedirectUrl = null;
-        if(null != cookies) {
-            for (Cookie cookie: cookies) {
-                logger.info("cookie.getName() {}",cookie.getName());
-                logger.info("cookie.getValue() {}",cookie.getValue());
-                if (cookie.getName().equals("login_redirect_url")) {
-                    loginRedirectUrl = cookie.getValue();
-                    break;
-                }
-            }
-        }
-        logger.info("loginRedirectUrl {}",loginRedirectUrl);
-        if (!StringHelper.isEmpty(loginRedirectUrl)) {
-            return "redirect:"+loginRedirectUrl;
-        }
-        return "redirect:/appreciate/category";
+        String redirectUrl = environment.getProperty("wxLoginRedirect."+state);
+        logger.info("redirectUrl is : {}",redirectUrl);
+        return "redirect: "+ redirectUrl + "?token=" + token;
     }
 
-    @RequestMapping(value="/login",method = RequestMethod.GET)
-    public String toLogin(){
-        return "redirect:https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1b792045969d2147&redirect_uri=https%3a%2f%2fvote.stack.xin%2fwx%2flogin-by-code&response_type=code&scope=snsapi_userinfo&state=vote#wechat_redirect";
+    @RequestMapping(value="/login/{state}",method = RequestMethod.GET)
+    public String toLogin(@PathVariable String state){
+        return "redirect:https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1b792045969d2147&redirect_uri=https%3a%2f%2fvote.stack.xin%2fwx%2flogin-by-code&response_type=code&scope=snsapi_userinfo&state="+state+"#wechat_redirect";
         //return "redirect: https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7933d55ea3872f4d&redirect_uri=https%3a%2f%2fwww.jd.com&response_type=code&scope=snsapi_userinfo&state=vote#wechat_redirect";
     }
 }

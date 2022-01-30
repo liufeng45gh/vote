@@ -69,6 +69,10 @@ wx:
   loginSecret: 34a9d9d86dc36f30320c89763780b23e
 vote:
   deadline: '2021-12-31 00:00:00'
+wxLoginRedirect:
+  devlopment: http://localhost:8080/category
+  production: https://vote.stack.xin/category
+
 
 
 

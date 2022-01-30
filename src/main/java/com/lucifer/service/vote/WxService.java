@@ -131,6 +131,18 @@ public class WxService {
         response.addCookie(c2);
     }
 
+    public String loginByCode(String code) throws JSONException, WxAuthenticationException, IOException {
+        WxInfo wxInfo = this.getWxInfo(code);
+        WxInfo dbWxInfo = wxUserDao.getWxUserByWxId(wxInfo.getWxId());
+        if (null == dbWxInfo) {
+            wxUserDao.insertWxUser(wxInfo);
+        }
+        String token = UUID.randomUUID().toString();
+        //stringRedisTemplate.opsForValue().set(Constant.CACHE_KEY_PERSISTENCE_TOKEN_PRE+token,wxInfo.getWxId());
+        this.writeToken(token,wxInfo.getWxId());
+        return token;
+    }
+
     public void writeToken(String token,String wxId){
         stringRedisTemplate.opsForValue().set(Constant.CACHE_KEY_PERSISTENCE_TOKEN_PRE+token,wxId);
     }
