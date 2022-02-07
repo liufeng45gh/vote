@@ -47,7 +47,7 @@ public class WxLoginController {
         logger.info("wxService.loginByCode has pass");
         String redirectUrl = environment.getProperty("wxLoginRedirect."+state);
         logger.info("redirectUrl is : {}",redirectUrl);
-        return "redirect: "+ redirectUrl + "?token=" + token;
+        return "redirect:"+ redirectUrl + "?token=" + token;
     }
 
     @RequestMapping(value="/login/{state}",method = RequestMethod.GET)
