@@ -16,6 +16,7 @@ import java.util.Map;
  * Created by liufx on 2017/4/13.
  */
 @Controller
+@RequestMapping("/api")
 public class WxConfigController {
 
     @Resource
