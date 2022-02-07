@@ -37,10 +37,19 @@ public class RestControllerAdvice extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ArgumentException.class)
     @ResponseBody
-    ResponseEntity<?> handleArgumentExceptionException(HttpServletRequest request, NotLoginException ex,HttpServletResponse response) throws UnsupportedEncodingException {
+    ResponseEntity<?> handleArgumentExceptionException(HttpServletRequest request, ArgumentException ex,HttpServletResponse response) throws UnsupportedEncodingException {
         HttpStatus status = HttpStatus.valueOf(400);
         response.setHeader("X-Err-Message", URLEncoder.encode(ex.getMessage(), "utf-8"));
-        return new ResponseEntity<>(new NotLoginExceptionType(status.value(),request, ex), status);
+        return new ResponseEntity<>(new CommonExceptionType(status.value(),request, ex), status);
+    }
+
+    @ExceptionHandler(Exception.class)
+    @ResponseBody
+    ResponseEntity<?> handleExceptionException(HttpServletRequest request, Exception ex,HttpServletResponse response) throws UnsupportedEncodingException {
+        HttpStatus status = HttpStatus.valueOf(500);
+        logger.error("exception",ex);
+        response.setHeader("X-Err-Message", URLEncoder.encode(ex.getMessage(), "utf-8"));
+        return new ResponseEntity<>(new CommonExceptionType(status.value(),request, ex), status);
     }
 
     public class NotLoginExceptionType extends HashMap{
@@ -48,6 +57,21 @@ public class RestControllerAdvice extends ResponseEntityExceptionHandler {
             this.put("status",status);
             this.put("oper_code",-1);
             this.put("error","NoAuth Server Error");
+            this.put("exception",ex.getClass().getName());
+            this.put("message",ex.getMessage());
+
+            this.put("detail",ex.getStackTrace()[0].toString());
+            this.put("path",request.getContextPath()+request.getServletPath());
+            this.put("url",request.getRequestURL());
+            this.put("timestamp", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(DateUtils.now()));
+        }
+    }
+
+    public class CommonExceptionType extends HashMap{
+        CommonExceptionType (Integer status, HttpServletRequest request, Exception ex){
+            this.put("status",status);
+            this.put("oper_code",-1);
+            this.put("error","Server Error");
             this.put("exception",ex.getClass().getName());
             this.put("message",ex.getMessage());
 
