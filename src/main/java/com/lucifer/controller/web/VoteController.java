@@ -39,7 +39,7 @@ public class VoteController {
     
     @RequestMapping(value="/submit",method = RequestMethod.POST)
     @ResponseBody
-    public Result voteSubmit(Vote vote, @RequestHeader(required = false,name = "Authorization") String token) throws NotLoginException, ArgumentException, RepetitiveOperationException {
+    public Result voteSubmit(@RequestBody Vote vote, @RequestHeader(required = false,name = "Authorization") String token) throws NotLoginException, ArgumentException, RepetitiveOperationException {
 
         logger.info("token is: {}",token);
         if(StringHelper.isEmpty(token)) {
