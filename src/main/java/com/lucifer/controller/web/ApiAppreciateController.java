@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -67,5 +68,15 @@ public class ApiAppreciateController {
     public Integer listByCategory(){
         Integer allVoteCount = voteService.allVoteCount();
         return allVoteCount;
+    }
+
+    @GetMapping(value="/appreciate/{id}")
+    public Map detail(HttpServletRequest request,@PathVariable Long id){
+        Appreciate appreciate = appreciateDao.getAppreciate(id);
+        AppreciateCategory currentCategory = appreciateDao.getAppreciateCategory(appreciate.getCategoryId());
+        Map resultMap = new HashMap();
+        resultMap.put("appreciate",appreciate);
+        resultMap.put("category",currentCategory);
+        return resultMap;
     }
 }
