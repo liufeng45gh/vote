@@ -1,6 +1,7 @@
 package com.lucifer.advice;
 
 import com.lucifer.controller.web.VoteController;
+import com.lucifer.exception.ArgumentException;
 import com.lucifer.exception.NotLoginException;
 import com.lucifer.exception.RepetitiveOperationException;
 import com.lucifer.utils.DateUtils;
@@ -28,6 +29,14 @@ public class RestControllerAdvice extends ResponseEntityExceptionHandler {
     @ResponseBody
     ResponseEntity<?> handleControllerException(HttpServletRequest request, NotLoginException ex,HttpServletResponse response) throws UnsupportedEncodingException {
         HttpStatus status = HttpStatus.valueOf(401);
+        response.setHeader("X-Err-Message", URLEncoder.encode(ex.getMessage(), "utf-8"));
+        return new ResponseEntity<>(new NotLoginExceptionType(status.value(),request, ex), status);
+    }
+
+    @ExceptionHandler(ArgumentException.class)
+    @ResponseBody
+    ResponseEntity<?> handleArgumentExceptionException(HttpServletRequest request, NotLoginException ex,HttpServletResponse response) throws UnsupportedEncodingException {
+        HttpStatus status = HttpStatus.valueOf(400);
         response.setHeader("X-Err-Message", URLEncoder.encode(ex.getMessage(), "utf-8"));
         return new ResponseEntity<>(new NotLoginExceptionType(status.value(),request, ex), status);
     }
