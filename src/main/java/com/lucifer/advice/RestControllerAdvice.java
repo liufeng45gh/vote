@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import javax.annotation.Priority;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
@@ -23,6 +24,7 @@ import java.util.HashMap;
  * Created by liufx on 15/12/16.
  */
 @ControllerAdvice(basePackageClasses =  VoteController.class)
+@Priority(1)
 public class RestControllerAdvice extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(NotLoginException.class)
