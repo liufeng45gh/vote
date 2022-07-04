@@ -9,10 +9,10 @@ public class ImageConfig {
     static {
         //page 1
 
-        resource.put("/web/images/p1/bg-1.jpg","https://vote.stack.xin/web/images/p1/bg-1.jpg");
-        resource.put("/web/images/p1/box.png","https://vote.stack.xin/web/images/p1/box.png");
-        resource.put("/web/images/p1/process-bg.png","https://vote.stack.xin/web/images/p1/process-bg.png");
-        resource.put("/web/images/p1/process-front.png","https://vote.stack.xin/web/images/p1/process-front.png");
+        resource.put("/web/images/p1/bg-1.jpg","https://vote.klny.xyz/web/images/p1/bg-1.jpg");
+        resource.put("/web/images/p1/box.png","https://vote.klny.xyz/web/images/p1/box.png");
+        resource.put("/web/images/p1/process-bg.png","https://vote.klny.xyz/web/images/p1/process-bg.png");
+        resource.put("/web/images/p1/process-front.png","https://vote.klny.xyz/web/images/p1/process-front.png");
 
 //        resource.put("/web/images/p1/bg-1.jpg","http://qn-vote-p.klny.xyz/bg-1.jpg");
 //        resource.put("/web/images/p1/box.png","http://qn-vote-p.klny.xyz/box.png");
@@ -20,9 +20,9 @@ public class ImageConfig {
 //        resource.put("/web/images/p1/process-front.png","http://qn-vote-p.klny.xyz/process-front.png");
 
         //page 2
-        resource.put("/web/images/p2/bj-2.jpg","https://vote.stack.xin/web/images/p2/bj-2.jpg");
-        resource.put("/web/images/p2/see-rule.png","https://vote.stack.xin/web/images/p2/see-rule.png");
-        resource.put("/web/images/p2/box.gif","https://vote.stack.xin/web/images/p2/box.gif");
+        resource.put("/web/images/p2/bj-2.jpg","https://vote.klny.xyz/web/images/p2/bj-2.jpg");
+        resource.put("/web/images/p2/see-rule.png","https://vote.klny.xyz/web/images/p2/see-rule.png");
+        resource.put("/web/images/p2/box.gif","https://vote.klny.xyz/web/images/p2/box.gif");
 
 
 //        resource.put("/web/images/p2/bj-2.jpg","http://qn-vote-p.klny.xyz/bj-2.jpg");
