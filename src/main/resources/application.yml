@@ -71,7 +71,7 @@ vote:
   deadline: '2021-12-31 00:00:00'
 wxLoginRedirect:
   devlopment: http://localhost:8080/category
-  production: https://vote.stack.xin/category
+  production: https://vote.klny.xyz/category
 
 
 
