@@ -2,9 +2,7 @@ package com.lucifer.controller.web;
 
 import com.lucifer.exception.ArgumentException;
 import com.lucifer.exception.NotLoginException;
-import com.lucifer.exception.RepetitiveOperationException;
 import com.lucifer.exception.WxAuthenticationException;
-import com.lucifer.model.vote.Vote;
 import com.lucifer.service.vote.WxService;
 import com.lucifer.utils.Result;
 import com.lucifer.utils.StringHelper;
