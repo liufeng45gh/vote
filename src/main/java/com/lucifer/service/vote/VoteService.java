@@ -51,7 +51,7 @@ public class VoteService {
         if (count>2) {
             throw new RepetitiveOperationException("每天没类作品最多投3票");
         }
-        
+
     }
 
     public void saveVote(Vote vote) throws RepetitiveOperationException {

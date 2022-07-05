@@ -47,8 +47,8 @@ mybatis:
 qiniu:
   accessKey: 0eQGsXVlK2ZMC0zrY-WwG0RAGN2XGhR-MuZ43obW
   secretKey: E4Oi-dh-0xg3ehU8BBJkS63Aon8HVXs4fd7BRNxk
-  publicBucket: klny-vote
-  url: http://qncloud.stack.xin/
+  publicBucket: klny-vote-p
+  url: http://qn-vote-p.klny.xyz/
 multipart:
   maxFileSize: 10Mb
   maxRequestSize: 30Mb
