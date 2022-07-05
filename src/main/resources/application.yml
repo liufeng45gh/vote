@@ -68,7 +68,8 @@ wx:
   loginAppId: wx1b792045969d2147
   loginSecret: 34a9d9d86dc36f30320c89763780b23e
 vote:
-  deadline: '2021-12-31 00:00:00'
+  start: '2022-07-03 00:00:00'
+  deadline: '2022-07-17 00:00:00'
 wxLoginRedirect:
   devlopment: http://localhost:8080/category
   production: https://vote.klny.xyz/category

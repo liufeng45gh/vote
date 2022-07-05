@@ -54,8 +54,8 @@ public class VoteController {
             throw new ArgumentException("appreciateId 不能为空");
         }
 
-        if(serverConfig.isAfterDeadline()){
-            throw new ArgumentException("投票已结束");
+        if(!serverConfig.inVoteTime()){
+            throw new ArgumentException("投票未开始或已结束");
         }
 
         vote.setWxId(wxId);

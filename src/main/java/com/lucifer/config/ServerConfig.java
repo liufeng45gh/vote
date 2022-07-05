@@ -22,7 +22,17 @@ public class ServerConfig {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date deadline;
 
-    public boolean isAfterDeadline(){
-        return new Date().after(deadline);
+    @Value("${vote.start}")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date start;
+
+    public boolean inVoteTime(){
+        if (new Date().before(start)) {
+            return false;
+        }
+        if (new Date().after(deadline)) {
+            return false;
+        }
+        return true ;
     }
 }

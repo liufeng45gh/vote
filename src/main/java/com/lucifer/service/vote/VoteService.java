@@ -48,12 +48,10 @@ public class VoteService {
 
         Integer count = voteDao.getTodayCategoryCount(vote);
         logger.info("count is {}",count );
-        if (count>4) {
-            throw new RepetitiveOperationException("每天没类作品最多投5票");
+        if (count>2) {
+            throw new RepetitiveOperationException("每天没类作品最多投3票");
         }
-
-
-
+        
     }
 
     public void saveVote(Vote vote) throws RepetitiveOperationException {
