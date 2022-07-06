@@ -10,7 +10,7 @@ public class ImageConfig {
         //page 1
 
         resource.put("/web/images/p1/bg-1.jpg","https://vote.klny.xyz/web/images/p1/bg-1.jpg");
-        resource.put("/web/images/p1/box.png","https://vote.klny.xyz/web/images/p1/box.png");
+        resource.put("/web/images/p1/box.png","https://vote.klny.xyz/web/images/p1/box.gif");
         resource.put("/web/images/p1/process-bg.png","https://vote.klny.xyz/web/images/p1/process-bg.png");
         resource.put("/web/images/p1/process-front.png","https://vote.klny.xyz/web/images/p1/process-front.png");
 
