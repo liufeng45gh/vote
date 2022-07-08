@@ -49,7 +49,7 @@ public class VoteService {
         Integer count = voteDao.getTodayCategoryCount(vote);
         logger.info("count is {}",count );
         if (count>2) {
-            throw new RepetitiveOperationException("每天没类作品最多投3票");
+            throw new RepetitiveOperationException("每天每类作品最多投3票");
         }
 
     }
